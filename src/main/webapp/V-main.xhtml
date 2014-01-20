@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+
+        <meta charset="utf-8"/>
+        <title>Free HTML5 Bootstrap Admin Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template."/>
+        <meta name="author" content="Muhammad Usman"/>
+
+        <!-- The styles -->
+        <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet"/>
+        <style type="text/css">
+            body {
+                padding-bottom: 40px;
+            }
+            .sidebar-nav {
+                padding: 9px 0;
+            }
+        </style>
+        <h:outputStylesheet id="bs-css" library="css" name="bootstrap-cerulean.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-responsive.css"/>
+        <h:outputStylesheet library="css" name="charisma-app.css"/>
+        <h:outputStylesheet library="css" name="jquery-ui-1.8.21.custom.css"/>
+        <h:outputStylesheet library="css" name="fullcalendar.css"/>
+        <h:outputStylesheet library="css" name="fullcalendar.print.css"/>
+        <h:outputStylesheet library="css" name="chosen.css"/>
+        <h:outputStylesheet library="css" name="uniform.default.css"/>
+        <h:outputStylesheet library="css" name="colorbox.css"/>
+        <h:outputStylesheet library="css" name="jquery.cleditor.css"/>
+        <h:outputStylesheet library="css" name="jquery.noty.css"/>
+        <h:outputStylesheet library="css" name="noty_theme_default.css"/>
+        <h:outputStylesheet library="css" name="elfinder.min.css"/>
+        <h:outputStylesheet library="css" name="css/elfinder.theme.css"/>
+        <h:outputStylesheet library="css" name="css/jquery.iphone.toggle.css"/>
+        <h:outputStylesheet library="css" name="css/opa-icons.css"/>
+        <h:outputStylesheet library="shortcut icon" name="uploadify.css"/>
+
+
+        <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- The fav icon -->
+        <h:outputStylesheet library="shortcut icon" name="img/favicon.ico"/>
+        <link rel="shortcut icon" href="img/favicon.ico"/>
+
+    </h:head>
+    <body>
+        <h:form>
+            <p:layout fullPage="true">  
+
+                <!--            <p:layoutUnit position="north" size="100" header="Top" resizable="true" closable="true" collapsible="true">  -->
+                <p:layoutUnit position="north"  resizable="false" closable="true" collapsible="true">  
+                    <!--<h:outputText value="North unit content." />-->  
+                    <!-- topbar starts -->
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="container-fluid">
+                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </a>
+                                <a class="brand" href="index.html"> <img alt="Charisma Logo" src="img/logo20.png" /> <span>Charisma</span></a>
+
+                                <!-- theme selector starts -->
+                                <div class="btn-group pull-right theme-container" >
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="icon-tint"></i><span class="hidden-phone"> Change Theme / Skin</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu" id="themes">
+                                        <li><a data-value="classic" href="#"><i class="icon-blank"></i> Classic</a></li>
+                                        <li><a data-value="cerulean" href="#"><i class="icon-blank"></i> Cerulean</a></li>
+                                        <li><a data-value="cyborg" href="#"><i class="icon-blank"></i> Cyborg</a></li>
+                                        <li><a data-value="redy" href="#"><i class="icon-blank"></i> Redy</a></li>
+                                        <li><a data-value="journal" href="#"><i class="icon-blank"></i> Journal</a></li>
+                                        <li><a data-value="simplex" href="#"><i class="icon-blank"></i> Simplex</a></li>
+                                        <li><a data-value="slate" href="#"><i class="icon-blank"></i> Slate</a></li>
+                                        <li><a data-value="spacelab" href="#"><i class="icon-blank"></i> Spacelab</a></li>
+                                        <li><a data-value="united" href="#"><i class="icon-blank"></i> United</a></li>
+                                    </ul>
+                                </div>
+                                <!-- theme selector ends -->
+
+                                <!-- user dropdown starts -->
+                                <div class="btn-group pull-right" >
+                                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                        <i class="icon-user"></i><span class="hidden-phone"> admin</span>
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Profile</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="login.html">Logout</a></li>
+                                    </ul>
+                                </div>
+                                <!-- user dropdown ends -->
+
+                                <div class="top-nav nav-collapse">
+                                    <ul class="nav">
+                                        <li><a href="#">Visit Site</a></li>
+                                        <li>
+                                            <form class="navbar-search pull-left">
+                                                <input placeholder="Search" class="search-query span2" name="query" type="text"/>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div><!--/.nav-collapse -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- topbar ends -->
+                    <p:growl id="messages"/>
+                    <p:menubar autoDisplay="false">  
+                        <p:submenu label="File" icon="ui-icon-document">  
+                            <p:submenu label="New" icon="ui-icon-contact">  
+                                <p:menuitem value="Project" url="#" />  
+                                <p:menuitem value="Other" url="#" />  
+                            </p:submenu>  
+                            <p:menuitem value="Open" url="#" />  
+                            <p:separator />  
+                            <p:menuitem value="Quit" url="#" />  
+                        </p:submenu>  
+
+                        <p:submenu label="Edit" icon="ui-icon-pencil">  
+                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />  
+                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />  
+                        </p:submenu>  
+
+                        <p:submenu label="Help" icon="ui-icon-help">  
+                            <p:menuitem value="Contents" url="#" />  
+                            <p:submenu label="Search" icon="ui-icon-search">  
+                                <p:submenu label="Text">  
+                                    <p:menuitem value="Workspace" url="#" />  
+                                </p:submenu>  
+                                <p:menuitem value="File" url="#" />  
+                            </p:submenu>  
+                        </p:submenu>  
+
+                        <p:submenu label="Actions" icon="ui-icon-gear">  
+                            <p:submenu label="Ajax" icon="ui-icon-refresh">  
+                                <p:menuitem value="Save" actionListener="#{menuBean.save}" icon="ui-icon-disk" update="messages"/>  
+                                <p:menuitem value="Update" actionListener="#{menuBean.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>  
+                            </p:submenu>  
+                            <p:submenu label="Non-Ajax" icon="ui-icon-newwin">  
+                                <p:menuitem value="Delete" actionListener="#{menuBean.delete}" icon="ui-icon-close" update="messages" ajax="false"/>  
+                            </p:submenu>  
+                        </p:submenu>  
+
+                        <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />  
+
+                        <f:facet name="options">  
+                            <p:inputText style="margin-right:10px"/>  
+                            <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />  
+                        </f:facet>  
+                    </p:menubar>  
+                </p:layoutUnit>  
+
+                <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">  
+                    <!--<h:outputText value="South unit content." />-->  
+                    <footer>
+                        <p class="pull-left"> copy; <a href="http://www.moharto.com/" target="_blank">Moharto</a> 2014</p>
+                        <p class="pull-right"> Powered by: <a href="http://www.mangium.com/">Mangium</a></p>
+                    </footer>
+                </p:layoutUnit>  
+
+                <p:layoutUnit position="west" size="200" resizable="true" closable="true" collapsible="true">  
+                    <!--<h:outputText value="West unit content." />-->  
+<!--                    <div class="container-fluid">
+                        <div class="row-fluid">-->
+                            <!-- left menu starts -->
+                            <div class="span2 main-menu-span">
+                                <div class="well nav-collapse sidebar-nav">
+                                    <ul class="nav nav-tabs nav-stacked main-menu">
+                                        <li class="nav-header hidden-tablet">Main</li>
+                                        <li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
+                                        <li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
+                                        <li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
+                                        <li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
+                                        <li><a class="ajax-link" href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
+                                        <li><a class="ajax-link" href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Gallery</span></a></li>
+                                        <li class="nav-header hidden-tablet">Sample Section</li>
+                                        <li><a class="ajax-link" href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>
+                                        <li><a class="ajax-link" href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
+                                        <li><a class="ajax-link" href="grid.html"><i class="icon-th"></i><span class="hidden-tablet"> Grid</span></a></li>
+                                        <li><a class="ajax-link" href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>
+                                        <li><a href="tour.html"><i class="icon-globe"></i><span class="hidden-tablet"> Tour</span></a></li>
+                                        <li><a class="ajax-link" href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>
+                                        <li><a href="error.html"><i class="icon-ban-circle"></i><span class="hidden-tablet"> Error Page</span></a></li>
+                                        <li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
+                                    </ul>
+                                    <label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox"/> Ajax on menu</label>
+                                </div><!--/.well -->
+                            </div><!--/span-->
+                            <!-- left menu ends -->
+<!--                        </div>
+                    </div>-->
+                </p:layoutUnit>  
+
+                <!--    <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">  
+                        <h:outputText value="Right unit content." />  
+                    </p:layoutUnit>  -->
+
+                <p:layoutUnit position="center">  
+                    <h:form>  
+                        <!--This fullPage layout consists of five different layoutUnits which are resizable and closable by default.-->  
+                        <div>
+                            <ul class="breadcrumb">
+                                <li>
+                                    <a href="#">Home</a> <span class="divider">/</span>
+                                </li>
+                                <li>
+                                    <a href="#">Tables</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </h:form>  
+                </p:layoutUnit>  
+
+            </p:layout>
+
+
+
+
+
+
+            <noscript>
+                <div class="alert alert-block span10">
+                    <h4 class="alert-heading">Warning!</h4>
+                    <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+                </div>
+            </noscript>
+            <!--
+                        <div class="container-fluid">
+                            <div class="row-fluid">
+                                <div id="content" class="span10">
+                                     content starts 
+            
+            
+            
+                                </div>
+                            </div>
+                        </div>-->
+        </h:form>
+    </body>
+</html>
