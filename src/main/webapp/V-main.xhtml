@@ -58,7 +58,7 @@
 
             <p:layout fullPage="true" >  
                 <!--            <p:layoutUnit position="north" size="100" header="Top" resizable="true" closable="true" collapsible="true">  -->
-                <p:layoutUnit position="north" size="100" styleClass="span2 main-menu-span"   resizable="true" closable="true" collapsible="true">  
+                <p:layoutUnit position="north" size="100" style="border: none" styleClass="span2 main-menu-span"   resizable="true" closable="true" collapsible="true">  
                     <!--<h:outputText value="North unit content." />-->  
                     <!-- topbar starts -->
                     <div class="navbar">
@@ -108,10 +108,10 @@
 
                                 <div class="top-nav nav-collapse">
                                     <ul class="nav">
-                                        <li><a href="http://www.moharto.com">Visit moharto site</a></li>
+                                        <!--<li><a href="http://www.moharto.com">Visit moharto site</a></li>-->
                                         <li>
                                             <form class="navbar-search pull-left">
-                                                <input placeholder="Search" class="search-query span2" name="query" type="text"/>
+                                                <!--<input placeholder="Search" class="search-query span2" name="query" type="text"/>-->
                                             </form>
                                         </li>
                                     </ul>
@@ -124,7 +124,7 @@
                 </p:layoutUnit>  
 
 
-                <p:layoutUnit position="west" size="240" header="Dashboard" resizable="false" closable="true" collapsible="true">  
+                <p:layoutUnit position="west" size="240" header="Dashboard" style="border: none" resizable="false" closable="true" collapsible="true">  
                     <!--<h:outputText value="West unit content." />-->  
                     <!--                    <div class="container-fluid">
                                             <div class="row-fluid">-->
@@ -260,12 +260,12 @@
 
 
 
-                <p:layoutUnit position="center" >  
+                <p:layoutUnit position="center" style="border: none"  >  
                     <h:form>  
 
                         <!-- topbar ends -->
                         <p:growl id="messages"/>
-                        <p:menubar autoDisplay="false" style="width: 97.1%">  
+                        <p:menubar autoDisplay="false" style="width: 97.1%; border: none">  
                             <p:submenu label="File" icon="ui-icon-document">  
                                 <p:submenu label="New" icon="ui-icon-contact">  
                                     <p:menuitem value="Project" url="#" />  
@@ -304,13 +304,13 @@
                             <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />  
 
                             <f:facet name="options">  
-                                <p:inputText style="margin-right:10px"/>  
-                                <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />  
+<!--                                <p:inputText style="margin-right:10px"/>  
+                                <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />  -->
                             </f:facet>  
                         </p:menubar>
 
                         <!--This fullPage layout consists of five different layoutUnits which are resizable and closable by default.-->  
-                        <div style="padding-top: 55px; width: 98%" id="home tab">
+                        <div style="padding-top: 55px; width: 98%;" id="home tab">
                             <ul class="breadcrumb">
                                 <li>
                                     <a href="#">Home</a> <span class="divider">/</span>
@@ -350,7 +350,7 @@
                     </h:form> 
                 </p:layoutUnit>  
 
-                <p:layoutUnit position="south" size="40" resizable="true" closable="true" collapsible="true">  
+                <p:layoutUnit position="south" size="40" style=" border:none;  border-top: 1px solid #aaa; border-radius: 4px;" resizable="true" closable="true" collapsible="true">  
                     <!--<h:outputText value="South unit content." />-->  
                     <footer>
                         <p class="pull-left"> copy; <a href="http://www.moharto.com/" target="_blank">Moharto</a> 2014</p>
