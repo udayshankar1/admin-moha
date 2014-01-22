@@ -27,17 +27,24 @@ public class DashboardBean implements Serializable {
         DashboardColumn column2 = new DefaultDashboardColumn();  
         DashboardColumn column3 = new DefaultDashboardColumn();  
           
-        column1.addWidget("sports");  
-        column1.addWidget("finance");  
+        column1.addWidget("dboard-college-approvals");  
+        column1.addWidget("dboard-latest-messages");  
           
-        column2.addWidget("lifestyle");  
-        column2.addWidget("weather");  
+        column1.addWidget("dboard-latest-reviews");  
+        column1.addWidget("dboard-college-renuals");  
           
-        column3.addWidget("politics");  
+        column1.addWidget("dboard-latst-admissions");
+        column1.addWidget("dboard-latest-ads");
+        
+        column1.addWidget("dboard-ads-renuals");
+        column1.addWidget("dboard-latest-tx");
+        
+        column1.addWidget("dboard-mis");
+        
   
         model.addColumn(column1);  
-        model.addColumn(column2);  
-        model.addColumn(column3);  
+//        model.addColumn(column2);  
+//        model.addColumn(column3);  
     }  
       
     public void handleReorder(DashboardReorderEvent event) {  

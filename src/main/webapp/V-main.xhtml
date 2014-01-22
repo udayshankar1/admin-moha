@@ -13,7 +13,7 @@
         <meta name="author" content="Moharto"/>
 
         <!-- The styles -->
-        <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet"/>
+<!--        <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet"/>
         <style type="text/css">
             body {
                 padding-bottom: 40px;
@@ -21,11 +21,23 @@
             .sidebar-nav {
                 padding: 9px 0;
             }
+        </style>-->
+
+        <!--OVERRIDDEN STYLES STARTS-->
+        <style type="text/css">
+        .ui-dashboard-column{
+        float:none !important;
+            }
+        .ui-widget-header{
+                color: #0088cc!important;
+            }
         </style>
+        <!--OVERRIDDEN STYLES ENDS-->
+        
         <h:outputStylesheet id="bs-css" library="css" name="bootstrap-cerulean.css"/>
         <h:outputStylesheet library="css" name="bootstrap-responsive.css"/>
         <h:outputStylesheet library="css" name="charisma-app.css"/>
-        <h:outputStylesheet library="css" name="jquery-ui-1.8.21.custom.css"/>
+        <!--<h:outputStylesheet library="css" name="jquery-ui-1.8.21.custom.css"/>-->
         <h:outputStylesheet library="css" name="fullcalendar.css"/>
         <h:outputStylesheet library="css" name="fullcalendar.print.css"/>
         <h:outputStylesheet library="css" name="chosen.css"/>
@@ -48,11 +60,12 @@
 
         <!-- The fav icon -->
         <!--<h:outputStylesheet library="shortcut icon" name="favicon.ico"/>-->
+        
     </h:head>
     <h:body>
 
 
-        <h:form>
+        <h:form id="dashboar-main-form" >
 
             <p:layout fullPage="true" >  
                 
@@ -71,7 +84,7 @@
                                 <a class="brand" href="index.html"  > <img alt="Moharto Logo" src="img/moharto-logo-buttion.png" /><span style="font-family: serif;">oharto</span></a>
 
                                 <!-- user dropdown starts -->
-                                <div class="btn-group pull-right" >
+<!--                                <div class="btn-group pull-right" >
                                     <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                                         <i class="icon-user"></i><span class="hidden-phone">Administrator</span>
                                         <span class="caret"></span>
@@ -81,9 +94,15 @@
                                         <li class="divider"></li>
                                         <li><a href="login.html">Logout</a></li>
                                     </ul>
-                                </div>
+                                </div>-->
                                 <!-- user dropdown ends -->
-
+                                
+                                <p:selectOneMenu value="Admin" styleClass="btn-group pull-right" >  
+                                    <f:selectItem itemLabel="Administrator" itemValue="" />  
+                                    <f:selectItem itemLabel="Settings"  itemValue="" />  
+                                    <f:selectItem itemLabel="Logout"  itemValue="" />  
+                                </p:selectOneMenu>
+                                
                                 <div class="top-nav nav-collapse">
                                     <ul class="nav">
                                         <!--<li><a href="http://www.moharto.com">Visit moharto site</a></li>-->
@@ -105,14 +124,11 @@
                 <!--LEFT SIDE MENU BAR BLOCK STARTS--> 
                 <p:layoutUnit position="west" header="Menu" style="border: none" resizable="true" closable="true" collapsible="true">  
 
-
-
-
-                    <p:panelMenu style="width:190px; "> 
-                        <p:submenu  label="Dashboard" />
-                        <p:submenu label="Data Center">
+                    <p:panelMenu style="width:190px; " > 
+                        <p:submenu  label="Dashboard"> </p:submenu> 
+                        <p:submenu label="Data Center" >
                             <p:submenu label="Geography">
-                                <p:menuitem value="Country" actionListener="#{buttonBean.save}" icon="ui-icon-disk"  url="#"/>  
+                                <p:menuitem value="Country" actionListener="#{buttonBean.save}" icon="ui-icon-disk"  url="#" />  
                                 <p:menuitem value="State" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
                                 <p:menuitem value="Zone" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
                                 <p:menuitem value="City" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
@@ -153,28 +169,44 @@
 
 
 
-                <p:layoutUnit position="center" style="border: none"  >  
+                <p:layoutUnit position="center" style="border: none" resizable="false" >  
                     <h:form>  
 
-                        <!-- topbar ends -->
+                        
                         <p:growl id="messages"/>
-                        <p:menubar autoDisplay="false" style="width: 97.1%; border: none">  
-                            <p:submenu label="File" icon="ui-icon-document">  
-                                <p:submenu label="New" icon="ui-icon-contact">  
-                                    <p:menuitem value="Project" url="#" />  
-                                    <p:menuitem value="Other" url="#" />  
-                                </p:submenu>  
-                                <p:menuitem value="Open" url="#" />  
-                                <p:separator />  
-                                <p:menuitem value="Quit" url="#" />  
+                        <p:menubar autoDisplay="false" style="width: 100%; border: none">  
+                            <p:submenu label="Dashboard" icon="ui-icon-document"  >
+                                
+                            </p:submenu>
+                            <p:submenu label="Datacenter" icon="ui-icon-document">
+                                <p:submenu label="Geography" icon="ui-icon-contact">  
+                                    <p:menuitem value="Country" url="#"/>  
+                                    <p:menuitem value="State" url="#" />
+                                    <p:menuitem value="Zone" url="#" />  
+                                    <p:menuitem value="City" url="#" />  
+                                </p:submenu>
+                                <p:submenu label="Colleges" icon="ui-icon-contact">  
+                                    <p:menuitem value="University" url="#"/>  
+                                    <p:menuitem value="College" url="#" />
+                                    <p:menuitem value="Course Level" url="#" />  
+                                    <p:menuitem value="Course" url="#" />  
+                                </p:submenu>
+                                <p:submenu label="Packages" icon="ui-icon-contact">  
+                                    <p:menuitem value="Packages List" url="#"/>
+                                    <p:menuitem value="Add Packages" url="#"/>
+                                </p:submenu>
+                                <p:submenu label="Ads" icon="ui-icon-contact">  
+                                    <p:menuitem value="Ads List" url="#"/>
+                                    <p:menuitem value="Add Ad" url="#"/>
+                                </p:submenu>
                             </p:submenu>  
 
-                            <p:submenu label="Edit" icon="ui-icon-pencil">  
+                            <p:submenu label="Bussiness" icon="ui-icon-pencil">  
                                 <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />  
                                 <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />  
                             </p:submenu>  
 
-                            <p:submenu label="Help" icon="ui-icon-help">  
+                            <p:submenu label="Sales" icon="ui-icon-help">  
                                 <p:menuitem value="Contents" url="#" />  
                                 <p:submenu label="Search" icon="ui-icon-search">  
                                     <p:submenu label="Text">  
@@ -184,7 +216,7 @@
                                 </p:submenu>  
                             </p:submenu>  
 
-                            <p:submenu label="Actions" icon="ui-icon-gear">  
+                            <p:submenu label="Messages" icon="ui-icon-gear">  
                                 <p:submenu label="Ajax" icon="ui-icon-refresh">  
                                     <p:menuitem value="Save" actionListener="#{menuBean.save}" icon="ui-icon-disk" update="messages"/>  
                                     <p:menuitem value="Update" actionListener="#{menuBean.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>  
@@ -194,17 +226,17 @@
                                 </p:submenu>  
                             </p:submenu>  
 
-                            <p:menuitem value="Quit" url="http://www.primefaces.org" icon="ui-icon-close" />  
+                              
 
                             <f:facet name="options">  
-<!--                                <p:inputText style="margin-right:10px"/>  
-                                <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />  -->
+                                <!--                                <p:inputText style="margin-right:10px"/>  
+                                                                <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />  -->
                             </f:facet>  
                         </p:menubar>
 
                         <!--This fullPage layout consists of five different layoutUnits which are resizable and closable by default.-->  
                         <!--BREAD CRUMB STARTS-->
-                        <div style="padding-top: 55px; width: 98%;" id="home tab">
+<!--                        <div style="padding-top: 55px; width: 98%;" id="home tab">
                             <ul class="breadcrumb">
                                 <li>
                                     <a href="#">Home</a> <span class="divider">/</span>
@@ -213,9 +245,53 @@
                                     <a href="#">Tables</a>
                                 </li>
                             </ul>
-                        </div>
+                        </div>-->
+                        
+                        <p:breadCrumb>  
+                                <p:menuitem value="Dashboard" url="#" />  
+                                <p:menuitem value="Dashboard" url="#" />  
+
+                        </p:breadCrumb>
                         <!--BREAD CRUMB ENDS-->
                         
+                            
+                        
+                        <!--TOP SQUARE BOXES WITH UPDATES STARTS-->
+                   
+                        <div class="sortable row-fluid" style="margin-top: 1%">
+                        <a data-rel="tooltip" title="6 new members." class="well span3 top-block" href="#">
+                            <span class="icon32 icon-red icon-user"></span>
+                            <div>Users</div>
+                            <div>507</div>
+                            <span class="notification">6</span>
+                        </a>
+
+                        <a data-rel="tooltip" title="4 new pro members." class="well span3 top-block" href="#">
+                            <span class="icon32 icon-color icon-star-on"></span>
+                            <div>Ads</div>
+                            <div>228</div>
+                            <span class="notification green">4</span>
+                        </a>
+
+                        <a data-rel="tooltip" title="$34 new sales." class="well span3 top-block" href="#">
+                            <span class="icon32 icon-color icon-cart"></span>
+                            <div>Transactions</div>
+                            <div>$13320</div>
+                            <span class="notification yellow">$34</span>
+                        </a>
+                            
+                        <a data-rel="tooltip" title="12 new messages." class="well span3 top-block" href="#">
+                            <span class="icon32 icon-color icon-envelope-closed"></span>
+                            <div>Messages</div>
+                            <div>25</div>
+                            <span class="notification red">12</span>
+                        </a>
+                        
+
+                    </div>
+                            
+                    <!--TOP SQUARE WITH UPDATES ENDS-->
+                    
                         <!--DASHBOARD BLOCK STARTS-->
                         <h:form id="dashboard-form">  
 
@@ -225,15 +301,266 @@
                                 <p:ajax event="reorder" listener="#{dashboardBean.handleReorder}" update="growl" />  
 
                                 <p:panel id="dboard-college-approvals" header="List of new colleges for approval" closable="true" toggleable="true" >  
-                                    <h:outputText value="List of new colleges for approval" />  
+                                    
+                                    <div class="box-content" style="width:100%">
+                                        <table class="table table-striped table-bordered bootstrap-datatable datatable">
+                                            <thead>
+                                                <tr>
+                                                    <th>College name</th>
+                                                    <th>Date registered</th>
+                                                    <th>University</th>
+                                                    <th>Status</th>
+                                                    <th>City</th>
+                                                    <th>Package</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>   
+                                            <tbody>
+                                                <!--PROTOTYPE TABLE ROW STARTS-->
+                                                <tr>
+                                                    <td>Ramaiah college</td>
+                                                    <td class="center">01/01/2014</td>
+                                                    <td class="center">VTU</td>
+                                                    <td class="center">
+                                                        <span class="label label-success">Active</span>
+                                                    </td>
+                                                    <td class="center">Banglore</td>
+                                                    <td class="center">Free</td>
+                                                    <td class="center">
+                                                        <a class="btn btn-success" href="#">
+                                                            <i class="icon-zoom-in icon-white"></i>  
+                                                            Approve                                            
+                                                        </a>
+                                                        <a class="btn btn-info" href="#">
+                                                            <i class="icon-edit icon-white"></i>  
+                                                            Message                                            
+                                                        </a>
+                                                        <a class="btn btn-danger" href="#">
+                                                            <i class="icon-trash icon-white"></i> 
+                                                            Reject
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+                                                <!--PROTOTYPE TABLE ENDS-->
+                                                <tr>
+                                                    <td>Brindavan college</td>
+                                                    <td class="center">01/12/2013</td>
+                                                    <td class="center">VTU</td>
+                                                    <td class="center">
+                                                        <span class="label label-success">Active</span>
+                                                    </td>
+                                                    <td class="center">Banglore</td>
+                                                    <td class="center">Gold</td>
+                                                    <td class="center">
+                                                        <a class="btn btn-success" href="#">
+                                                            <i class="icon-zoom-in icon-white"></i>  
+                                                            Approve                                            
+                                                        </a>
+                                                        <a class="btn btn-info" href="#">
+                                                            <i class="icon-edit icon-white"></i>  
+                                                            Message                                            
+                                                        </a>
+                                                        <a class="btn btn-danger" href="#">
+                                                            <i class="icon-trash icon-white"></i> 
+                                                            Reject
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>City college</td>
+                                                    <td class="center">01/011/2013</td>
+                                                    <td class="center">Banglore University</td>
+                                                    <td class="center">
+                                                        <span class="label label-warning">Idle</span>
+                                                    </td>
+                                                    <td class="center">Banglore</td>
+                                                    <td class="center">Free</td>
+                                                    <td class="center">
+                                                        <a class="btn btn-success" href="#">
+                                                            <i class="icon-zoom-in icon-white"></i>  
+                                                            Approve                                            
+                                                        </a>
+                                                        <a class="btn btn-info" href="#">
+                                                            <i class="icon-edit icon-white"></i>  
+                                                            Message                                            
+                                                        </a>
+                                                        <a class="btn btn-danger" href="#">
+                                                            <i class="icon-trash icon-white"></i> 
+                                                            Reject
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Oakridge college</td>
+                                                    <td class="center">01/011/2013</td>
+                                                    <td class="center">Mysore</td>
+                                                    <td class="center">
+                                                        <span class="label label-important">In-Active</span>
+                                                    </td>
+                                                    <td class="center">Mysore</td>
+                                                    <td class="center">Free</td>
+                                                    <td class="center">
+                                                        <a class="btn btn-success" href="#">
+                                                            <i class="icon-zoom-in icon-white"></i>  
+                                                            Approve                                            
+                                                        </a>
+                                                        <a class="btn btn-info" href="#">
+                                                            <i class="icon-edit icon-white"></i>  
+                                                            Message                                            
+                                                        </a>
+                                                        <a class="btn btn-danger" href="#">
+                                                            <i class="icon-trash icon-white"></i> 
+                                                            Reject
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Christ college</td>
+                                                    <td class="center">01/11/2013</td>
+                                                    <td class="center">Christ</td>
+                                                    <td class="center">
+                                                        <span class="label label-success">Active</span>
+                                                    </td>
+                                                    <td class="center">Banglore</td>
+                                                    <td class="center">Platinum</td>
+                                                    <td class="center">
+                                                        <a class="btn btn-success" href="#">
+                                                            <i class="icon-zoom-in icon-white"></i>  
+                                                            Approve                                            
+                                                        </a>
+                                                        <a class="btn btn-info" href="#">
+                                                            <i class="icon-edit icon-white"></i>  
+                                                            Message                                            
+                                                        </a>
+                                                        <a class="btn btn-danger" href="#">
+                                                            <i class="icon-trash icon-white"></i> 
+                                                            Reject
+                                                        </a>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>            
+                                    </div>
                                 </p:panel>  
 
                                 <p:panel id="dboard-latest-messages" header="Latest Messages" closable="true" toggleable="true">  
-                                    <h:outputText value="Latest Messages" />  
+                                    
+                                    <div class="box-content">
+                                            <table class="table table-striped table-bordered bootstrap-datatable datatable">
+                                                <thead>
+                                                    <tr>
+                                                        <th>From</th>
+                                                        <th>Type</th>
+                                                        <th>Subject</th>
+                                                        <th>Description</th>
+                                                        <th>Date</th>
+                                                        <th>Time</th>
+                                                        <th>Flag</th>
+                                                    </tr>
+                                                </thead>   
+                                                <tbody>
+                                                    <!-- TABLE ROW STARTS-->
+                                                    <tr>
+                                                        
+                                                        <td class="center">Sharan</td>
+                                                        <td class="center">feedback</td>
+                                                        <td class="center">Good site</td>
+                                                        <td class="center">Its a good site</td>
+                                                        <td class="center">01/011/2013</td>
+                                                        <td class="center">5.30pm</td>
+                                                        <td class="center"><span class="label label-success">Read</span> </td>
+                                                    </tr>
+                                                    <!--PROTOTYPE TABLE ENDS-->
+                                                    <tr>
+                                                        
+                                                        <td class="center">Karan</td>
+                                                        <td class="center">feedback</td>
+                                                        <td class="center">improve colleges</td>
+                                                        <td class="center">Its a good site</td>
+                                                        <td class="center">01/011/2013</td>
+                                                        <td class="center">5.30pm</td>
+                                                        <td class="center"><span class="label label-success">Read</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        
+                                                        <td class="center">Swaran</td>
+                                                        <td class="center">enquiry</td>
+                                                        <td class="center">Good site</td>
+                                                        <td class="center">Its a good site</td>
+                                                        <td class="center">01/011/2013</td>
+                                                        <td class="center">5.30pm</td>
+                                                        <td class="center"><span class="label label-warning">unread</span> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        
+                                                        <td class="center">Charan</td>
+                                                        <td class="center">Request</td>
+                                                        <td class="center">Need MBA</td>
+                                                        <td class="center">can i do MBA in VTU</td>
+                                                        <td class="center">01/011/2013</td>
+                                                        <td class="center">6.30pm</td>
+                                                        <td class="center"><span class="label label-warning">Unread</span> </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>            
+                                        </div>
+                                    
                                 </p:panel>  
 
                                 <p:panel id="dboard-latest-reviews" header="Latest Reviews" closable="true" toggleable="true">  
-                                    <h:outputText value="Reviews Content"  />  
+                                    
+                                    <div class="box-content">
+                                    <ul class="nav nav-tabs" id="myTab">
+                                        <li class="active"><a href="#info">Text</a></li>
+                                        <li><a href="#custom">Video</a></li>
+                                        <li><a href="#messages">Message</a></li>
+                                    </ul>
+
+                                    <div id="myTabContent" class="tab-content">
+                                        <div class="tab-pane active" id="info">
+                                            <center> <h3>Moharto helped me  to get seat</h3> </center>
+                                            
+                                            
+                                            <div class="box-content">
+                                        <ul class="dashboard-list">
+                                            <li>
+                                                <a href="#">
+                                                    <img class="dashboard-avatar" alt="Usman" src="http://www.gravatar.com/avatar/3232415a0380253cfffe19163d04acab.png?s=50"></img></a>
+                                                 <a href="#">Maalokam </a>
+                                                 <strong>Hyderabad</strong><br/>
+                                                
+                                                <a href="#">City College 
+                                                </a>  MBA Finance<br/>
+                                                
+                                            </li>
+                                        </ul>
+                                            
+                                            
+                                            
+                                            <p>I have successfully completed my MBA marketing education course in 2011 and got placed in a very good Reputed company. It was good with the college hostel facilities and campus."</p>
+                                            <center> <a class="btn btn-success" href="#">
+                                                 <i class="icon-zoom-in icon-white" ></i>  
+                                                    Add to Testimonial                                            
+                                                </a> </center>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane" id="custom">
+                                            <h3>Custom <small>small text</small></h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Donec consectetur, velit a pharetra ultricies, diam lorem lacinia risus, ac commodo orci erat eu massa. Sed sit amet nulla ipsum. Donec felis mauris, vulputate sed tempor at, aliquam a ligula. Pellentesque non pulvinar nisi.</p>
+                                        </div>
+                                        <div class="tab-pane" id="messages">
+                                            <h3>Messages <small>small text</small></h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Donec consectetur, velit a pharetra ultricies, diam lorem lacinia risus, ac commodo orci erat eu massa. Sed sit amet nulla ipsum. Donec felis mauris, vulputate sed tempor at, aliquam a ligula. Pellentesque non pulvinar nisi.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor.</p>
+                                        </div>
+                                    </div>
+                                </div>
                                 </p:panel>  
 
                                 <p:panel id="dboard-college-renuals" header="Upcoming Renewals" closable="true" toggleable="true">  
