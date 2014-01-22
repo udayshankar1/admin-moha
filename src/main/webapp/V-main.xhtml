@@ -7,10 +7,10 @@
     <h:head>
 
         <meta charset="utf-8"/>
-        <title>Free HTML5 Bootstrap Admin Template</title>
+        <title>Moharto for online admission -to  study MBA BTECH BE in top colleges in india</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template."/>
-        <meta name="author" content="Muhammad Usman"/>
+        <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"/>
+        <meta name="author" content="Moharto"/>
 
         <!-- The styles -->
         <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet"/>
@@ -35,10 +35,10 @@
         <h:outputStylesheet library="css" name="jquery.noty.css"/>
         <h:outputStylesheet library="css" name="noty_theme_default.css"/>
         <h:outputStylesheet library="css" name="elfinder.min.css"/>
-        <h:outputStylesheet library="css" name="css/elfinder.theme.css"/>
-        <h:outputStylesheet library="css" name="css/jquery.iphone.toggle.css"/>
-        <h:outputStylesheet library="css" name="css/opa-icons.css"/>
-        <h:outputStylesheet library="shortcut icon" name="uploadify.css"/>
+        <h:outputStylesheet library="css" name="elfinder.theme.css"/>
+        <h:outputStylesheet library="css" name="jquery.iphone.toggle.css"/>
+        <h:outputStylesheet library="css" name="opa-icons.css"/>
+        <!--<h:outputStylesheet library="shortcut icon" name="uploadify.css"/>-->
 
 
         <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -47,19 +47,17 @@
         <![endif]-->
 
         <!-- The fav icon -->
-        <h:outputStylesheet library="shortcut icon" name="img/favicon.ico"/>
-        <link rel="shortcut icon" href="img/favicon.ico"/>
-
+        <!--<h:outputStylesheet library="shortcut icon" name="favicon.ico"/>-->
     </h:head>
-    <body>
+    <h:body>
 
 
         <h:form>
 
             <p:layout fullPage="true" >  
-                <!--            <p:layoutUnit position="north" size="100" header="Top" resizable="true" closable="true" collapsible="true">  -->
+                
                 <p:layoutUnit position="north" size="100" style="border: none" styleClass="span2 main-menu-span"   resizable="true" closable="true" collapsible="true">  
-                    <!--<h:outputText value="North unit content." />-->  
+                     
                     <!-- topbar starts -->
                     <div class="navbar">
                         <div class="navbar-inner">
@@ -69,28 +67,8 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </a>
-                                <!--<a class="brand" href="index.html"> <img alt="Moharto Logo" src="img/logo20.png" /> <span>Moharto</span></a>-->
+                                
                                 <a class="brand" href="index.html"  > <img alt="Moharto Logo" src="img/moharto-logo-buttion.png" /><span style="font-family: serif;">oharto</span></a>
-
-                                <!-- theme selector starts -->
-                                <!--                    <div class="btn-group pull-right theme-container" >
-                                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                                            <i class="icon-tint"></i><span class="hidden-phone"> Change Theme</span>
-                                                            <span class="caret"></span>
-                                                        </a>
-                                                        <ul class="dropdown-menu" id="themes">
-                                                            <li><a data-value="classic" href="#"><i class="icon-blank"></i> Classic</a></li>
-                                                            <li><a data-value="cerulean" href="#"><i class="icon-blank"></i> Cerulean</a></li>
-                                                            <li><a data-value="cyborg" href="#"><i class="icon-blank"></i> Cyborg</a></li>
-                                                            <li><a data-value="redy" href="#"><i class="icon-blank"></i> Redy</a></li>
-                                                            <li><a data-value="journal" href="#"><i class="icon-blank"></i> Journal</a></li>
-                                                            <li><a data-value="simplex" href="#"><i class="icon-blank"></i> Simplex</a></li>
-                                                            <li><a data-value="slate" href="#"><i class="icon-blank"></i> Slate</a></li>
-                                                            <li><a data-value="spacelab" href="#"><i class="icon-blank"></i> Spacelab</a></li>
-                                                            <li><a data-value="united" href="#"><i class="icon-blank"></i> United</a></li>
-                                                        </ul>
-                                                    </div>-->
-                                <!-- theme selector ends -->
 
                                 <!-- user dropdown starts -->
                                 <div class="btn-group pull-right" >
@@ -115,7 +93,8 @@
                                             </form>
                                         </li>
                                     </ul>
-                                </div><!--/.nav-collapse -->
+                                </div>
+                                <!--/.nav-collapse -->
                             </div>
                         </div>
                     </div>
@@ -123,137 +102,51 @@
 
                 </p:layoutUnit>  
 
+                <!--LEFT SIDE MENU BAR BLOCK STARTS--> 
+                <p:layoutUnit position="west" header="Menu" style="border: none" resizable="true" closable="true" collapsible="true">  
 
-                <p:layoutUnit position="west" size="240" header="Dashboard" style="border: none" resizable="false" closable="true" collapsible="true">  
-                    <!--<h:outputText value="West unit content." />-->  
-                    <!--                    <div class="container-fluid">
-                                            <div class="row-fluid">-->
-                    <!-- left menu starts -->
-                    <!--                    <div class="span2 main-menu-span">
-                                            <div class="well nav-collapse sidebar-nav">-->
-                    <!--                            <ul class="nav nav-tabs nav-stacked main-menu"> 
-                                                    <li class="nav-header hidden-tablet">Main</li>
-                                                    <li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-                                                    <li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> Data Center</span></a>
-                                                        <ul>
-                                                            <li><a href='#'><span class="hidden-tablet" >Geography</span></a>
-                                                                <ul>
-                                                                    <li><a href="countries-list.html"><span  class="hidden-tablet" >Country </span></a></li>
-                                                                    <li><a href="state.html"><span class="hidden-tablet" >State </span></a></li>
-                                                                    <li><a href="zone.html"><span class="hidden-tablet">Zone </span></a></li>
-                                                                    <li><a href="cities.html"><span class="hidden-tablet" >City </span></a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul>
-                    
-                                                        <ul>
-                                                            <li><a class="ajax-link" href='#'><span>Colleges and Courses</span></a>
-                    
-                                                                <ul>
-                                                                    <li><a href="universities.html"><span class="hidden-tablet">University </span></a></li>
-                                                                    <li><a href="#"><span class="hidden-tablet">College</span></a></li>
-                                                                    <li><a href="#"><span class="hidden-tablet"> Course Level</span></a></li>
-                                                                    <li><a href="#"><span class="hidden-tablet">  Course</span></a></li>
-                                                                    <li><a href="#"><span class="hidden-tablet"> Curriculum</span></a></li>
-                                                                </ul>
-                                                            </li>
-                                                        </ul> 
-                    
-                                                        <ul>
-                                                            <li><a href='#'><span>Packages</span></a>
-                    
-                                                                <ul>
-                                                                    <li><a href="#"><span class="hidden-tablet">  View List </span></a></li>
-                                                                    <li><a href="#"><span class="hidden-tablet">Add/Update</span></a></li>
-                    
-                                                                </ul>
-                                                            </li>
-                                                        </ul> 
-                    
-                                                        <ul>
-                                                            <li><a href='#'><span class="hidden-tablet">Enrollment Charge</span></a>
-                    
-                                                                <ul>
-                                                                    <li><a href="#" class="hidden-tablet"><span>  View List </span></a></li>
-                                                                    <li><a href="#"><span class="hidden-tablet">Add new</span></a></li>
-                    
-                                                                </ul>
-                                                            </li>
-                                                        </ul> 
-                    
-                                                        <ul>
-                                                            <li><a href='#'><span>Ads</span></a>
-                                                                <ul>
-                                                                    <li><a href="#"><span class="hidden-tablet">List </span></a></li>
-                                                                    <li><a href="#"><span class="hidden-tablet">Add</span></a></li>
-                    
-                                                                </ul>
-                                                            </li>
-                                                        </ul> 
-                    
-                                                    </li>
-                                                    <li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Bussiness </span></a>
-                    
-                                                    </li>
-                                                    <li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Sales </span></a></li>
-                                                    <li><a class="ajax-link" href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Messages</span></a></li>
-                                                    <li><a class="ajax-link" href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Support</span></a></li>
-                                                    <li class="nav-header hidden-tablet">Sample Section</li>
-                                                    <li><a class="ajax-link" href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>
-                                                    <li><a class="ajax-link" href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
-                                                    <li><a class="ajax-link" href="grid.html"><i class="icon-th"></i><span class="hidden-tablet"> Grid</span></a></li>
-                                                    <li><a class="ajax-link" href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>
-                                                    <li><a href="tour.html"><i class="icon-globe"></i><span class="hidden-tablet"> Tour</span></a></li>
-                                                    <li><a class="ajax-link" href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>
-                                                    <li><a href="error.html"><i class="icon-ban-circle"></i><span class="hidden-tablet"> Error Page</span></a></li>
-                                                    <li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
-                                                </ul>
-                                                <label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox"/> Ajax on menu</label>-->
-                    <!--                        </div>/.well 
-                                        </div>/span
-                                         left menu ends 
-                                                                </div>                   
-                </div> -->  
-                    <div class="span2 main-menu-span">
 
-                        <div id="accordion">
-                            <p:panelMenu style="width:190px; "> 
-                                <p:submenu styleClass="nav nav-tabs nav-stacked main-menu" label="Data Center"> </p:submenu> 
-                                <p:submenu label="Geography">
-                                    <p:menuitem value="Country" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
-                                    <p:menuitem value="State" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
-                                    <p:menuitem value="Zone" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
-                                    <p:menuitem value="City" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
-                                </p:submenu> 
-                                <p:submenu label="Colleges and Courses">
-                                    <p:menuitem value="University" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
-                                    <p:menuitem value="College" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
-                                    <p:menuitem value="Course Level" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
-                                    <p:menuitem value="Course" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
-                                    <p:menuitem value="Curriculum" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
-                                </p:submenu> 
-                                <p:submenu label="Packages">
-                                    <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
-                                    <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
-                                </p:submenu> 
-                                <p:submenu label="Enrollment Charges">
-                                    <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
-                                    <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
-                                </p:submenu> 
-                                <p:submenu label="Ads">
-                                    <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
-                                    <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
-                                </p:submenu>
-                                <p:submenu label="Business"> </p:submenu>
-                                <p:submenu label="Sales"> </p:submenu>
-                                <p:submenu label="Messages"> </p:submenu>
-                                <p:submenu label="Support"> </p:submenu>
-                            </p:panelMenu> 
 
-                        </div>
-                    </div>
+
+                    <p:panelMenu style="width:190px; "> 
+                        <p:submenu  label="Dashboard" />
+                        <p:submenu label="Data Center">
+                            <p:submenu label="Geography">
+                                <p:menuitem value="Country" actionListener="#{buttonBean.save}" icon="ui-icon-disk"  url="#"/>  
+                                <p:menuitem value="State" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Zone" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="City" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Colleges Courses">
+                                <p:menuitem value="University" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="College" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Course Level" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Course" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Curriculum" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Packages">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                            <p:submenu label="Subscription Charges">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Ads">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                        </p:submenu>
+                        <p:submenu label="Business"> </p:submenu>
+                        <p:submenu label="Sales"> </p:submenu>
+                        <p:submenu label="Messages"> </p:submenu>
+                        <p:submenu label="Support"> </p:submenu>
+                    </p:panelMenu> 
+
+
                 </p:layoutUnit>  
-
+                <!--LEFT SIDE MENU BAR BLOCK ENDS-->
+                
                 <!--    <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">  
                         <h:outputText value="Right unit content." />  
                     </p:layoutUnit>  -->
@@ -310,6 +203,7 @@
                         </p:menubar>
 
                         <!--This fullPage layout consists of five different layoutUnits which are resizable and closable by default.-->  
+                        <!--BREAD CRUMB STARTS-->
                         <div style="padding-top: 55px; width: 98%;" id="home tab">
                             <ul class="breadcrumb">
                                 <li>
@@ -320,32 +214,57 @@
                                 </li>
                             </ul>
                         </div>
+                        <!--BREAD CRUMB ENDS-->
+                        
+                        <!--DASHBOARD BLOCK STARTS-->
+                        <h:form id="dashboard-form">  
 
-                        <p:growl id="growl" showDetail="true" />  
+                            <p:growl id="growl" showDetail="true" />  
 
-                        <p:dashboard id="board" model="#{dashboardBean.model}">  
-                            <p:ajax event="reorder" listener="#{dashboardBean.handleReorder}" update="growl" />  
+                            <p:dashboard id="board" model="#{dashboardBean.model}"  >  
+                                <p:ajax event="reorder" listener="#{dashboardBean.handleReorder}" update="growl" />  
 
-                            <p:panel id="sports" header="Sports">  
-                                <h:outputText value="Sports Content" />  
-                            </p:panel>  
+                                <p:panel id="dboard-college-approvals" header="List of new colleges for approval" closable="true" toggleable="true" >  
+                                    <h:outputText value="List of new colleges for approval" />  
+                                </p:panel>  
 
-                            <p:panel id="finance" header="Finance">  
-                                <h:outputText value="Finance Content" />  
-                            </p:panel>  
+                                <p:panel id="dboard-latest-messages" header="Latest Messages" closable="true" toggleable="true">  
+                                    <h:outputText value="Latest Messages" />  
+                                </p:panel>  
 
-                            <p:panel id="lifestyle" header="Lifestyle">  
-                                <h:outputText value="Lifestyle Content"  />  
-                            </p:panel>  
+                                <p:panel id="dboard-latest-reviews" header="Latest Reviews" closable="true" toggleable="true">  
+                                    <h:outputText value="Reviews Content"  />  
+                                </p:panel>  
 
-                            <p:panel id="weather" header="Weather">  
-                                <h:outputText value="Weather Content" />  
-                            </p:panel>  
+                                <p:panel id="dboard-college-renuals" header="Upcoming Renewals" closable="true" toggleable="true">  
+                                    <h:outputText value="Renewals Content" />  
+                                </p:panel>  
 
-                            <p:panel id="politics" header="Politics">  
-                                <h:outputText value="Politics Content" />  
-                            </p:panel>  
-                        </p:dashboard>  
+                                <p:panel id="dboard-latst-admissions" header="Latest Admissions" closable="true" toggleable="true">  
+                                    <h:outputText value="Admissions Content" />  
+                                </p:panel>  
+                                
+                                <p:panel id="dboard-latest-ads" header="Latest Ads" closable="true" toggleable="true">  
+                                    <h:outputText value="Latest Messages" />  
+                                </p:panel>  
+
+                                <p:panel id="dboard-ads-renuals" header="Expiring Ads" closable="true" toggleable="true">  
+                                    <h:outputText value="Reviews Content"  />  
+                                </p:panel>  
+
+                                <p:panel id="dboard-latest-tx" header="Latest Transactions" closable="true" toggleable="true">  
+                                    <h:outputText value="Renewals Content" />  
+                                </p:panel>  
+
+                                <p:panel id="dboard-mis" header="MIS" closable="true" toggleable="true">  
+                                    <h:outputText value="Admissions Content" />  
+                                </p:panel>
+                                
+                            </p:dashboard>  
+                            
+
+                        </h:form>  
+                       <!--DASHBOARD BLOCK ENDS-->
 
                     </h:form> 
                 </p:layoutUnit>  
@@ -353,7 +272,7 @@
                 <p:layoutUnit position="south" size="40" style=" border:none;  border-top: 1px solid #aaa; border-radius: 4px;" resizable="true" closable="true" collapsible="true">  
                     <!--<h:outputText value="South unit content." />-->  
                     <footer>
-                        <p class="pull-left"> copy; <a href="http://www.moharto.com/" target="_blank">Moharto</a> 2014</p>
+                        <p class="pull-left">© <a href="http://www.moharto.com/" target="_blank">Moharto</a> 2014</p>
                         <p class="pull-right"> Powered by: <a href="http://www.mangium.com/">Mangium</a></p>
                     </footer>
                 </p:layoutUnit> 
@@ -368,5 +287,5 @@
             </noscript>
 
         </h:form>
-    </body>
+    </h:body>
 </html>

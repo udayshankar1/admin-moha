@@ -50,11 +50,21 @@
             <artifactId>primefaces</artifactId>
             <version>4.0</version>
         </dependency>
+        
+        <!--PRIMEFACES DEPENDENCIES-->
+        <dependency>  
+            <groupId>org.primefaces.themes</groupId>  
+            <artifactId>all-themes</artifactId>  
+            <version>1.0.10</version>  
+        </dependency>
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
             <version>1.3</version>
         </dependency>
+        
+        
+        <!--SPRING DEPENDENCIES-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>

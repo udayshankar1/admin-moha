@@ -68,27 +68,9 @@
                     <!--<a class="brand" href="index.html"> <img alt="Moharto Logo" src="img/logo20.png" /> <span>Moharto</span></a>-->
                     <a class="brand" href="index.html"  > <img alt="Moharto Logo" src="img/moharto-logo-buttion.png" /><span style="font-family: serif;">oharto</span></a>
 
-                    <!-- theme selector starts -->
-<!--                    <div class="btn-group pull-right theme-container" >
-                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="icon-tint"></i><span class="hidden-phone"> Change Theme</span>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" id="themes">
-                            <li><a data-value="classic" href="#"><i class="icon-blank"></i> Classic</a></li>
-                            <li><a data-value="cerulean" href="#"><i class="icon-blank"></i> Cerulean</a></li>
-                            <li><a data-value="cyborg" href="#"><i class="icon-blank"></i> Cyborg</a></li>
-                            <li><a data-value="redy" href="#"><i class="icon-blank"></i> Redy</a></li>
-                            <li><a data-value="journal" href="#"><i class="icon-blank"></i> Journal</a></li>
-                            <li><a data-value="simplex" href="#"><i class="icon-blank"></i> Simplex</a></li>
-                            <li><a data-value="slate" href="#"><i class="icon-blank"></i> Slate</a></li>
-                            <li><a data-value="spacelab" href="#"><i class="icon-blank"></i> Spacelab</a></li>
-                            <li><a data-value="united" href="#"><i class="icon-blank"></i> United</a></li>
-                        </ul>
-                    </div>-->
-                    <!-- theme selector ends -->
+                   
 
-                    <!-- user dropdown starts -->
+                    <!-- user header dropdown starts -->
                     <div class="btn-group pull-right" >
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="icon-user"></i><span class="hidden-phone">Administrator</span>
@@ -100,7 +82,8 @@
                             <li><a href="login.html">Logout</a></li>
                         </ul>
                     </div>
-                    <!-- user dropdown ends -->
+                    <!-- user header.
+                    dropdown ends -->
 
                     <div class="top-nav nav-collapse">
                         <ul class="nav">
@@ -214,11 +197,12 @@
                 </div>
                 <!--/span-->
                 <!-- left menu ends -->
-
+                
+                <!--SPAN10 STARTS-->
                 <div id="content" class="span10">
                     <!-- content starts -->
 
-
+                    <!--BREADCRUMB STARTS-->
                     <div>
                         <ul class="breadcrumb">
                             <li>
@@ -229,6 +213,7 @@
                             </li>
                         </ul>
                     </div>
+                    <!--BREADCRUMB ENDS-->
                     
                     <!--TOP SQUARE BOXES WITH UPDATES STARTS-->
                     <div class="sortable row-fluid">
@@ -264,8 +249,18 @@
                     </div>
                     <!--TOP SQUARE WITH UPDATES ENDS-->
 
-
-
+                    <!--ACTION BUTTONS ROW STARTS-->
+                    <div class="row-fluid sortable" >
+                        <center>
+                        <button class="btn btn-primary noty" data-noty-options='{"text":"Opens compose message page","layout":"center","type":"alert","animateOpen": {"opacity": "show"}}'><i class="icon-bell icon-white"></i> Compose Message</button>
+                        <button class="btn btn-primary noty" data-noty-options='{"text":"Opens invoice generation page","layout":"center","type":"alert","animateOpen": {"opacity": "show"}}'><i class="icon-bell icon-white"></i> Generate Invoice</button>
+                        <button class="btn btn-primary noty" data-noty-options='{"text":"Opens Ad creation page","layout":"center","type":"alert","animateOpen": {"opacity": "show"}}'><i class="icon-bell icon-white"></i>Create Ad</button>
+                        <button class="btn btn-primary noty" data-noty-options='{"text":"Open Data center updation page","layout":"center","type":"alert","animateOpen": {"opacity": "show"}}'><i class="icon-bell icon-white"></i> Update Date Center</button>
+                        <button class="btn btn-primary noty" data-noty-options='{"text":"Open Site creation page","layout":"center","type":"alert","animateOpen": {"opacity": "show"}}'><i class="icon-bell icon-white"></i> Create Microsite</button>
+                        </center>
+                    </div>
+                    <!--ACTION BUTTONS ROW ENDS-->
+                    
                     <!--TABLE BLOCK STARTS-->
                     <div class="row-fluid sortable">		
                         <div class="box span12">
@@ -465,7 +460,7 @@
                                                         <td class="center">Its a good site</td>
                                                         <td class="center">01/011/2013</td>
                                                         <td class="center">5.30pm</td>
-                                                        <td class="center"><    span class="label label-success">Read</span> </td>
+                                                        <td class="center"><span class="label label-success">Read</span> </td>
                                                     </tr>
                                                     <!--PROTOTYPE TABLE ENDS-->
                                                     <tr>
@@ -516,6 +511,7 @@
                     
                     <!--TESTIMONIAL TAB BLOCK STARTS-->
                         <div class="row-fluid sortable">
+                            
                             <div class="box span4">
                                 <div class="box-header well">
                                     <h2><i class="icon-th"></i> Latest Reviews</h2>
@@ -687,7 +683,7 @@
                             
                             
                             <!--GRAPHS BLOCK STARTS-->
-                            <div class="box span4">
+<!--                            <div class="box span4">
                                 <div class="box-header well" data-original-title>
                                     <h2><i class="icon-list-alt"></i> Registrations graph</h2>
                                     <div class="box-icon">
@@ -698,16 +694,18 @@
                                 <div class="box-content">
                                     <div id="realtimechart" style="height:190px;"></div>
                                     <p class="clearfix">Time line</p>
-                                </div>
+                                </div>-->
                                 <!--GRAPHS BLOCK ENDS-->
                                 <!--</div>-->
                                 <!--</span>-->
                                 
                             </div>
+                            <!--row-fluid sortable div ends-->
                             <!--/row-->
 
 
                           <!--LATEST AD BLOCK STARTS-->
+                          <div class="sortable row-fluid">
                             <div class="box span4">
                                 <div class="box-header well" data-original-title>
                                     <h2><i class="icon-user"></i> Latest Ads</h2>
@@ -767,7 +765,7 @@
                             <!--LATEST ADS BLOCK ENDS-->                                               
 
 
-                            <!--LATEST AD BLOCK STARTS-->
+                            <!--EXPIRING AD BLOCK STARTS-->
                             <div class="box span4">
                                 <div class="box-header well" data-original-title>
                                     <h2><i class="icon-user"></i> Expiring Ads</h2>
@@ -824,13 +822,80 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--LATEST ADS BLOCK ENDS-->  
+                            <!--EXPIRING ADS BLOCK ENDS-->  
                             
-                            <!--Weekly Status block starts-->
+                            
+                            <!--LATEST TX BLOCK STARTS-->
+                            <div class="box span4">
+                                <div class="box-header well" data-original-title>
+                                    <h2><i class="icon-user"></i> Latest Transactions</h2>
+                                    <div class="box-icon">
+                                        <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+                                        <a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+                                    </div>
+                                </div>
+                                <div class="box-content">
+                                    <div class="box-content">
+                                        <ul class="dashboard-list">
+                                            <li>
+                                                <a href="#">
+                                                    <img class="dashboard-avatar" alt="Usman" src="img/college logos/index.jpeg"></a>
+                                                <a href="#">Brindavan College
+                                                </a><br>
+                                                <strong>Recived 200</strong> $<br>
+                                                <strong>10/02/2014</strong>&nbsp;&nbsp;&nbsp;&nbsp;<strong>03:30AM</strong><br/>
+                                                <!--<strong>Status:</strong> <span class="label label-success">Active</span>--> 
+                                                <!--<button class="btn btn-primary"><i class="icon-edit icon-white" style="float:right;"></i></button>-->
+                                                <button class="btn btn-primary noty" data-noty-options='{"text":"This is a success information","layout":"top","type":"information"}'><i class="icon-bell icon-white"></i> View</button>
+                                                <button class="btn btn-primary noty" data-noty-options='{"text":"This is a success information","layout":"top","type":"information"}'><i class="icon-bell icon-white"></i> Message</button>
+                                                <button class="btn btn-primary noty" data-noty-options='{"text":"This is a success information","layout":"top","type":"information"}'><i class="icon-bell icon-white"></i> Receipt</button>
+                                             </li>
+                                            <li>
+                                                <a href="#">
+                                                    <img class="dashboard-avatar" alt="Usman" src="img/college logos/index.jpeg"></a>
+                                                <a href="#">Brindavan College
+                                                </a><br>
+                                                <<strong>Paid 20</strong> $<br>
+                                                <strong>10/02/2014</strong>&nbsp;&nbsp;&nbsp;&nbsp;<strong>10/03/2014</strong><br/>
+                                                <!--<strong>Status:</strong> <span class="label label-success">Active</span>--> 
+                                                <!--<button class="btn btn-primary"><i class="icon-edit icon-white" style="float:right;"></i></button>-->
+                                                <button class="btn btn-primary noty" data-noty-options='{"text":"This is a success information","layout":"top","type":"information"}'><i class="icon-bell icon-white"></i> Preview</button>
+                                                <button class="btn btn-primary noty" data-noty-options='{"text":"This is a success information","layout":"top","type":"information"}'><i class="icon-bell icon-white"></i> Message</button>
+                                                <button class="btn btn-primary noty" data-noty-options='{"text":"This is a success information","layout":"top","type":"information"}'><i class="icon-bell icon-white"></i> Renew</button>
+                                             </li>
+                                             <li>
+                                                <a href="#">
+                                                    <img class="dashboard-avatar" alt="Usman" src="img/college logos/index.jpeg"></a>
+                                                <a href="#">Brindavan College
+                                                </a><br>
+                                                <strong>Video</strong> 30sec<br>
+                                                <strong>10/02/2014</strong>&nbsp;&nbsp;&nbsp;&nbsp;<strong>10/03/2014</strong><br/>
+                                                <!--<strong>Status:</strong> <span class="label label-success">Active</span>--> 
+                                                <!--<button class="btn btn-primary"><i class="icon-edit icon-white" style="float:right;"></i></button>-->
+                                                <button class="btn btn-primary noty" data-noty-options='{"text":"This is a success information","layout":"top","type":"information"}'><i class="icon-bell icon-white"></i> Preview</button>
+                                                <button class="btn btn-primary noty" data-noty-options='{"text":"This is a success information","layout":"top","type":"information"}'><i class="icon-bell icon-white"></i> Message</button>
+                                                <button class="btn btn-primary noty" data-noty-options='{"text":"This is a success information","layout":"top","type":"information"}'><i class="icon-bell icon-white"></i> Renew</button>
+                                             </li>
+
+                                           
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--LATEST TX BLOCK ENDS-->
+                            
+                            </div>
+                          <!--sortable row fluid for second row ends-->
+                            
+                          <!--sortable row-fluid third row starts-->
+                          <div class="sortable row-fluid">
+                              
+
+                          <!--Weekly Status block starts-->
 
                                                     <div class="box span4">
                                                         <div class="box-header well" data-original-title>
-                                                            <h2><i class="icon-list"></i> Weekly Status Updates</h2>
+                                                            <h2><i class="icon-list"></i> MIS</h2>
                                                             <div class="box-icon">
                                                                 <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
                                                                 <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -844,14 +909,14 @@
                                                                     <a href="#">
                                                                         <i class="icon-arrow-down"></i>
                                                                         <span class="red">15</span>
-                                                                        New Registrations
+                                                                        College Registrations
                                                                     </a>
                                                                 </li>
                                                                 <li>
                                                                     <a href="#">
                                                                         <i class="icon-minus"></i>
                                                                         <span class="blue">36</span>
-                                                                        New Articles                                    
+                                                                        College Activations                                    
                                                                     </a>
                                                                 </li>
                                                                 <li>
@@ -865,28 +930,28 @@
                                                                     <a href="#">
                                                                         <i class="icon-arrow-up"></i>                               
                                                                         <span class="green">112</span>
-                                                                        New Comments                                    
+                                                                        Student Comments                                    
                                                                     </a>
                                                                 </li>
                                                                 <li>
                                                                     <a href="#">
                                                                         <i class="icon-arrow-down"></i>
                                                                         <span class="red">31</span>
-                                                                        New Registrations
+                                                                        Transactions
                                                                     </a>
                                                                 </li>
                                                                 <li>
                                                                     <a href="#">
                                                                         <i class="icon-minus"></i>
                                                                         <span class="blue">93</span>
-                                                                        New Articles                                    
+                                                                        Ads                                    
                                                                     </a>
                                                                 </li>
                                                                 <li>
                                                                     <a href="#">
                                                                         <i class="icon-comment"></i>
                                                                         <span class="yellow">254</span>
-                                                                        User reviews                                    
+                                                                        Courses                                    
                                                                     </a>
                                                                 </li>
                                                             </ul>
@@ -897,10 +962,14 @@
 
                             <!--Weekly Status block ends-->
 
-
+                            </div>
+                            <!--row-fluid sortable div ends-->
 
                         </div>
-                                    <!--/row-->
+                        <!--span10 ENDS-->
+
+            </div>
+                        <!--/row-->
 
 
 
@@ -908,7 +977,7 @@
                     <!-- content ends -->
                 </div>
                                 <!--/#content.span10-->
-            </div>
+            
                             <!--/fluid-row-->
 
             <hr>
@@ -932,7 +1001,8 @@
                 <p class="pull-right">Powered by: <a href="http://www.mangium.com/">Mangium</a></p>
             </footer>
 
-        </div><!--/.fluid-container-->
+        <!--</div>-->
+        <!--/.fluid-container-->
 
         <!-- external javascript
         ================================================== -->
