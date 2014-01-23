@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+
+        <meta charset="utf-8"/>
+        <title>Moharto for online admission -to  study MBA BTECH BE in top colleges in india</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"/>
+        <meta name="author" content="Moharto"/>
+
+        <!-- The styles -->
+        <!--        <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet"/>
+                <style type="text/css">
+                    body {
+                        padding-bottom: 40px;
+                    }
+                    .sidebar-nav {
+                        padding: 9px 0;
+                    }
+                </style>-->
+
+        <!--OVERRIDDEN STYLES STARTS-->
+        <style type="text/css">
+            .ui-dashboard-column{
+                float:none !important;
+            }
+            .ui-widget-header{
+                color: #0088cc!important;
+            }
+
+            .ui-layout-north .ui-layout-unit-content {
+                overflow: visible !important;
+            }
+
+            .ui-layout-north {
+                z-index: 30 !important;
+                overflow: visible !important;
+            }
+        </style>
+        <!--OVERRIDDEN STYLES ENDS-->
+
+        <h:outputStylesheet id="bs-css" library="css" name="bootstrap-cerulean.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-responsive.css"/>
+        <h:outputStylesheet library="css" name="charisma-app.css"/>
+        <h:outputStylesheet library="css" name="opa-icons.css"/>
+        <!--<h:outputStylesheet library="css" name="jquery-ui-1.8.21.custom.css"/>-->
+        <!--        <h:outputStylesheet library="css" name="fullcalendar.css"/>
+                <h:outputStylesheet library="css" name="fullcalendar.print.css"/>
+                <h:outputStylesheet library="css" name="chosen.css"/>
+                <h:outputStylesheet library="css" name="uniform.default.css"/>
+                <h:outputStylesheet library="css" name="colorbox.css"/>
+                <h:outputStylesheet library="css" name="jquery.cleditor.css"/>
+                <h:outputStylesheet library="css" name="jquery.noty.css"/>
+                <h:outputStylesheet library="css" name="noty_theme_default.css"/>
+                <h:outputStylesheet library="css" name="elfinder.min.css"/>
+                <h:outputStylesheet library="css" name="elfinder.theme.css"/>
+                <h:outputStylesheet library="css" name="jquery.iphone.toggle.css"/>
+                <h:outputStylesheet library="css" name="opa-icons.css"/>-->
+        <!--<h:outputStylesheet library="shortcut icon" name="uploadify.css"/>-->
+
+
+        <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- The fav icon -->
+        <!--<h:outputStylesheet library="shortcut icon" name="favicon.ico"/>-->
+
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:layout fullPage="true">  
+
+                <p:layoutUnit position="north"   resizable="true" closable="true" collapsible="true">  
+                    <!-- topbar starts -->
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <div class="container-fluid">
+                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </a>
+
+                                <a class="brand" href="index.html"  > <img alt="Moharto Logo" src="img/moharto-logo-buttion.png" /><span style="font-family: serif;">oharto</span></a>
+
+                                <!-- user dropdown starts -->
+                                <!--                                <div class="btn-group pull-right" >
+                                                                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                                                        <i class="icon-user"></i><span class="hidden-phone">Administrator</span>
+                                                                        <span class="caret"></span>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu">
+                                                                        <li><a href="#">Change password</a></li>
+                                                                        <li class="divider"></li>
+                                                                        <li><a href="login.html">Logout</a></li>
+                                                                    </ul>
+                                                                </div>-->
+                                <!-- user dropdown ends -->
+
+                                <p:selectOneMenu value="Admin" styleClass="btn-group pull-right" >  
+                                    <f:selectItem itemLabel="Administrator" itemValue="" />  
+                                    <f:selectItem itemLabel="Settings"  itemValue="" />  
+                                    <f:selectItem itemLabel="Logout"  itemValue="" />  
+                                </p:selectOneMenu>
+
+                                <div class="top-nav nav-collapse">
+                                    <ul class="nav">
+                                        <!--<li><a href="http://www.moharto.com">Visit moharto site</a></li>-->
+                                        <li>
+                                            <form class="navbar-search pull-left">
+                                                <!--<input placeholder="Search" class="search-query span2" name="query" type="text"/>-->
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--/.nav-collapse -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- topbar ends -->
+
+                    <p:breadCrumb>  
+                        <p:menuitem value="Dashboard" url="#" />  
+                        <p:menuitem value="Dashboard" url="#" />  
+
+                    </p:breadCrumb>
+                    <!--BREAD CRUMB ENDS-->
+                    <ui:insert name="top">
+                        <p:growl id="messages"/>
+                        <p:menubar autoDisplay="false" style="width: 95%; border: none">  
+                            <p:submenu label="Dashboard" icon="ui-icon-document"  >
+
+                            </p:submenu>
+                            <p:submenu label="Datacenter" icon="ui-icon-document">
+                                <p:submenu label="Geography" icon="ui-icon-contact">  
+                                    <p:menuitem value="Country" url="#"/>  
+                                    <p:menuitem value="State" url="#" />
+                                    <p:menuitem value="Zone" url="#" />  
+                                    <p:menuitem value="City" url="#" />  
+                                </p:submenu>
+                                <p:submenu label="Colleges" icon="ui-icon-contact">  
+                                    <p:menuitem value="University" url="#"/>  
+                                    <p:menuitem value="College" url="#" />
+                                    <p:menuitem value="Course Level" url="#" />  
+                                    <p:menuitem value="Course" url="#" />  
+                                </p:submenu>
+                                <p:submenu label="Packages" icon="ui-icon-contact">  
+                                    <p:menuitem value="Packages List" url="#"/>
+                                    <p:menuitem value="Add Packages" url="#"/>
+                                </p:submenu>
+                                <p:submenu label="Ads" icon="ui-icon-contact">  
+                                    <p:menuitem value="Ads List" url="#"/>
+                                    <p:menuitem value="Add Ad" url="#"/>
+                                </p:submenu>
+                            </p:submenu>  
+
+                            <p:submenu label="Bussiness" icon="ui-icon-pencil">  
+                                <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />  
+                                <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />  
+                            </p:submenu>  
+
+                            <p:submenu label="Sales" icon="ui-icon-help">  
+                                <p:menuitem value="Contents" url="#" />  
+                                <p:submenu label="Search" icon="ui-icon-search">  
+                                    <p:submenu label="Text">  
+                                        <p:menuitem value="Workspace" url="#" />  
+                                    </p:submenu>  
+                                    <p:menuitem value="File" url="#" />  
+                                </p:submenu>  
+                            </p:submenu>  
+
+                            <p:submenu label="Messages" icon="ui-icon-gear">  
+                                <p:submenu label="Ajax" icon="ui-icon-refresh">  
+                                    <p:menuitem value="Save" actionListener="#{menuBean.save}" icon="ui-icon-disk" update="messages"/>  
+                                    <p:menuitem value="Update" actionListener="#{menuBean.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>  
+                                </p:submenu>  
+                                <p:submenu label="Non-Ajax" icon="ui-icon-newwin">  
+                                    <p:menuitem value="Delete" actionListener="#{menuBean.delete}" icon="ui-icon-close" update="messages" ajax="false"/>  
+                                </p:submenu>  
+                            </p:submenu>  
+
+
+
+                            <f:facet name="options">  
+                                <!--                                <p:inputText style="margin-right:10px"/>  
+                                                                <p:commandButton type="button" value="Logout" icon="ui-icon-extlink" />  -->
+                            </f:facet>  
+                        </p:menubar>
+                    </ui:insert>
+                    <!--<div style="height: 100px;width: 100px; border: 1px solid #ddd"></div>-->
+                </p:layoutUnit>  
+
+                <p:layoutUnit position="south" size="100" style="border: none">  
+                    <h:outputText value="South unit content." />  
+
+                </p:layoutUnit>  
+
+                <p:layoutUnit position="center">  
+                    <h:form>  
+
+
+
+                        <!--This fullPage layout consists of five different layoutUnits which are resizable and closable by default.-->  
+                        <!--BREAD CRUMB STARTS-->
+                        <!--                        <div style="padding-top: 55px; width: 98%;" id="home tab">
+                                                    <ul class="breadcrumb">
+                                                        <li>
+                                                            <a href="#">Home</a> <span class="divider">/</span>
+                                                        </li>
+                                                        <li>
+                                                            <a href="#">Tables</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>-->
+
+
+                    </h:form> 
+                </p:layoutUnit>  
+
+            </p:layout>
+        </h:form>
+    </h:body>
+</html>
