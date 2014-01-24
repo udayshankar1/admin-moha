@@ -6,20 +6,20 @@
     <h:head>
 
         <meta charset="utf-8"/>
-        <title>Moharto for online admission -to  study MBA BTECH BE in top colleges in india</title>
+        <title>Moharto for online admission -to  study MBA BTech BE in top colleges in india</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"/>
         <meta name="author" content="Moharto"/>
 
         
         <style type="text/css">
-            body {
+/*            body {
                 padding-bottom: 40px;
             }
             .sidebar-nav {
                 padding: 9px 0;
-            }
-        </style>-->
+            }*/
+        </style>
 
         <!--OVERRIDDEN STYLES STARTS-->
         <style type="text/css">
@@ -28,6 +28,8 @@
             }
         .ui-widget-header{
                 color: #0088cc!important;
+                text-shadow:none;
+                
             }
             .ui-panelmenu .ui-panelmenu-header {
                 cursor: pointer;
@@ -35,6 +37,7 @@
                 margin: 0;
                 zoom: 1;
                 height: 35px;
+                font-size: 14px!important;
             }
             .ui-layout-north .ui-layout-unit-content {
                 overflow: visible !important;
@@ -43,6 +46,14 @@
             .ui-layout-north {
                 z-index: 30 !important;
                 overflow: visible !important;
+            }
+            .tbl{
+                font-size: 13px!important;
+                width: 100%;
+            }
+            .tbl thead span{
+                color:#0088cc!important;
+                font-size: 14px!important;
             }
         </style>
         <!--OVERRIDDEN STYLES ENDS-->
@@ -185,7 +196,7 @@
                 <!--LEFT SIDE MENU BAR BLOCK STARTS--> 
                 <p:layoutUnit position="west" header="Menu" style="border: none; width: 100%;" resizable="false" closable="true" collapsible="true">  
 
-                    <p:panelMenu style="width:190px; " > 
+                    <p:panelMenu style="width:190px; border:none; " > 
                         <p:submenu  label="Dashboard"> </p:submenu> 
                         <p:submenu label="Data Center" >
                             <p:submenu label="Geography">
@@ -241,46 +252,80 @@
                             <p:growl id="growl" showDetail="true" />  
 
                             <p:dashboard id="board" model="#{dashboardBean.model}"  >  
-                                <p:ajax event="reorder" listener="#{dashboardBean.handleReorder}" update="growl" />  
-
-                                <p:panel id="dboard-college-approvals" header="List of new colleges for approval" closable="true" toggleable="true" >  
-                                    
+                                <p:ajax event="reorder" listener="#{dashboardBean.handleReorder}" update="growl" /> 
+                                
+                                <p:panel id="dboard-squrebox-updates" header="Latest updatess" closable="true" toggleable="true" style="border:none;">
                                     <!--TOP SQUARE BOXES WITH UPDATES STARTS-->
-                   
-                        <div class="sortable row-fluid" style="margin-top: 1%">
-                        <a data-rel="tooltip" title="6 new members." class="well span3 top-block" href="#">
-                            <span class="icon32 icon-red icon-user"></span>
-                            <div>Users</div>
-                            <div>507</div>
-                            <span class="notification">6</span>
-                        </a>
 
-                        <a data-rel="tooltip" title="4 new pro members." class="well span3 top-block" href="#">
-                            <span class="icon32 icon-color icon-star-on"></span>
-                            <div>Ads</div>
-                            <div>228</div>
-                            <span class="notification green">4</span>
-                        </a>
+                                    <div class="sortable row-fluid" style="margin-top: 1%">
+                                        <a data-rel="tooltip" title="6 new members." class="well span3 top-block" href="#">
+                                            <span class="icon32 icon-red icon-user"></span>
+                                            <div>Users</div>
+                                            <div>507</div>
+                                            <span class="notification">6</span>
+                                        </a>
 
-                        <a data-rel="tooltip" title="$34 new sales." class="well span3 top-block" href="#">
-                            <span class="icon32 icon-color icon-cart"></span>
-                            <div>Transactions</div>
-                            <div>$13320</div>
-                            <span class="notification yellow">$34</span>
-                        </a>
-                            
-                        <a data-rel="tooltip" title="12 new messages." class="well span3 top-block" href="#">
-                            <span class="icon32 icon-color icon-envelope-closed"></span>
-                            <div>Messages</div>
-                            <div>25</div>
-                            <span class="notification red">12</span>
-                        </a>
-                        
+                                        <a data-rel="tooltip" title="4 new pro members." class="well span3 top-block" href="#">
+                                            <span class="icon32 icon-color icon-star-on"></span>
+                                            <div>Ads</div>
+                                            <div>228</div>
+                                            <span class="notification green">4</span>
+                                        </a>
 
-                    </div>
-                            
-                    <!--TOP SQUARE WITH UPDATES ENDS-->
+                                        <a data-rel="tooltip" title="$34 new sales." class="well span3 top-block" href="#">
+                                            <span class="icon32 icon-color icon-cart"></span>
+                                            <div>Transactions</div>
+                                            <div>$13320</div>
+                                            <span class="notification yellow">$34</span>
+                                        </a>
+
+                                        <a data-rel="tooltip" title="12 new messages." class="well span3 top-block" href="#">
+                                            <span class="icon32 icon-color icon-envelope-closed"></span>
+                                            <div>Messages</div>
+                                            <div>25</div>
+                                            <span class="notification red">12</span>
+                                        </a>
+
+
+                                    </div>
+
+                                    <!--TOP SQUARE WITH UPDATES ENDS-->
+                                </p:panel>
+                                
+                                <p:panel id="dboard-college-approvals" header="List of new colleges for approval" closable="true" toggleable="true" style="width:100%">  
                                     
+                                    
+                                    <p:dataTable value="#{collegeApprovalsTableArray.array}" var="tab" cellSeparator="false " styleClass="tbl">
+                                        <p:column headerText="College Name">
+                                            <h:outputText value="#{tab.college_name}"/>
+                                        </p:column>
+                                        <p:column headerText="Date Rregistered">
+                                            <h:outputText value="#{tab.date}"/>
+                                        </p:column>
+                                        <p:column headerText="University">
+                                            <h:outputText value="#{tab.university}"/>
+                                        </p:column>
+                                        <p:column headerText="Status">
+
+                                            <p:commandButton value="#{tab.status}" style="background: #669533;  color: #ffffff; text-shadow:none; font-size: 13px;"/>
+                                        </p:column>
+                                        <p:column headerText="City">
+
+                                            <h:outputText value="#{tab.city}"/>
+                                        </p:column>
+                                        <p:column headerText="Package">
+
+                                            <h:outputText value="#{tab.packages}"/>
+                                        </p:column>
+                                        <p:column headerText="Actions">
+
+                                            <!--<p:commandButton value="Approve" styleClass="label label-success" icon="ui-icon-check"/>-->
+                                            <p:commandButton style="background: #73a839;  color: #ffffff; text-shadow:none; font-size: 13px;" value="Approve" icon="ui-icon-check"/>
+                                            <p:commandButton style="background: #9e6ab8;  color: #ffffff; text-shadow:none; font-size: 13px;" value="Message" icon="ui-icon-comment"/>
+                                            <p:commandButton style="background: #D83137;  color: #ffffff; text-shadow:none; font-size: 13px;" value="Reject" icon="ui-icon-close"/>
+                                            
+                                        </p:column>
+                                    </p:dataTable>
                                     
                                     <!--COLLEGES TABLE STARTS-->
 <!--                                    <div class="box-content" style="width:100%">
@@ -430,10 +475,40 @@
                                     <!--COLLEGES TABLE ENDS-->
                                 </p:panel>  
 
-                                <p:panel id="dboard-latest-messages" header="Latest Messages" closable="true" toggleable="true">  
+                                
+                                <p:panel id="dboard-latest-messages" header="Latest Messages" closable="true" toggleable="true"  >  
                                     
+<!--                                    <p:tabView id="tabView">  
+
+                                          
+                                        <p:tab id="tab2" title="Text Reviews">  
+                                            <h:panelGrid columns="2" cellpadding="10">  
+                                                <p:graphicImage id="tab1Img" value="/images/godfather/godfather1.jpg" />  
+                                                <h3><h:outputText id="tab1Text"  
+                                                              value="The violence whenever anything stands against the good of the family." /></h3>
+                                                <a href="#">
+                                                    <img class="dashboard-avatar" alt="Usman" src="http://www.gravatar.com/avatar/3232415a0380253cfffe19163d04acab.png?s=50"></img></a>
+                                                 <a href="#">Maalokam </a>
+                                                 <strong>Hyderabad</strong><br/>
+                                                
+                                                <a href="#">City College 
+                                                </a>  MBA Finance<br/>
+                                            </h:panelGrid>  
+                                        </p:tab>
+                                        <p:tab id="tab1" title="Video Reviews">  
+                                            <h:panelGrid columns="2" cellpadding="10">  
+                                                <p:graphicImage id="tab1Img" value="/images/godfather/godfather1.jpg" />  
+                                                <h:outputText id="tab1Text"  
+                                                              value="The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.  
+                                                              His beloved son Michael has just come home from the war, but does not intend to become part of his father's business. T  
+                                                              hrough Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect,  
+                                                              but given to ruthless violence whenever anything stands against the good of the family." />  
+                                            </h:panelGrid>  
+                                        </p:tab>
+                                        
+                                    </p:tabView>-->
                                     <!--MESSAGES TABLE STARTS-->
-<!--                                    <div class="box-content">
+                                    <div class="box-content">
                                             <table class="table table-striped table-bordered bootstrap-datatable datatable">
                                                 <thead>
                                                     <tr>
@@ -491,11 +566,11 @@
                                                     </tr>
                                                 </tbody>
                                             </table>            
-                                        </div>-->
+                                        </div>
                                     <!--MESSAGES TABLE ENDS-->
                                 </p:panel>  
 
-                                <p:panel id="dboard-latest-reviews" header="Latest Reviews" closable="true" toggleable="true">  
+                                <p:panel id="dboard-latest-reviews" header="Latest Reviews" closable="true" toggleable="true"  >  
                                     
                                     <div class="box-content">
                                     <ul class="nav nav-tabs" id="myTab">
@@ -546,27 +621,27 @@
                                 </div>
                                 </p:panel>  
 
-                                <p:panel id="dboard-college-renuals" header="Upcoming Renewals" closable="true" toggleable="true">  
+                                <p:panel id="dboard-college-renuals" header="Upcoming Renewals" closable="true" toggleable="true"  >  
                                     <h:outputText value="Renewals Content" />  
                                 </p:panel>  
 
-                                <p:panel id="dboard-latst-admissions" header="Latest Admissions" closable="true" toggleable="true">  
+                                <p:panel id="dboard-latst-admissions" header="Latest Admissions" closable="true" toggleable="true"  >  
                                     <h:outputText value="Admissions Content" />  
                                 </p:panel>  
                                 
-                                <p:panel id="dboard-latest-ads" header="Latest Ads" closable="true" toggleable="true">  
+                                <p:panel id="dboard-latest-ads" header="Latest Ads" closable="true" toggleable="true"  >  
                                     <h:outputText value="Latest Messages" />  
                                 </p:panel>  
 
-                                <p:panel id="dboard-ads-renuals" header="Expiring Ads" closable="true" toggleable="true">  
+                                <p:panel id="dboard-ads-renuals" header="Expiring Ads" closable="true" toggleable="true"  >  
                                     <h:outputText value="Reviews Content"  />  
                                 </p:panel>  
 
-                                <p:panel id="dboard-latest-tx" header="Latest Transactions" closable="true" toggleable="true">  
+                                <p:panel id="dboard-latest-tx" header="Latest Transactions" closable="true" toggleable="true"  >  
                                     <h:outputText value="Renewals Content" />  
                                 </p:panel>  
 
-                                <p:panel id="dboard-mis" header="MIS" closable="true" toggleable="true">  
+                                <p:panel id="dboard-mis" header="MIS" closable="true" toggleable="true"  >  
                                     <h:outputText value="Admissions Content" />  
                                 </p:panel>
                                 

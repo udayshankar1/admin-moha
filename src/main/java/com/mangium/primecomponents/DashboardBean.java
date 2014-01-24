@@ -25,20 +25,23 @@ public class DashboardBean implements Serializable {
         model = new DefaultDashboardModel();  
         DashboardColumn column1 = new DefaultDashboardColumn();  
         DashboardColumn column2 = new DefaultDashboardColumn();  
-        DashboardColumn column3 = new DefaultDashboardColumn();  
+        DashboardColumn column3 = new DefaultDashboardColumn();
+        
           
+        column1.addWidget("dboard-squrebox-updates");
         column1.addWidget("dboard-college-approvals");  
         column1.addWidget("dboard-latest-messages");  
           
         column1.addWidget("dboard-latest-reviews");  
         column1.addWidget("dboard-college-renuals");  
-          
-        column1.addWidget("dboard-latst-admissions");
-        column1.addWidget("dboard-latest-ads");
-        
         column1.addWidget("dboard-ads-renuals");
-        column1.addWidget("dboard-latest-tx");
         
+        column1.addWidget("dboard-latst-admissions");
+        
+        
+        
+        column1.addWidget("dboard-latest-tx");
+        column1.addWidget("dboard-latest-ads");
         column1.addWidget("dboard-mis");
         
   
