@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+
+        <h:outputStylesheet library="css" name="css-student-profile.css"/>
+        <h:outputStylesheet library="css" name="commoncontentstyle.css"/>
+
+        <style>
+
+        </style>
+    </h:head>
+
+    <!--template inclusion -->
+
+    <h:body>
+            <h:form id="form">
+                <div class="pagetitle">Add/Update College</div>
+                <h:panelGrid columns="3" class="grid" cellspacing="5px;" >
+                    <h:outputText value="Id"/>
+                    <h:outputText  value=":" class="top-colon"/>
+                    <p:inputText />
+                    <h:outputText value="Name"/>
+                    <h:outputText value=":" class="top-colon"/>
+                    <p:inputText />
+                </h:panelGrid>
+                <div class="clear"/>
+                <h:panelGrid columns="4" cellspacing="5px" class="grid2">
+                    <h:outputText value="Country" />
+                    <h:outputText value=":"/>
+                    <p:selectOneMenu value="#{collegeProfileBean.countries}"  style="  width: 157px;">
+                        <f:selectItem itemLabel="Select Country" itemValue="" />  
+                        <f:selectItem itemLabel="India" itemValue="India"/>
+                         <f:selectItem itemLabel="Nepal" itemValue="Nepal"/>
+                          <f:selectItem itemLabel="China" itemValue="China"/>
+                           <f:selectItem itemLabel="Bhutan" itemValue="Bhutan" />
+                    </p:selectOneMenu>
+                    <p:commandButton value="add" style="height: 27px;width: 48px;"/>
+                    <h:outputText value="State" />
+                    <h:outputText value=":"/>
+                    <p:selectOneMenu value="#" style="  width: 157px;" >
+                        <f:selectItem itemLabel="Select State" itemValue=""/>
+                         <f:selectItem itemLabel="Karnataka" itemValue="Karnataka"/>
+                           <f:selectItem itemLabel="Maharashtra" itemValue="Maharashtra"/>
+                                   <f:selectItem itemLabel="Chennai" itemValue="Chennai"/>
+                                           <f:selectItem itemLabel="Andhra pradhesh" itemValue="Andhra pradhesh"/>
+                    </p:selectOneMenu>
+                    <p:commandButton  value="add" style="height: 27px;width: 48px;"/>
+                    <h:outputText value="Zone" />
+                    <h:outputText value=":"/>
+                    <p:selectOneMenu  style="  width: 157px;" >
+                              <f:selectItem itemLabel="Select Zone"/>
+                              <f:selectItem itemLabel="North" itemValue="North"/>
+                          <f:selectItem itemLabel="South" itemValue="South"/>
+                            <f:selectItem itemLabel="East" itemValue="East"/>
+                              <f:selectItem itemLabel="West" itemValue="West"/>
+                    </p:selectOneMenu>
+                    <p:commandButton  value="add" style="height: 27px;width: 48px;"/>
+                    <h:outputText value="City" />
+                    <h:outputText value=":"/>
+                    <p:selectOneMenu  style="  width: 157px;">
+                        <f:selectItem itemLabel="Select City" />
+                        <f:selectItem itemLabel="Bangalore" itemValue="bangalore"/>
+                        <f:selectItem itemLabel="Mysore" itemValue="mysore"/>
+                        <f:selectItem itemLabel="Kolkata" itemValue="kolkata"/>
+                        <f:selectItem itemLabel="Chennai" itemValue="chennai"/>
+                        <f:selectItem itemLabel="Belgaum" itemValue="belgaum"/>
+                    </p:selectOneMenu>
+                    <p:commandButton  value="add" style="height: 27px;width: 48px;"/>
+                    <h:outputText value="University" />
+                    <h:outputText value=":"/>
+                    <p:selectOneMenu  style="  width: 157px;">
+                        <f:selectItem itemLabel="Select University"/>
+                        <f:selectItem itemLabel="VTU" itemValue="VTU"/>
+                      <f:selectItem itemLabel="Bangalore University" itemValue="Bangalore University"/>
+                       <f:selectItem itemLabel="Bombay University" itemValue="Bombay University"/>
+                          <f:selectItem itemLabel="Anna University" itemValue="Anna University"/>
+                    </p:selectOneMenu>
+                    <p:commandButton  value="add" style="height: 27px;width: 48px;"/>
+                </h:panelGrid>
+                <div class="clear"/>
+                <h:panelGrid columns="3" cellspacing="5px;"  class="bottom-grid">
+                    <h:outputText value="Email id"/>
+                    <h:outputText  value=":" class="bottom-colon"/>
+                    <p:inputText />
+                    <h:outputText value="Phone"/>
+                    <h:outputText  value=":" class="bottom-colon"/>
+                    <p:inputText />
+                    <h:outputText value="Website"/>
+                    <h:outputText  value=":" class="bottom-colon"/>
+                    <p:inputText />
+
+                </h:panelGrid>
+                <div class="clear"/>
+                <div class="panel">
+
+                    <div class="top-label">Universtiy Courses</div>   
+                    <div class="second-label">College Courses</div>
+                    <p:commandButton value="add course" style="float: right;margin-right: 29px;margin-top: 5px;"/>
+                    <p:pickList id="pickList" value="#{pickListBean.cities}" var="city"   
+                                itemLabel="#{city}" itemValue="#{city}"  /> 
+                    <h:panelGrid columns="2" style="margin-left: 156px;margin-top: 3px;">
+                        <p:commandButton value="Save"/>
+                        <p:commandButton value="Clear"/>
+                    </h:panelGrid>
+           
+
+                <p:growl id="messages" showDetail="true"/>  
+                <p:dataTable id="multi" var="college" value="#{collegeProfileBean.mediummessagemodel}"   widgetVar="messagesTable" 
+                             emptyMessage="No values found with given criteria"           selection="#{collegeProfileBean.selectedmessages}" editable="true" style="width: 605px;
+margin-left: 3px;
+margin-top: 10px;">  
+
+                    <p:ajax event="rowEdit" listener="#{collegeProfileBean.onEdit}" update=":form:messages"/>
+                    <p:ajax event="rowEditCancel" listener="#{collegeProfileBean.onCancel}" update=":form:messages"/>
+
+                    <p:column selectionMode="multiple" style="width:2%;margin-left: 0px;" />  
+
+
+                    <p:column headerText="Course"  >  
+                        <p:cellEditor>
+                            <f:facet name="output">  
+                                <h:outputText value="#{college.course}" />  
+                            </f:facet>  
+                            <f:facet name="input">
+                                <p:inputText value="#{college.course}" />  
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>  
+
+                    <p:column headerText="Specialization">  
+                        <p:cellEditor>
+                            <f:facet name="output">  
+                                <h:outputText value="#{college.specialization}" />  
+                            </f:facet>  
+                            <f:facet name="input">  
+                                <p:inputText value="#{college.specialization}" style="width:100%" label="Year"/>  
+                            </f:facet>  
+                        </p:cellEditor>
+                    </p:column>  
+
+                    <p:column headerText="Seats">  
+                        <p:cellEditor>
+                            <f:facet name="output">  
+                                <h:outputText  value="#{college.seats}" />  
+                            </f:facet>  
+                            <f:facet name="input"> 
+                                <p:inputText value="#{college.seats}" style="width:100%" />  
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>  
+
+                    <p:column headerText="Last date">  
+                        <p:cellEditor>
+                            <f:facet name="output">  
+                                <h:outputText value="#{college.lastdate}" />  
+                            </f:facet>  
+                            <f:facet name="input"> 
+                                <p:inputText value="#{college.lastdate}" style="width:100%"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>  
+
+                    <p:column headerText="fee">  
+                        <p:cellEditor>
+                            <f:facet name="output">  
+                                <h:outputText value="#{college.fee}" />  
+                            </f:facet>  
+                            <f:facet name="input"> 
+                                <p:inputText value="#{college.fee}" style="width:100%"/>
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column> 
+
+                    <p:column  headerText="edit" style="width:6%">  
+                        <p:rowEditor />  
+                    </p:column>  
+
+
+                    <f:facet name="footer" class="footer" >  
+
+                        <p:commandButton id="multiViewButton" value="Update"  onclick="PF('dlg1').show();" />  
+                        <p:commandButton id="multiViewButton1" value="View"  
+                                         onclick="PF('dlg2').show();" style="margin-top: 0px;"/>  
+                        <p:commandButton id="multiViewButton2" value="Delete"  
+                                         onclick="PF('dlg3').show();" style="margin-top: 0px;" />  
+
+                    </f:facet>  
+
+                </p:dataTable>
+           
+                <div class="paratitle" style="margin-left: 3px">Documents</div>
+                <h:panelGrid columns="2">
+                    <h:outputText value="Logo" style="font-size: 12px;"/>
+                    <p:commandButton value="browse"/>
+
+                        <h:outputText value="Certificate"/>
+                        <p:commandButton value="browse" />
+
+                </h:panelGrid>
+                     </div>
+                <br/><br/>
+            </h:form>
+    </h:body>
+</html>
+
