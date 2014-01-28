@@ -253,23 +253,29 @@
                         
                         
                         <p:dataTable id="multi" var="collegerow" value="#{collegeProfileBean.mediummessagemodel}"   widgetVar="messagesTable" 
-                                     emptyMessage="No values found with given criteria"      selection="#{collegeProfileBean.selectedmessages}" editable="true" styleClass="tbl" >  
+                                     emptyMessage="Unable to fetch data from database"      selection="#{collegeProfileBean.colleges}" editable="true"  styleClass="tbl"  paginator="true" rows="10" paginatorPosition="bottom" draggableColumns="true" editMode="cell" >  
 
 <!--                            <p:ajax event="rowEdit" listener="#{collegeProfileBean.onEdit}" update=":form:messages"/>
                             <p:ajax event="rowEditCancel" listener="#{collegeProfileBean.onCancel}" update=":form:messages"/>-->
 
-                            <f:facet name="footer" class="header" >  
+                            <f:facet name="header" class="header" >  
 
-                                <p:commandButton id="multiViewButton" value="Update"  onclick="PF('dlg1').show();" />  
-                                <p:commandButton id="multiViewButton1" value="View"  
-                                                 onclick="PF('dlg2').show();" style="margin-top: 0px;"/>  
-                                <p:commandButton id="multiViewButton2" value="Delete"  
-                                                 onclick="PF('dlg3').show();" style="margin-top: 0px;" />  
+                                <!--                                <p:commandButton id="multiViewButton" value="Update"  onclick="PF('dlg1').show();" />  
+                                                                <p:commandButton id="multiViewButton1" value="View"  
+                                                                                 onclick="PF('dlg2').show();" style="margin-top: 0px;"/>  
+                                                                <p:commandButton id="multiViewButton2" value="Delete"  
+                                                                                 onclick="PF('dlg3').show();" style="margin-top: 0px;" />  -->
+                                
+                                <p:commandButton id="btn-add" value="Add"/>
+                                <p:commandButton id="btn-update" value="Update"/>
+                                <p:commandButton id="btn-delete" value="Delete"/>
+                                <p:commandButton id="btn-import" value="Import"/><br/>
+                                <h:outputText value="List of colleges" />
 
                             </f:facet>
-                            
-                            <p:column selectionMode="multiple" style="width:2%;margin-left: 0px;" />  
-                            
+                            //check box column
+                            <p:column selectionMode="multiple" style="width:3%;" />  
+
 
                             <p:column headerText="Name"  >  
                                 <p:cellEditor>
@@ -288,12 +294,12 @@
                                         <h:outputText value="#{collegerow.specialization}" />  
                                     </f:facet>  
                                     <f:facet name="input">  
-                                        <p:inputText value="#{collegerow.specialization}" style="width:100%" label="Year"/>  
+                                        <p:inputText value="#{collegerow.specialization}" style="width:100%" />  
                                     </f:facet>  
                                 </p:cellEditor>
                             </p:column>  
 
-                            <p:column headerText="Credentials">  
+                            <p:column headerText="Address">  
                                 <p:cellEditor>
                                     <f:facet name="output">  
                                         <h:outputText  value="#{collegerow.seats}" />  
@@ -324,39 +330,90 @@
                                         <p:inputText value="#{collegerow.fee}" style="width:100%"/>
                                     </f:facet>
                                 </p:cellEditor>
+                            </p:column>
+                            
+                            <p:column headerText="City">  
+                                <p:cellEditor>
+                                    <f:facet name="output">  
+                                        <h:outputText value="#{collegerow.fee}" />  
+                                    </f:facet>  
+                                    <f:facet name="input"> 
+                                        <p:inputText value="#{collegerow.fee}" style="width:100%"/>
+                                    </f:facet>
+                                </p:cellEditor>
+                            </p:column>
+                            
+                            <p:column headerText="Website">  
+                                <p:cellEditor>
+                                    <f:facet name="output">  
+                                        <h:outputText value="#{collegerow.fee}" />  
+                                    </f:facet>  
+                                    <f:facet name="input"> 
+                                        <p:inputText value="#{collegerow.fee}" style="width:100%"/>
+                                    </f:facet>
+                                </p:cellEditor>
                             </p:column> 
-
-                            <p:column  headerText="edit" style="width:6%">  
+                            
+                            <p:column headerText="Logo">  
+                                <p:cellEditor>
+                                    <f:facet name="output">  
+                                        <h:outputText value="#{collegerow.fee}" />  
+                                    </f:facet>  
+                                    <f:facet name="input"> 
+                                        <p:inputText value="#{collegerow.fee}" style="width:100%"/>
+                                    </f:facet>
+                                </p:cellEditor>
+                            </p:column> 
+                            
+                            <p:column headerText="Description">  
+                                <p:cellEditor>
+                                    <f:facet name="output">  
+                                        <h:outputText value="#{collegerow.fee}" />  
+                                    </f:facet>  
+                                    <f:facet name="input"> 
+                                        <p:inputText value="#{collegerow.fee}" style="width:100%"/>
+                                    </f:facet>
+                                </p:cellEditor>
+                            </p:column>
+                            
+                            <p:column headerText="video">  
+                                <p:cellEditor>
+                                    <f:facet name="output">  
+                                        <h:outputText value="#{collegerow.fee}" />  
+                                    </f:facet>  
+                                    <f:facet name="input"> 
+                                        <p:inputText value="#{collegerow.fee}" style="width:100%"/>
+                                    </f:facet>
+                                </p:cellEditor>
+                            </p:column>
+                            
+                            <p:column headerText="Photo">  
+                                <p:cellEditor>
+                                    <f:facet name="output">  
+                                        <h:outputText value="#{collegerow.fee}" />  
+                                    </f:facet>  
+                                    <f:facet name="input"> 
+                                        <p:inputText value="#{collegerow.fee}" style="width:100%"/>
+                                    </f:facet>
+                                </p:cellEditor>
+                            </p:column> 
+                            
+                            <p:column headerText="Status">  
+                                <p:cellEditor>
+                                    <f:facet name="output">  
+                                        <h:outputText value="#{collegerow.fee}" />  
+                                    </f:facet>  
+                                    <f:facet name="input"> 
+                                        <p:inputText value="#{collegerow.fee}" style="width:100%"/>
+                                    </f:facet>
+                                </p:cellEditor>
+                            </p:column> 
+                                //edit icon
+<!--                            <p:column  headerText="edit" style="width:6%">  
                                 <p:rowEditor />  
-                            </p:column>  
-
-
-                              
+                                </p:column>  -->
 
                         </p:dataTable> 
-                        
-                        <h:form id="cell-edit-form">
-                        
-                        <p:contextMenu for="colleges-table-edit" widgetVar="cMenu">     
-                            <p:menuitem value="Edit Cell" icon="ui-icon-search" onclick="PF('carsTable').showCellEditor();return false;"/>    
-                            <p:menuitem value="Hide Menu" icon="ui-icon-close" onclick="PF('cMenu').hide()"/>    
-                        </p:contextMenu>
-                        
-                            <p:dataTable id="colleges-table-edit" var="editcollege" value="#{college.collegesrow}" editable="true" editMode="cell" widgetVar="carsTable">
-                            <h:form id="cell-edit-form">
-                                <p:growl id="messages" showDetail="true"/>
-                                
-                                <p:column headerText="Name" >  
-<!--                                    <p:cellEditor>  
-                                        <f:facet name="output"><h:outputText value="#{editcollege.collegeName}" /></f:facet>  
-                                        <f:facet name="input"><p:inputText id="modelInput" value="#{editcollege.collegeName}" /></f:facet>  
-                                    </p:cellEditor>  -->
-                                </p:column>
-                                
-                            </h:form>
-                                
-                        </p:dataTable>
-                            </h:form>
                        
                        <!--MAIN CONTENT BLOCK ENDS-->
 

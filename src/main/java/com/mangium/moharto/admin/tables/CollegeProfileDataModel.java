@@ -18,7 +18,7 @@ public class CollegeProfileDataModel  extends ListDataModel<CollegeProfile> impl
     
     public CollegeProfileDataModel()
     {
-    
+        
     }
     
     public CollegeProfileDataModel(List<CollegeProfile> data) {  

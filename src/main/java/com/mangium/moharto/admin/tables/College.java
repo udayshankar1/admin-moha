@@ -13,6 +13,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import org.primefaces.event.CellEditEvent;
+import org.primefaces.event.FileUploadEvent;
+import org.primefaces.event.RowEditEvent;
 
 /**
  *
@@ -35,7 +37,8 @@ public class College implements Serializable {
 
     //put some sample data into collegesrow variable
     
-    //event listner method defination for oncelledit event
+    
+    //ajax event listner method defination for oncelledit event
     public void onCellEdit(CellEditEvent event) {  
         Object oldValue = event.getOldValue();  
         Object newValue = event.getNewValue();  
@@ -45,4 +48,15 @@ public class College implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null, msg);  
         }
     }
+    
+    public void onCancel(RowEditEvent event) {  
+        FacesMessage msg = new FacesMessage("row editing Cancelled", ((CollegeProfile) event.getObject()).getCourse());  
+  
+        FacesContext.getCurrentInstance().addMessage(null, msg);  
+    }  
+    
+     public void handleFileUpload(FileUploadEvent event) {  
+        FacesMessage msg = new FacesMessage("Succesful", event.getFile().getFileName() + " is uploaded.");  
+        FacesContext.getCurrentInstance().addMessage(null, msg);  
+    }  
 }

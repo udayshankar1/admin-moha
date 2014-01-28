@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.mangium.moharto.admin.tables;
 
 /**
@@ -11,25 +5,40 @@ package com.mangium.moharto.admin.tables;
  * @author uday
  */
 public class CollegeProfile {
-   private  String course;
-   
-   private String specialization;
-   
-   private String  seats;
-   
-   private String lastdate;
-   
-   private String fee;
-   
-   private String country;
-   
-   private String state;
+    private  String course;
+
+    private String specialization;
+
+    private String  seats;
+
+    private String lastdate;
+
+    private String fee;
+
+    private String country;
+
+    private String state;
    
      private String city;
      
      private String zone;
      
      private String university;
+     
+     //new variables
+     private String college_name;
+     private String college_acronomy;
+     private String college_credentials;
+     private String college_university;
+     private String college_established;
+     private String college_city;
+     private String college_adress;
+     private String college_websiteurl;
+     private String college_vediospath;
+     private String college_photospath;
+     private String college_logo;
+     private String college_description;
+     private String college_status;
 
     public String getState() {
         return state;
@@ -112,9 +121,112 @@ public class CollegeProfile {
     public void setFee(String fee) {
         this.fee = fee;
     }
-   
-   
-   
+
+    //new getters and setters
+    public String getCollege_name() {
+        return college_name;
+    }
+
+    public void setCollege_name(String college_name) {
+        this.college_name = college_name;
+    }
+
+    public String getCollege_acronomy() {
+        return college_acronomy;
+    }
+
+    public void setCollege_acronomy(String college_acronomy) {
+        this.college_acronomy = college_acronomy;
+    }
+
+    public String getCollege_credentials() {
+        return college_credentials;
+    }
+
+    public void setCollege_credentials(String college_credentials) {
+        this.college_credentials = college_credentials;
+    }
+
+    public String getCollege_university() {
+        return college_university;
+    }
+
+    public void setCollege_university(String college_university) {
+        this.college_university = college_university;
+    }
+
+    public String getCollege_established() {
+        return college_established;
+    }
+
+    public void setCollege_established(String college_established) {
+        this.college_established = college_established;
+    }
+
+    public String getCollege_city() {
+        return college_city;
+    }
+
+    public void setCollege_city(String college_city) {
+        this.college_city = college_city;
+    }
+
+    public String getCollege_adress() {
+        return college_adress;
+    }
+
+    public void setCollege_adress(String college_adress) {
+        this.college_adress = college_adress;
+    }
+
+    public String getCollege_websiteurl() {
+        return college_websiteurl;
+    }
+
+    public void setCollege_websiteurl(String college_websiteurl) {
+        this.college_websiteurl = college_websiteurl;
+    }
+
+    public String getCollege_vediospath() {
+        return college_vediospath;
+    }
+
+    public void setCollege_vediospath(String college_vediospath) {
+        this.college_vediospath = college_vediospath;
+    }
+
+    public String getCollege_photospath() {
+        return college_photospath;
+    }
+
+    public void setCollege_photospath(String college_photospath) {
+        this.college_photospath = college_photospath;
+    }
+
+    public String getCollege_logo() {
+        return college_logo;
+    }
+
+    public void setCollege_logo(String college_logo) {
+        this.college_logo = college_logo;
+    }
+
+    public String getCollege_description() {
+        return college_description;
+    }
+
+    public void setCollege_description(String college_description) {
+        this.college_description = college_description;
+    }
+
+    public String getCollege_status() {
+        return college_status;
+    }
+
+    public void setCollege_status(String college_status) {
+        this.college_status = college_status;
+    }
+    
    
    
    

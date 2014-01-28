@@ -16,11 +16,12 @@ import org.primefaces.event.FileUploadEvent;
 @javax.faces.bean.ManagedBean
 @RequestScoped
 public class CollegeProfileBean {
-        private List<CollegeProfile> messages;
+    private List<CollegeProfile> colleges;
 
     private CollegeProfileDataModel mediummessagemodel;
 
-    private CollegeProfile selectedmessage;
+//    private CollegeProfile selectedmessage;
+    private CollegeProfile selectedcollege;
     
     private String country;
 
@@ -32,12 +33,12 @@ public class CollegeProfileBean {
         this.country = country;
     }
 
-    public List<CollegeProfile> getMessages() {
-        return messages;
+    public List<CollegeProfile> getColleges() {
+        return colleges;
     }
 
-    public void setMessages(List<CollegeProfile> messages) {
-        this.messages = messages;
+    public void setMessages(List<CollegeProfile> colleges) {
+        this.colleges = colleges;
     }
 
     public CollegeProfileDataModel getMediummessagemodel() {
@@ -48,37 +49,45 @@ public class CollegeProfileBean {
         this.mediummessagemodel = mediummessagemodel;
     }
 
-    public CollegeProfile getSelectedmessage() {
-        return selectedmessage;
+    public CollegeProfile getSelectedcollege() {
+        return selectedcollege;
     }
 
-    public void setSelectedmessage(CollegeProfile selectedmessage) {
-        this.selectedmessage = selectedmessage;
+    public void setSelectedcollege(CollegeProfile selectedcollege) {
+        this.selectedcollege = selectedcollege;
     }
 
-    public CollegeProfile[] getSelectedmessages() {
-        return selectedmessages;
+    public CollegeProfile[] getSelectedcolleges() {
+        return selectedcolleges;
     }
 
     public void setSelectedmessages(CollegeProfile[] selectedmessages) {
-        this.selectedmessages = selectedmessages;
+        this.selectedcolleges = selectedcolleges;
+    }
+    
+    public List getCountries() {
+        return countries;
+    }
+
+    public void setCountries(List countries) {
+        this.countries = countries;
     }
 
    
 
  
 
-    private CollegeProfile[] selectedmessages;
+    private CollegeProfile[] selectedcolleges;
     
     private List countries;
 
     public CollegeProfileBean() {
         
         countries=new ArrayList();
-        CollegeProfile a1=new CollegeProfile();
-        a1.setCountry("India");
-       
-        countries.add(a1);
+//        CollegeProfile a1=new CollegeProfile();
+//        a1.setCountry("India");
+//       
+//        countries.add(a1);
         
 //        a1.setCity("");
 //        a1.setZone("");
@@ -101,11 +110,23 @@ public class CollegeProfileBean {
                 
 
      CollegeProfile c1=new CollegeProfile();
-     c1.setCourse("MBA");
-     c1.setSpecialization("Finance");
-     c1.setSeats("60");
-     c1.setLastdate("12-12-14");
-     c1.setFee("50,000");
+     c1.setCourse("Brindavan College");
+     c1.setSpecialization("BVC");
+     c1.setSeats("Ranked with A");
+     c1.setLastdate("12-12-1990");
+     c1.setFee("VTU");
+     c1.setCollege_name("Brindavan College");
+     c1.setCollege_acronomy("Banglore");
+     c1.setCollege_adress("#1 mg road");
+     c1.setCollege_description("top ranced college");
+     c1.setCollege_established("12-12-1990");
+     c1.setCollege_logo("\"http://www.gravatar.com/avatar/3232415a0380253cfffe19163d04acab.png?s=50\"");
+     c1.setCollege_status("Active");
+     c1.setCollege_university("VTU");
+     c1.setCollege_vediospath("vedio link1");
+     c1.setCollege_photospath("photolink2");
+     c1.setCollege_websiteurl("www.brindavan.com");
+     
      
      
      CollegeProfile c2=new CollegeProfile();
@@ -139,26 +160,20 @@ public class CollegeProfileBean {
      c5.setLastdate("28-07-14");
      c5.setFee("55,000");
      
-        messages = new ArrayList<CollegeProfile>();
+        colleges = new ArrayList<CollegeProfile>();
         
-        messages.add(c1);
-        messages.add(c2);
-        messages.add(c3);
-        messages.add(c4);
-        messages.add(c5);
+        colleges.add(c1);
+        colleges.add(c2);
+        colleges.add(c3);
+        colleges.add(c4);
+        colleges.add(c5);
 
 
 
-        mediummessagemodel = new CollegeProfileDataModel(messages);
+        mediummessagemodel = new CollegeProfileDataModel(colleges);
     }
 
-    public List getCountries() {
-        return countries;
-    }
-
-    public void setCountries(List countries) {
-        this.countries = countries;
-    }
+    
      public void onEdit(RowEditEvent event) {  
         FacesMessage msg = new FacesMessage("table row Edited", ((CollegeProfile) event.getObject()).getCourse());  
   
