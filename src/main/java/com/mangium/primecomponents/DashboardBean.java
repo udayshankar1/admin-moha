@@ -31,23 +31,21 @@ public class DashboardBean implements Serializable {
         column1.addWidget("dboard-squrebox-updates");
         column1.addWidget("dboard-college-approvals");  
         column1.addWidget("dboard-latest-messages");  
-          
-        column1.addWidget("dboard-latest-reviews");  
-        column1.addWidget("dboard-college-renuals");  
-        column1.addWidget("dboard-ads-renuals");
         
-        column1.addWidget("dboard-latst-admissions");
+        column1.addWidget("dboard-latest-reviews");
         
-        
-        
-        column1.addWidget("dboard-latest-tx");
-        column1.addWidget("dboard-latest-ads");
+        column1.addWidget("dboard-college-renuals");
         column1.addWidget("dboard-mis");
+        column2.addWidget("dboard-latst-admissions");
+        column2.addWidget("dboard-latest-ads");                   
+        column3.addWidget("dboard-ads-renuals");                                        
+        column3.addWidget("dboard-latest-tx");        
+        
         
   
         model.addColumn(column1);  
-//        model.addColumn(column2);  
-//        model.addColumn(column3);  
+        model.addColumn(column2);  
+        model.addColumn(column3);  
     }  
       
     public void handleReorder(DashboardReorderEvent event) {  
