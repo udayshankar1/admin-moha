@@ -6,23 +6,14 @@ package com.mangium.moharto.admin.tables;
  */
 public class CollegeProfile {
     private  String course;
-
     private String specialization;
-
     private String  seats;
-
     private String lastdate;
-
     private String fee;
-
     private String country;
-
     private String state;
-   
-     private String city;
-     
-     private String zone;
-     
+     private String city;     
+     private String zone;     
      private String university;
      
      //new variables
