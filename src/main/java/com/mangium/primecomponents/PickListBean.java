@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.mangium.moharto.admin.tables;
+package com.mangium.primecomponents;
 
 /**
  *

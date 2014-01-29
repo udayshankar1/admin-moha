@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mangium</groupId>
-    <artifactId>mohartoadmin2</artifactId>
+    <artifactId>mohartoadmin1.1</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>mohartoadmin2</name>
+    <name>mohartoadmin1.1</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
