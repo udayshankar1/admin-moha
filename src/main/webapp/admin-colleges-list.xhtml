@@ -55,6 +55,15 @@
                 color:#0088cc!important;
                 font-size: 14px!important;
             }
+            
+            .ui-widget-content {
+                color: #555555!important;
+                font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+                font-size: 13px;                
+            }
+            .ui-datatable thead th, .ui-datatable tfoot td {
+                text-align: left;
+            }
         </style>
         <!--OVERRIDDEN STYLES ENDS-->
         
@@ -253,7 +262,8 @@
                         
                         
                         <p:dataTable id="multi" var="collegerow" value="#{collegeProfileBean.mediummessagemodel}"   widgetVar="messagesTable" 
-                                     emptyMessage="Unable to fetch data from database"      selection="#{collegeProfileBean.colleges}" editable="true"  styleClass="tbl"  paginator="true" rows="10" paginatorPosition="bottom" draggableColumns="true" editMode="cell" >  
+                                     emptyMessage="Unable to fetch data from database"   scrollRows="1"  
+                                     scrollable="true" liveScroll="true" scrollHeight="150"   selection="#{collegeProfileBean.colleges}" editable="true"   paginator="true" rows="10" paginatorPosition="bottom" draggableColumns="true" editMode="cell" >  
 
 <!--                            <p:ajax event="rowEdit" listener="#{collegeProfileBean.onEdit}" update=":form:messages"/>
                             <p:ajax event="rowEditCancel" listener="#{collegeProfileBean.onCancel}" update=":form:messages"/>-->

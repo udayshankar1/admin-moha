@@ -73,10 +73,6 @@ public class CollegeProfileBean {
         this.countries = countries;
     }
 
-   
-
- 
-
     private CollegeProfile[] selectedcolleges;
     
     private List countries;
