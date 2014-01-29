@@ -63,25 +63,12 @@
         <h:outputStylesheet library="css" name="charisma-app.css"/>
         <h:outputStylesheet library="css" name="opa-icons.css"/>
 
-
-
-        <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
-
-
     </h:head>
 
     <h:body>
-
         <h:form  >
-
             <p:layout fullPage="true" >  
-
                 <p:layoutUnit position="north"  style="border: none;" styleClass="span2 main-menu-span"   resizable="false" closable="false" collapsible="false">  
-
                     <!-- topbar starts -->
                     <div class="navbar" style="margin-bottom: 0%;">
                         <div class="navbar-inner">
@@ -91,9 +78,7 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </a>
-
                                 <a class="brand" href="index.html"  > <img alt="Moharto Logo" src="img/moharto-logo-buttion.png" /><span style="font-family: serif;">oharto</span></a>
-
                                 <!-- user dropdown starts -->
                                 <p:selectOneMenu value="user-dropdown" styleClass="btn-group pull-right" >  
                                     <f:selectItem itemLabel="Administrator" itemValue="" />  
@@ -101,8 +86,6 @@
                                     <f:selectItem itemLabel="Logout"  itemValue="" />  
                                 </p:selectOneMenu>
                                 <!-- user dropdown ends -->
-
-
 
                                 <div class="top-nav nav-collapse">
                                     <ul class="nav">
@@ -117,12 +100,10 @@
                                 <!--/.nav-collapse -->
                             </div>
                         </div>
-
                     </div>
                     <!-- topbar ends -->
 
                     <!--MAIN VERTICAL MENU BAR STARTS--> 
-
                     <p:growl id="messages"/>
                     <p:menubar autoDisplay="false" style=" border: none">  
                         <p:submenu label="Dashboard" icon="ui-icon-document"  >
@@ -175,26 +156,19 @@
                                 <p:menuitem value="Delete" actionListener="#{menuBean.delete}" icon="ui-icon-close" update="messages" ajax="false"/>  
                             </p:submenu>  
                         </p:submenu>  
-
-
-
-
                     </p:menubar>
-
                     <!--MAIN VERTICAL MENU BAR ENDS-->
 
                     <!--BREAD CRUMB STARTS-->
                     <p:breadCrumb>  
                         <p:menuitem value="Dashboard" url="#" />  
                         <p:menuitem value="Dashboard" url="#" />  
-
                     </p:breadCrumb>
                     <!--BREAD CRUMB ENDS-->
                 </p:layoutUnit>  
 
                 <!--LEFT SIDE MENU BAR BLOCK STARTS--> 
                 <p:layoutUnit position="west" header="Menu" style="border: none; width: 100%;" resizable="false" closable="true" collapsible="true">  
-
                     <p:panelMenu style="width:190px; border:none; " > 
                         <p:submenu  label="Dashboard"> </p:submenu> 
                         <p:submenu label="Data Center" >
@@ -229,9 +203,6 @@
                         <p:submenu label="Messages"> </p:submenu>
                         <p:submenu label="Support"> </p:submenu>
                     </p:panelMenu> 
-
-
-
                 </p:layoutUnit>  
                 <!--LEFT SIDE MENU BAR BLOCK ENDS-->
 
@@ -255,11 +226,11 @@
                                         <a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
                                     </div>
                                 </div>
-                                
+
                                 <!--UI Table Starts HERE-->
                                 <div class="box-content">
                                     <table class="table table-bordered table-striped">
-                                        
+
                                         <!--File Upload-->
                                         <tr>
                                             <td><h3>Multiple File Upload</h3></td>
@@ -268,7 +239,7 @@
                                                               multiple="true" update="messages" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
                                             </td>
                                         </tr>
-                                        
+
                                         <!--Ratings Or Reviews-->
                                         <tr>
                                             <td><h3>Star Rating</h3></td>
@@ -276,7 +247,7 @@
                                                 <p:rating value="#{ratingController.rating2}" stars="10" cancel="false" /> 
                                             </td>
                                         </tr>
-                                        
+
                                         <!--Toggle-->
                                         <tr>
                                             <td><h3>Toggle Switch</h3></td>
@@ -287,7 +258,7 @@
                                                 </p:selectOneButton> 
                                             </td>
                                         </tr>
-                                        
+
                                         <!--TextArea-->
                                         <tr>
                                             <td><h3>Auto Growing Textarea</h3></td>
@@ -295,7 +266,7 @@
                                                 <p:inputTextarea placeholder="Enter text"  autoResize="false"/>
                                             </td>
                                         </tr>
-                                        
+
                                         <!--POP OVER Still pending-->
                                         <tr>
                                             <td><h3>Popover</h3></td>
@@ -304,7 +275,7 @@
                                                 <p:panel style="float: left;">On hover POP-Up display </p:panel>
                                             </td>
                                         </tr>
-                                        
+
                                         <!--Slider-->
                                         <tr>
                                             <td><h3>Slider</h3></td>
@@ -318,14 +289,55 @@
                                                 <h:inputHidden id="txt7" value="#{sliderBean.number7}" />
                                             </td>
                                         </tr>
-                                        
+
                                         <!--Dialog-->
                                         <tr>
                                             <td><h3>Dialog</h3></td>
                                             <td>
-                                                <p:commandButton id="basic" value="Basic" onclick="PF('dlg1').show();" type="button" />  
-                                                <p:dialog id="basicDialog" header="Basic Dialog" widgetVar="dlg1">  
+                                                <p:commandButton id="basic" value="Basic" onclick="PF('dig1').show();" type="button" />  
+                                                <p:dialog id="basicDialog" header="Basic Dialog" widgetVar="dig1">  
                                                     <h:outputText value="Resistance to PrimeFaces is futile!" />  
+                                                </p:dialog>
+                                            </td>
+                                        </tr>
+
+                                         <!-- POPUP Dialog-->
+                                        <tr>
+                                            <td><h3>POP-UP Dialog(Datatable)</h3></td>
+                                            <td>
+                                                <p:commandButton id="basic" value="Display" onclick="PF('dlg2').show();" type="button" />  
+                                                <p:dialog id="basicDialog1" header="Dialog with Datatable" widgetVar="dlg2">  
+                                                    <p:dataTable value="#{collegeApprovalsTableArray.array}" var="tab" cellSeparator="false " styleClass="tbl">
+                                                        <p:column headerText="College Name">
+                                                            <h:outputText value="#{tab.college_name}"/>
+                                                        </p:column>
+                                                        <p:column headerText="Date Rregistered">
+                                                            <h:outputText value="#{tab.date}"/>
+                                                        </p:column>
+                                                        <p:column headerText="University">
+                                                            <h:outputText value="#{tab.university}"/>
+                                                        </p:column>
+                                                        <p:column headerText="Status">
+
+                                                            <p:commandButton value="#{tab.status}" style="background: #669533;  color: #ffffff; text-shadow:none; font-size: 13px;"/>
+                                                        </p:column>
+                                                        <p:column headerText="City">
+
+                                                            <h:outputText value="#{tab.city}"/>
+                                                        </p:column>
+                                                        <p:column headerText="Package">
+
+                                                            <h:outputText value="#{tab.packages}"/>
+                                                        </p:column>
+                                                        <p:column headerText="Actions">
+
+                                                            <!--<p:commandButton value="Approve" styleClass="label label-success" icon="ui-icon-check"/>-->
+                                                            <p:commandButton style="background: #73a839;  color: #ffffff; text-shadow:none; font-size: 13px;" value="Approve" icon="ui-icon-check"/>
+                                                            <p:commandButton style="background: #9e6ab8;  color: #ffffff; text-shadow:none; font-size: 13px;" value="Message" icon="ui-icon-comment"/>
+                                                            <p:commandButton style="background: #D83137;  color: #ffffff; text-shadow:none; font-size: 13px;" value="Reject" icon="ui-icon-close"/>
+
+                                                        </p:column>
+                                                    </p:dataTable>  
                                                 </p:dialog>
                                             </td>
                                         </tr>
@@ -340,7 +352,7 @@
                                                 <p:tooltip for="fade" value="Fade effect is used by default" showEffect="fade" hideEffect="fade" />
                                             </td>
                                         </tr>
-                                        
+
                                         <!--Messages work outside the layout-->
                                         <tr>
                                             <td><h3>Messages</h3></td>
@@ -355,6 +367,8 @@
                                                 </h:form>  
                                             </td>
                                         </tr>
+
+                                       
                                     </table>
                                 </div>	
                                 <!--UI Table Ends HERE-->
@@ -362,7 +376,6 @@
 
                         </div><!--/row-->
                         <!--FOOTER BLOCK STARTS-->
-
                     </h:form> 
                 </p:layoutUnit>  
 
