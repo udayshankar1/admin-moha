@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+
+        <meta charset="utf-8"/>
+        <title>Moharto for online admission -to  study MBA BTech BE in top colleges in india</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"/>
+        <meta name="author" content="Moharto"/>
+
+
+        <!--        <style type="text/css">
+        /*            body {
+                        padding-bottom: 40px;
+                    }
+                    .sidebar-nav {
+                        padding: 9px 0;
+                    }*/
+                </style>-->
+
+        <!--OVERRIDDEN STYLES STARTS-->
+        <style type="text/css">
+            .ui-dashboard-column{
+                float:none !important;
+            }
+            .ui-widget-header{
+                color: #0088cc!important;
+                text-shadow:none;
+
+            }
+            .ui-panelmenu .ui-panelmenu-header {
+                cursor: pointer;
+                position: relative;
+                margin: 0;
+                zoom: 1;
+                height: 35px;
+                font-size: 14px!important;
+            }
+            .ui-layout-north .ui-layout-unit-content {
+                overflow: visible !important;
+            }
+
+            .ui-layout-north {
+                z-index: 30 !important;
+                overflow: visible !important;
+            }
+            .tbl{
+                font-size: 13px!important;
+                width: 100%;
+            }
+            .tbl thead span{
+                color:#0088cc!important;
+                font-size: 14px!important;
+            }
+        </style>
+        <!--OVERRIDDEN STYLES ENDS-->
+
+        <h:outputStylesheet id="bs-css" library="css" name="bootstrap-cerulean.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-responsive.css"/>
+        <h:outputStylesheet library="css" name="charisma-app.css"/>
+        <h:outputStylesheet library="css" name="opa-icons.css"/>
+
+
+
+        <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+
+
+    </h:head>
+
+    <h:body>
+
+        <h:form  >
+
+            <p:layout fullPage="true" >  
+
+                <p:layoutUnit position="north"  style="border: none;" styleClass="span2 main-menu-span"   resizable="false" closable="false" collapsible="false">  
+
+                    <!-- topbar starts -->
+                    <div class="navbar" style="margin-bottom: 0%;">
+                        <div class="navbar-inner">
+                            <div class="container-fluid">
+                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </a>
+
+                                <a class="brand" href="index.html"  > <img alt="Moharto Logo" src="img/moharto-logo-buttion.png" /><span style="font-family: serif;">oharto</span></a>
+
+                                <!-- user dropdown starts -->
+                                <p:selectOneMenu value="user-dropdown" styleClass="btn-group pull-right" >  
+                                    <f:selectItem itemLabel="Administrator" itemValue="" />  
+                                    <f:selectItem itemLabel="Settings"  itemValue="" />  
+                                    <f:selectItem itemLabel="Logout"  itemValue="" />  
+                                </p:selectOneMenu>
+                                <!-- user dropdown ends -->
+
+
+
+                                <div class="top-nav nav-collapse">
+                                    <ul class="nav">
+                                        <!--<li><a href="http://www.moharto.com">Visit moharto site</a></li>-->
+                                        <li>
+                                            <form class="navbar-search pull-left">
+                                                <!--<input placeholder="Search" class="search-query span2" name="query" type="text"/>-->
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--/.nav-collapse -->
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- topbar ends -->
+
+                    <!--MAIN VERTICAL MENU BAR STARTS--> 
+
+                    <p:growl id="messages"/>
+                    <p:menubar autoDisplay="false" style=" border: none">  
+                        <p:submenu label="Dashboard" icon="ui-icon-document"  >
+
+                        </p:submenu>
+                        <p:submenu label="Datacenter" icon="ui-icon-document">
+                            <p:submenu label="Geography" icon="ui-icon-contact">  
+                                <p:menuitem value="Country" url="#"/>  
+                                <p:menuitem value="State" url="#" />
+                                <p:menuitem value="Zone" url="#" />  
+                                <p:menuitem value="City" url="#" />  
+                            </p:submenu>
+                            <p:submenu label="Colleges" icon="ui-icon-contact">  
+                                <p:menuitem value="University" url="#"/>  
+                                <p:menuitem value="College" url="#" />
+                                <p:menuitem value="Course Level" url="#" />  
+                                <p:menuitem value="Course" url="#" />  
+                            </p:submenu>
+                            <p:submenu label="Packages" icon="ui-icon-contact">  
+                                <p:menuitem value="Packages List" url="#"/>
+                                <p:menuitem value="Add Packages" url="#"/>
+                            </p:submenu>
+                            <p:submenu label="Ads" icon="ui-icon-contact">  
+                                <p:menuitem value="Ads List" url="#"/>
+                                <p:menuitem value="Add Ad" url="#"/>
+                            </p:submenu>
+                        </p:submenu>  
+
+                        <p:submenu label="Bussiness" icon="ui-icon-pencil">  
+                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />  
+                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />  
+                        </p:submenu>  
+
+                        <p:submenu label="Sales" icon="ui-icon-help">  
+                            <p:menuitem value="Contents" url="#" />  
+                            <p:submenu label="Search" icon="ui-icon-search">  
+                                <p:submenu label="Text">  
+                                    <p:menuitem value="Workspace" url="#" />  
+                                </p:submenu>  
+                                <p:menuitem value="File" url="#" />  
+                            </p:submenu>  
+                        </p:submenu>  
+
+                        <p:submenu label="Messages" icon="ui-icon-gear">  
+                            <p:submenu label="Ajax" icon="ui-icon-refresh">  
+                                <p:menuitem value="Save" actionListener="#{menuBean.save}" icon="ui-icon-disk" update="messages"/>  
+                                <p:menuitem value="Update" actionListener="#{menuBean.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>  
+                            </p:submenu>  
+                            <p:submenu label="Non-Ajax" icon="ui-icon-newwin">  
+                                <p:menuitem value="Delete" actionListener="#{menuBean.delete}" icon="ui-icon-close" update="messages" ajax="false"/>  
+                            </p:submenu>  
+                        </p:submenu>  
+
+
+
+
+                    </p:menubar>
+
+                    <!--MAIN VERTICAL MENU BAR ENDS-->
+
+                    <!--BREAD CRUMB STARTS-->
+                    <p:breadCrumb>  
+                        <p:menuitem value="Dashboard" url="#" />  
+                        <p:menuitem value="Dashboard" url="#" />  
+
+                    </p:breadCrumb>
+                    <!--BREAD CRUMB ENDS-->
+                </p:layoutUnit>  
+
+                <!--LEFT SIDE MENU BAR BLOCK STARTS--> 
+                <p:layoutUnit position="west" header="Menu" style="border: none; width: 100%;" resizable="false" closable="true" collapsible="true">  
+
+                    <p:panelMenu style="width:190px; border:none; " > 
+                        <p:submenu  label="Dashboard"> </p:submenu> 
+                        <p:submenu label="Data Center" >
+                            <p:submenu label="Geography">
+                                <p:menuitem value="Country" actionListener="#{buttonBean.save}" icon="ui-icon-disk"  url="#" />  
+                                <p:menuitem value="State" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Zone" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="City" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Colleges Courses">
+                                <p:menuitem value="University" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="College" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Course Level" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Course" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Curriculum" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Packages">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                            <p:submenu label="Subscription Charges">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Ads">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                        </p:submenu>
+                        <p:submenu label="Business"> </p:submenu>
+                        <p:submenu label="Sales"> </p:submenu>
+                        <p:submenu label="Messages"> </p:submenu>
+                        <p:submenu label="Support"> </p:submenu>
+                    </p:panelMenu> 
+
+
+
+                </p:layoutUnit>  
+                <!--LEFT SIDE MENU BAR BLOCK ENDS-->
+
+                <!--    <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">  
+                        <h:outputText value="Right unit content." />  
+                    </p:layoutUnit>  -->
+
+
+                <!--MAIN CONTENT BLOCK STARTS--> 
+                <p:layoutUnit position="center" style="border: none" resizable="false" collapsible="false" >  
+                    <h:form id="form">  
+
+                        <!--MAIN CONTENT BLOCK ENDS-->
+                        <div class="row-fluid sortable">	
+                            <div class="box span12">
+                                <div class="box-header well" >
+                                    <h2><i class="icon-plus"></i> Extended Elements</h2>
+                                    <div class="box-icon">
+                                        <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
+                                        <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
+                                        <a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
+                                    </div>
+                                </div>
+                                
+                                <!--UI Table Starts HERE-->
+                                <div class="box-content">
+                                    <table class="table table-bordered table-striped">
+                                        
+                                        <!--File Upload-->
+                                        <tr>
+                                            <td><h3>Multiple File Upload</h3></td>
+                                            <td>
+                                                <p:fileUpload fileUploadListener="#{fileUploadController.handleFileUpload}" mode="simple" dragDropSupport="false"  
+                                                              multiple="true" update="messages" sizeLimit="100000" fileLimit="3" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+                                            </td>
+                                        </tr>
+                                        
+                                        <!--Ratings Or Reviews-->
+                                        <tr>
+                                            <td><h3>Star Rating</h3></td>
+                                            <td>
+                                                <p:rating value="#{ratingController.rating2}" stars="10" cancel="false" /> 
+                                            </td>
+                                        </tr>
+                                        
+                                        <!--Toggle-->
+                                        <tr>
+                                            <td><h3>Toggle Switch</h3></td>
+                                            <td>
+                                                <p:selectOneButton value="#{buttonBean.number}">  
+                                                    <f:selectItem itemLabel="ON" itemValue="1" />  
+                                                    <f:selectItem itemLabel="OFF" itemValue="2" /> 
+                                                </p:selectOneButton> 
+                                            </td>
+                                        </tr>
+                                        
+                                        <!--TextArea-->
+                                        <tr>
+                                            <td><h3>Auto Growing Textarea</h3></td>
+                                            <td>
+                                                <p:inputTextarea placeholder="Enter text"  autoResize="false"/>
+                                            </td>
+                                        </tr>
+                                        
+                                        <!--POP OVER Still pending-->
+                                        <tr>
+                                            <td><h3>Popover</h3></td>
+                                            <td>
+                                                <p:commandButton value="Hover for popover" id="btn" onmouseover="" style="float: left"/>  
+                                                <p:panel style="float: left;">On hover POP-Up display </p:panel>
+                                            </td>
+                                        </tr>
+                                        
+                                        <!--Slider-->
+                                        <tr>
+                                            <td><h3>Slider</h3></td>
+                                            <td>
+                                                <p:panelGrid columns="1" style="margin-bottom:10px">                      
+                                                    <h:outputText id="displayRange" value="Between #{sliderBean.number6} and #{sliderBean.number7}"/>                      
+                                                    <p:slider for="txt6,txt7" display="displayRange" style="width:400px" range="true"   
+                                                              displayTemplate="Between {min} and {max}"/>  
+                                                </p:panelGrid>
+                                                <h:inputHidden id="txt6" value="#{sliderBean.number6}" />  
+                                                <h:inputHidden id="txt7" value="#{sliderBean.number7}" />
+                                            </td>
+                                        </tr>
+                                        
+                                        <!--Dialog-->
+                                        <tr>
+                                            <td><h3>Dialog</h3></td>
+                                            <td>
+                                                <p:commandButton id="basic" value="Basic" onclick="PF('dlg1').show();" type="button" />  
+                                                <p:dialog id="basicDialog" header="Basic Dialog" widgetVar="dlg1">  
+                                                    <h:outputText value="Resistance to PrimeFaces is futile!" />  
+                                                </p:dialog>
+                                            </td>
+                                        </tr>
+                                        
+                                        <!--Tooltip-->
+                                        <tr>
+                                            <td><h3>Tooltip</h3></td>
+                                            <td>
+                                                <h:outputLink id="fade" value="#">  
+                                                    <p:commandButton value="Hover for tooltip" />  
+                                                </h:outputLink>  
+                                                <p:tooltip for="fade" value="Fade effect is used by default" showEffect="fade" hideEffect="fade" />
+                                            </td>
+                                        </tr>
+                                        
+                                        <!--Messages work outside the layout-->
+                                        <tr>
+                                            <td><h3>Messages</h3></td>
+                                            <td>   
+                                                <h:form id="form1">  
+                                                    <p:messages id="messages2" showDetail="true" autoUpdate="true" closable="true" />  
+
+                                                    <p:commandButton id="infoButton" value="Info" actionListener="#{messagesController.addInfo}"/>  
+                                                    <p:commandButton id="warnButton" value="Warn" actionListener="#{messagesController.addWarn}"/>  
+                                                    <p:commandButton id="errorButton" value="Error" actionListener="#{messagesController.addError}"/>  
+                                                    <p:commandButton id="fatalButton" value="Fatal" actionListener="#{messagesController.addFatal}"/>  
+                                                </h:form>  
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>	
+                                <!--UI Table Ends HERE-->
+                            </div><!--/span-->
+
+                        </div><!--/row-->
+                        <!--FOOTER BLOCK STARTS-->
+
+                    </h:form> 
+                </p:layoutUnit>  
+
+                <p:layoutUnit position="south" size="40" style=" border:none;  border-top: 1px solid #aaa; border-radius: 4px;" resizable="false" closable="true" collapsible="false">  
+                    <!--<h:outputText value="South unit content." />-->  
+                    <footer>
+                        <p class="pull-left">© <a href="http://www.moharto.com/" target="_blank">Moharto</a> 2014</p>
+                        <p class="pull-right"> Powered by: <a href="http://www.mangium.com/">Mangium</a></p>
+                    </footer>
+                </p:layoutUnit> 
+                <!--FOOTER BLOCK ENDS-->
+            </p:layout>
+        </h:form>
+    </h:body>
+</html>
