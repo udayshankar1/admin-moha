@@ -1,7 +1,9 @@
+package com.mangium.primecomponents;
 
-
-package com.mangium;
-
+/**
+ *
+ * @author uday
+ */
 import java.util.ArrayList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
@@ -10,8 +12,7 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class CollegeApprovalsTableArray {
-
-  public ArrayList table;
+   public ArrayList table;
     public ArrayList getArray(){
         return table;
     }
@@ -58,5 +59,5 @@ public class CollegeApprovalsTableArray {
           t4.setStatus("Active");
         table.add(t4);
     }
-    
+     
 }

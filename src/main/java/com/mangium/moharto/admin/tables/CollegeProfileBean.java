@@ -20,7 +20,7 @@ public class CollegeProfileBean {
 
     private CollegeProfileDataModel mediummessagemodel;
 
-//    private CollegeProfile selectedmessage;
+
     private CollegeProfile selectedcollege;
     
     private String country;
@@ -80,10 +80,10 @@ public class CollegeProfileBean {
     public CollegeProfileBean() {
         
         countries=new ArrayList();
-//        CollegeProfile a1=new CollegeProfile();
-//        a1.setCountry("India");
-//       
-//        countries.add(a1);
+        CollegeProfile a1=new CollegeProfile();
+        a1.setCountry("India");
+       
+        countries.add(a1);
         
 //        a1.setCity("");
 //        a1.setZone("");

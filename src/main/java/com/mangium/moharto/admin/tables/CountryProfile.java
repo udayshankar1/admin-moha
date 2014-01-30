@@ -11,6 +11,8 @@ public class CountryProfile {
     private String Alias;
     private String Status;
     private String Actions;
+    
+    
 
     public String getSI() {
         return SI;
@@ -60,5 +62,15 @@ public class CountryProfile {
         this.Actions = Actions;
     }
      
+    
+    private boolean country_status;
+
+    public boolean isCountry_status() {
+        return country_status;
+    }
+
+    public void setCountry_status(boolean country_status) {
+        this.country_status = country_status;
+    }
      
 }

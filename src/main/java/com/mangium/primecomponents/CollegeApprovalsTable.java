@@ -1,7 +1,9 @@
+package com.mangium.primecomponents;
 
-
-package com.mangium;
-
+/**
+ *
+ * @author uday
+ */
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
@@ -9,7 +11,6 @@ import javax.faces.bean.RequestScoped;
 @ManagedBean
 @RequestScoped
 public class CollegeApprovalsTable {
-
    private String college_name;
    private String date;
    private String university;
@@ -69,5 +70,6 @@ public class CollegeApprovalsTable {
    
     public CollegeApprovalsTable() {
     }
+
     
 }

@@ -79,10 +79,10 @@ public class CountryProfileBean {
 
     public CountryProfileBean() {
         
-        countries=new ArrayList();
-
-                
-
+        countries=new ArrayList<>();
+        
+        
+        
      CountryProfile c1=new CountryProfile();
      c1.setSI("1");
      c1.setName("AUSTRALIA");
@@ -91,15 +91,17 @@ public class CountryProfileBean {
      c1.setStatus("Active");
      c1.setActions("ACTIVE");
      c1.setAlias("Bharath");
-     
+     c1.setCountry_status(true);
+             
      CountryProfile c2=new CountryProfile();
      c2.setSI("2");
      c2.setName("INDIA");
-     c2.setStatus("EDIT");
-     c2.setAcronomy("YES");
+     c2.setStatus("Active");
+     c2.setAcronomy("IND");
      c2.setActions("ACTIVE");
-     
      c2.setAlias("Sharath");
+     
+     c2.setCountry_status(true);
      
      CountryProfile c3=new CountryProfile();
      c3.setSI("3");
@@ -109,6 +111,7 @@ public class CountryProfileBean {
      c3.setActions("ACTIVE");
      
      c3.setAlias("bahubali");
+     c3.setCountry_status(true);
      
      CountryProfile c4=new CountryProfile();
      c4.setSI("4");
@@ -118,6 +121,7 @@ public class CountryProfileBean {
      c4.setActions("ACTIVE");
      
      c4.setAlias("Kiran");
+     c4.setCountry_status(true);
      
      CountryProfile c5=new CountryProfile();
      c5.setSI("5");
@@ -127,6 +131,7 @@ public class CountryProfileBean {
      c5.setActions("ACTIVE");
      
      c5.setAlias("Swaroop");
+     c5.setCountry_status(true);
      
      CountryProfile c6=new CountryProfile();
      c6.setSI("6");
@@ -136,6 +141,7 @@ public class CountryProfileBean {
      c6.setActions("ACTIVE");
      
      c6.setAlias("Larence");
+     c6.setCountry_status(true);
     
      
     
