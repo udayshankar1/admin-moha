@@ -10,14 +10,7 @@
         <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"/>
         <meta name="author" content="Moharto"/>
 
-        <!--        <style type="text/css">
-        /*            body {
-                        padding-bottom: 40px;
-                    }
-                    .sidebar-nav {
-                        padding: 9px 0;
-                    }*/
-                </style>-->
+        
 
         <!--OVERRIDDEN STYLES STARTS-->
         <style type="text/css">
@@ -72,9 +65,9 @@
     </h:head>
 
     <h:body>
-        <h:form  >
+        <h:form id="form-main-page" >
             <p:layout fullPage="true" >  
-                <p:layoutUnit position="north"  style="border: none;" styleClass="span2 main-menu-span"   resizable="false" closable="false" collapsible="false">  
+                <p:layoutUnit position="north"  style="border: none;"    resizable="false" closable="false" collapsible="false">  
                     <!-- topbar starts -->
                     <div class="navbar" style="margin-bottom: 0%;">
                         <div class="navbar-inner">
@@ -215,29 +208,32 @@
 
                 <!--MAIN CONTENT BLOCK STARTS--> 
                 <p:layoutUnit position="center" style="border: none" resizable="false" collapsible="false" >  
-                    <h:form id="form">  
+                      
 
                         <!--MAIN CONTENT BLOCK STARTS-->
-                        <!--<p:growl id="messages" showDetail="true"/>-->
+                        <h:form id="form-countries-list">
+                        <p:growl id="messages" showDetail="true"/>
                         <p:dataTable id="multi" var="collegerow" value="#{countryProfileBean.mediummessagemodel}"   widgetVar="messagesTable" 
                                      emptyMessage="Unable to fetch data from database"  scrollRows="1"  
                                      scrollable="true" liveScroll="true" scrollHeight="150"    selection="#{countryProfileBean.colleges}" editable="true"    paginator="true" rows="10" paginatorPosition="bottom" draggableColumns="true" editMode="cell" >  
 
-<!--                            <p:ajax event="rowEdit" listener="#{countryProfileBean.onEdit}" update=":form:messages"/>
-                            <p:ajax event="rowEditCancel" listener="#{countryProfileBean.onCancel}" update=":form:messages"/>-->
+<!--                            <p:ajax event="rowEdit" listener="#{countryProfileBean.onEdit}" update=":form-countries-list:messages"/>
+                            <p:ajax event="rowEditCancel" listener="#{countryProfileBean.onCancel}" update=":form-countries-list:messages"/>-->
 
                             <f:facet name="header" class="header" >  
-
-                                <p:commandButton id="btn-add" value="Add"/>
-                                <p:commandButton id="btn-update" value="Update"/>
-                                <p:commandButton id="btn-delete" value="Delete"/>
+                                   
+                                <p:commandButton id="btn-list" value="List"/>
+                                <p:commandButton id="btn-add" value="Add" />
+                                <p:commandButton id="btn-activelist" value="Active list"/>
+                                <p:commandButton id="btn-inactivelist" value="Inactive List"/>
                                 <p:commandButton id="btn-import" value="Import"/><br/>
-                                <h:outputText value="List of Countries" />
+                                <h:outputText value="List of Countries"  />
                             </f:facet>
+                            
                             //check box column
                             <p:column selectionMode="multiple" style="width:3%;" />  
 
-                            <p:column headerText="Serial No."  >  
+                            <p:column headerText="SNo."  >  
                                 <p:cellEditor>
                                     <f:facet name="output">  
                                         <h:outputText value="#{collegerow.SI}" />  
@@ -265,25 +261,26 @@
                                         <h:outputText value="#{collegerow.acronomy}" />  
                                     </f:facet>  
                                     <f:facet name="input">  
-                                        <p:inputText value="#{collegerow.acronomy}" style="width:100%" />  
+                                        <p:inputText value="#{collegerow.acronomy}"  />  
                                     </f:facet>  
                                 </p:cellEditor>
                             </p:column>  
 
                             <p:column headerText="Alias">  
-                                <a> <span class="label label-success">Yes</span></a>
+                                <a> <span class="label label-success">#{collegerow.alias}</span></a>
+                                
                             </p:column>  
 
                             <p:column headerText="Status">  
-                                <a> <span class="label label-success">Active</span></a>
+                                <a> <span class="label label-success">#{collegerow.status}</span></a>
                             </p:column>  
 
                             <p:column headerText="Actions">  
                                 
-                                <a> <span class="label label-success">View</span></a>
+                                <a> <span class="label label-info">View</span></a>
                                 <a> <span class="label label-success">Update</span></a>
-                                <a> <span class="label label-success">Archieve</span></a>
-                                <a> <span class="label label-success">Delete</span></a>
+                                <a> <span class="label label-inverse">Archive</span></a>
+                                <a> <span class="label label-important">Delete</span></a>
                             </p:column>
 
 

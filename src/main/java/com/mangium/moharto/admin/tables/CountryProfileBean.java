@@ -20,7 +20,7 @@ public class CountryProfileBean {
 
     private CountryProfileDataModel mediummessagemodel;
 
-//    private CollegeProfile selectedmessage;
+
     private CountryProfile selectedcollege;
     
     private String country;
@@ -80,39 +80,16 @@ public class CountryProfileBean {
     public CountryProfileBean() {
         
         countries=new ArrayList();
-//        CountryProfile a1=new CountryProfile();
-//        a1.setCountry("India");
-//       
-//        countries.add(a1);
-        
-//        a1.setCity("");
-//        a1.setZone("");
-//        a1.setUniversity("");
-//        
-//        
-//          CollegeProfile a2=new CountryProfile();
-//        a2.setCountry("China");
-//         a2.setState("");
-//        a2.setCity("");
-//        a2.setZone("");
-//        a2.setUniversity("");
-//        
-//          CollegeProfile a3=new CollegeProfile();
-//        a3.setCountry("Nepal");
-//         a3.setState("");
-//        a2.setCity("");
-//        a2.setZone("");
-//        a2.setUniversity("");
+
                 
 
      CountryProfile c1=new CountryProfile();
      c1.setSI("1");
      c1.setName("AUSTRALIA");
-     c1.setStatus("AST");
-     c1.setAcronomy("YES");
+     c1.setAcronomy("AUS");
+     c1.setAlias("yes");
+     c1.setStatus("Active");
      c1.setActions("ACTIVE");
-     c1.setAlias("AUS");
-     
      
      CountryProfile c2=new CountryProfile();
      c2.setSI("2");
@@ -156,7 +133,7 @@ public class CountryProfileBean {
     
      
     
-        colleges = new ArrayList<CountryProfile>();
+        colleges = new ArrayList<>();
         
         colleges.add(c1);
         colleges.add(c2);

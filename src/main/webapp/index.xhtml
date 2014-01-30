@@ -1,686 +1,685 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
     <h:head>
 
-        <meta charset="utf-8"></meta>
-        <title>Moharto for online admission - to  study MBA BTECH BE in top colleges in india</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-        <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"></meta>
-        <meta name="author" content="Moharto"></meta>
+        <meta charset="utf-8"/>
+        <title>Moharto for online admission -to  study MBA BTech BE in top colleges in india</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"/>
+        <meta name="author" content="Moharto"/>
 
-        <!-- The styles -->
-        
 
+        <!--        <style type="text/css">
+        /*            body {
+                        padding-bottom: 40px;
+                    }
+                    .sidebar-nav {
+                        padding: 9px 0;
+                    }*/
+                </style>-->
+
+        <!--OVERRIDDEN STYLES STARTS-->
         <style type="text/css">
-            body {
-                padding-bottom: 40px;
+            .ui-dashboard-column{
+                float:none !important;
             }
-            .sidebar-nav {
-                padding: 9px 0;
+            .ui-widget-header{
+                color: #0088cc!important;
+                text-shadow:none;
+
+            }
+            .ui-panelmenu .ui-panelmenu-header {
+                cursor: pointer;
+                position: relative;
+                margin: 0;
+                zoom: 1;
+                height: 35px;
+                font-size: 14px!important;
+            }
+            .ui-layout-north .ui-layout-unit-content {
+                overflow: visible !important;
+            }
+
+            .ui-layout-north {
+                z-index: 30 !important;
+                overflow: visible !important;
+            }
+            .tbl{
+                font-size: 13px!important;
+                width: 100%;
+            }
+            .tbl thead span{
+                color:#555555!important;
+                font-size: 13px!important;
+                font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+            }
+            .ui-widget-content {
+                color: #555555!important;
+                font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+                font-size: 13px;                
+            }
+            .ui-datatable thead th, .ui-datatable tfoot td {
+                text-align: left;
             }
         </style>
-        
-            <!--PUT ALL CSS FILES IN WEBAPP/RESOURCES/CSS FILE-->
-        <h:outputStylesheet id="bs-css" library="css" name="bootstrap-cerulean.css"/>    
+        <!--OVERRIDDEN STYLES ENDS-->
+
+        <h:outputStylesheet id="bs-css" library="css" name="bootstrap-cerulean.css"/>
         <h:outputStylesheet library="css" name="bootstrap-responsive.css"/>
         <h:outputStylesheet library="css" name="charisma-app.css"/>
-        <h:outputStylesheet library="css" name="jquery-ui-1.8.21.custom.css"/>
-        <h:outputStylesheet library="css" name="fullcalendar.css"/>
-        <h:outputStylesheet library="css" name="fullcalendar.print.css"/>
-        <h:outputStylesheet library="css" name="chosen.css"/>
-        <h:outputStylesheet library="css" name="uniform.default.css"/>
-        <h:outputStylesheet library="css" name="colorbox.css"/>
-        <h:outputStylesheet library="css" name="jquery.cleditor.css"/>
-        <h:outputStylesheet library="css" name="jquery.noty.css"/>
-        <h:outputStylesheet library="css" name="noty_theme_default.css"/>
-        <h:outputStylesheet library="css" name="elfinder.min.css"/>
-        <h:outputStylesheet library="css" name="elfinder.theme.css"/>
-        <h:outputStylesheet library="css" name="jquery.iphone.toggle.css"/>
         <h:outputStylesheet library="css" name="opa-icons.css"/>
-        <h:outputStylesheet library="shortcut icon" name="uploadify.css"/>
-        <h:outputStylesheet library="shortcut icon" name="bootstrap-cerulean.css"/>
 
-        <h:outputStylesheet library="css" name="img/favicon.ico"/>
-        
-        
-        
-            
 
-        <!-- The styles -->
-        <!--MAIN CSS FOR CSS-->
-        
-        <!--<link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet"></link>-->
-        
-        <style type="text/css">
-            body {
-                padding-bottom: 40px;
-            }
-            .sidebar-nav {
-                padding: 9px 0;
-            }
-        </style>
-       
 
-        <!-- The fav icon -->
-        <link rel="shortcut icon" href="img/favicon.ico"></link>
+        <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
 
 
     </h:head>
 
     <h:body>
-        <!-- topbar starts -->
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="container-fluid">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <!--<a class="brand" href="index.html"> <img alt="Charisma Logo" src="img/logo20.png" /> <span>Charisma</span></a>-->
-                    <a class="brand" href="index.html"  > <img alt="Moharto Logo" src="img/moharto-logo-buttion.png" /><span style="font-family: serif;">oharto</span></a>
-                    <!-- theme selector starts -->
-                    <div class="btn-group pull-right theme-container" >
-                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="icon-tint"></i><span class="hidden-phone"> Change Theme / Skin</span>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" id="themes">
-                            
-                            <li><a data-value="cerulean" href="#"><i class="icon-blank"></i> Cerulean</a></li>
-                            
-<!--                            <li><a data-value="cyborg" href="#"><i class="icon-blank"></i> Cyborg</a></li>
-                            <li><a data-value="redy" href="#"><i class="icon-blank"></i> Redy</a></li>
-                            <li><a data-value="journal" href="#"><i class="icon-blank"></i> Journal</a></li>
-                            <li><a data-value="simplex" href="#"><i class="icon-blank"></i> Simplex</a></li>
-                            <li><a data-value="slate" href="#"><i class="icon-blank"></i> Slate</a></li>
-                            <li><a data-value="spacelab" href="#"><i class="icon-blank"></i> Spacelab</a></li>
-                            <li><a data-value="united" href="#"><i class="icon-blank"></i> United</a></li>
-                            <li><a data-value="classic" href="#"><i class="icon-blank"></i> Classic</a></li>-->
-                        </ul>
-                    </div>
-                    <!-- theme selector ends -->
 
-                    <!-- user dropdown starts -->
-                    <div class="btn-group pull-right" >
-                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="icon-user"></i><span class="hidden-phone"> admin</span>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Profile</a></li>
-                            <li class="divider"></li>
-                            <li><a href="login.html">Logout</a></li>
-                        </ul>
-                    </div>
-                    <!-- user dropdown ends -->
+        <h:form  >
 
-                    <div class="top-nav nav-collapse">
-                        <ul class="nav">
-                            <li><a href="#">Visit Site</a></li>
-                            <li>
-                                <form class="navbar-search pull-left">
-                                    <!--<input placeholder="Search" class="search-query span2" name="query" type="text">-->
-                                </form>
-                            </li>
-                        </ul>
+            <p:layout fullPage="true" >  
+
+                <p:layoutUnit position="north"  style="border: none;"    resizable="false" closable="false" collapsible="false">  
+
+                    <!-- topbar starts -->
+                    <div class="navbar" style="margin-bottom: 0%;">
+                        <div class="navbar-inner">
+                            <div class="container-fluid">
+                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </a>
+
+                                <a class="brand" href="index.html"  > <img alt="Moharto Logo" src="img/moharto-logo-buttion.png" /><span style="font-family: serif;">oharto</span></a>
+
+                                <!-- user dropdown starts -->
+                                <p:selectOneMenu value="user-dropdown" styleClass="btn-group pull-right" >  
+                                    <f:selectItem itemLabel="Administrator" itemValue="" />  
+                                    <f:selectItem itemLabel="Settings"  itemValue="" />  
+                                    <f:selectItem itemLabel="Logout"  itemValue="" />  
+                                </p:selectOneMenu>
+                                <!-- user dropdown ends -->
+
+
+
+                                <div class="top-nav nav-collapse">
+                                    <ul class="nav">
+                                        <!--<li><a href="http://www.moharto.com">Visit moharto site</a></li>-->
+                                        <li>
+                                            <form class="navbar-search pull-left">
+                                                <!--<input placeholder="Search" class="search-query span2" name="query" type="text"/>-->
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--/.nav-collapse -->
+                            </div>
+                        </div>
+
                     </div>
-                    <!--/.nav-collapse -->
-                    
+                    <!-- topbar ends -->
+
+                    <!--MAIN VERTICAL MENU BAR STARTS--> 
+
+                    <p:growl id="messages"/>
+                    <p:menubar autoDisplay="false" style=" border: none">  
+                        <p:submenu label="Dashboard" icon="ui-icon-document"  >
+
+                        </p:submenu>
+                        <p:submenu label="Datacenter" icon="ui-icon-document">
+                            <p:submenu label="Geography" icon="ui-icon-contact">  
+                                <p:menuitem value="Country" url="#"/>  
+                                <p:menuitem value="State" url="#" />
+                                <p:menuitem value="Zone" url="#" />  
+                                <p:menuitem value="City" url="#" />  
+                            </p:submenu>
+                            <p:submenu label="Colleges" icon="ui-icon-contact">  
+                                <p:menuitem value="University" url="#"/>  
+                                <p:menuitem value="College" url="#" />
+                                <p:menuitem value="Course Level" url="#" />  
+                                <p:menuitem value="Course" url="#" />  
+                            </p:submenu>
+                            <p:submenu label="Packages" icon="ui-icon-contact">  
+                                <p:menuitem value="Packages List" url="#"/>
+                                <p:menuitem value="Add Packages" url="#"/>
+                            </p:submenu>
+                            <p:submenu label="Ads" icon="ui-icon-contact">  
+                                <p:menuitem value="Ads List" url="#"/>
+                                <p:menuitem value="Add Ad" url="#"/>
+                            </p:submenu>
+                        </p:submenu>  
+
+                        <p:submenu label="Bussiness" icon="ui-icon-pencil">  
+                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />  
+                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />  
+                        </p:submenu>  
+
+                        <p:submenu label="Sales" icon="ui-icon-help">  
+                            <p:menuitem value="Contents" url="#" />  
+                            <p:submenu label="Search" icon="ui-icon-search">  
+                                <p:submenu label="Text">  
+                                    <p:menuitem value="Workspace" url="#" />  
+                                </p:submenu>  
+                                <p:menuitem value="File" url="#" />  
+                            </p:submenu>  
+                        </p:submenu>  
+
+                        <p:submenu label="Messages" icon="ui-icon-gear">  
+                            <p:submenu label="Ajax" icon="ui-icon-refresh">  
+                                <p:menuitem value="Save" actionListener="#{menuBean.save}" icon="ui-icon-disk" update="messages"/>  
+                                <p:menuitem value="Update" actionListener="#{menuBean.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>  
+                            </p:submenu>  
+                            <p:submenu label="Non-Ajax" icon="ui-icon-newwin">  
+                                <p:menuitem value="Delete" actionListener="#{menuBean.delete}" icon="ui-icon-close" update="messages" ajax="false"/>  
+                            </p:submenu>  
+                        </p:submenu>  
+
+
+
+
+                    </p:menubar>
+
+                    <!--MAIN VERTICAL MENU BAR ENDS-->
+
+                    <!--BREAD CRUMB STARTS-->
+                    <p:breadCrumb>  
+                        <p:menuitem value="Dashboard" url="#" />  
+                        <p:menuitem value="Dashboard" url="#" />  
+
+                    </p:breadCrumb>
+                    <!--BREAD CRUMB ENDS-->
+                </p:layoutUnit>  
+
+                <!--LEFT SIDE MENU BAR BLOCK STARTS--> 
+                <p:layoutUnit position="west" header="Menu" style="border: none; width: 100%;" resizable="false" closable="true" collapsible="true">  
+
+                    <p:panelMenu style="width:190px; border:none; " > 
+                        <p:submenu  label="Dashboard"> </p:submenu> 
+                        <p:submenu label="Data Center" >
+                            <p:submenu label="Geography">
+                                <p:menuitem value="Country" actionListener="#{buttonBean.save}" icon="ui-icon-disk"  url="#" />  
+                                <p:menuitem value="State" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Zone" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="City" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Colleges Courses">
+                                <p:menuitem value="University" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="College" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Course Level" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Course" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Curriculum" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Packages">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                            <p:submenu label="Subscription Charges">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Ads">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                        </p:submenu>
+                        <p:submenu label="Business"> </p:submenu>
+                        <p:submenu label="Sales"> </p:submenu>
+                        <p:submenu label="Messages"> </p:submenu>
+                        <p:submenu label="Support"> </p:submenu>
+                    </p:panelMenu> 
+
+
+
+                </p:layoutUnit>  
+                <!--LEFT SIDE MENU BAR BLOCK ENDS-->
+
+                <!--    <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">  
+                        <h:outputText value="Right unit content." />  
+                    </p:layoutUnit>  -->
+
+
+                <!--MAIN CONTENT BLOCK STARTS--> 
+                <p:layoutUnit position="center" style="border: none" resizable="false" collapsible="false" >  
+                    <h:form>  
+
+
+                        <!--DASHBOARD BLOCK STARTS-->
+                        <h:form id="dashboard-form">  
+
+                            <p:growl id="growl" showDetail="true" />  
+
+                            <p:dashboard id="board" model="#{dashboardBean.model}"  >  
+                                <p:ajax event="reorder" listener="#{dashboardBean.handleReorder}" update="growl" /> 
+
+                                <p:panel id="dboard-squrebox-updates" header="Latest updatess" closable="true" toggleable="true" style="border:none;">
+                                    <!--TOP SQUARE BOXES WITH UPDATES STARTS-->
+
+                                    <div class="sortable row-fluid" style="margin-top: 1%">
+                                        <a data-rel="tooltip" title="6 new members." class="well span3 top-block" href="#">
+                                            <span class="icon32 icon-red icon-transfer-ew"></span>
+                                            <div>Traffic</div>
+                                            <div>507</div>
+                                            <span class="notification">6</span>
+                                        </a>
+
+                                        <a data-rel="tooltip" title="4 new pro members." class="well span3 top-block" href="#">
+                                            <span class="icon32 icon-color icon-star-on"></span>
+                                            <div>Enrollments</div>
+                                            <div>228</div>
+                                            <span class="notification green">4</span>
+                                        </a>
+
+                                        <a data-rel="tooltip" title="$34 new sales." class="well span3 top-block" href="#">
+                                            <span class="icon32 icon-color icon-cart"></span>
+                                            <div>Transactions</div>
+                                            <div>13320 <del>&#2352;</del></div>
+                                            <span class="notification yellow">34<del>&#2352;</del></span>
+                                        </a>
+
+                                        <a data-rel="tooltip" title="12 new messages." class="well span3 top-block" href="#">
+                                            <span class="icon32 icon-red icon-user"></span>
+                                            <div>Subscriptions</div>
+                                            <div>25</div>
+                                            <span class="notification red">12</span>
+                                        </a>
+
+                                    </div>
+
+                                    <!--TOP SQUARE WITH UPDATES ENDS-->
+                                </p:panel>
+
+                                <p:panel id="dboard-college-approvals" header="List of new colleges for approval"  closable="true" toggleable="true" >  
+                                   
+                                    <p:dataTable value="#{collegeApprovalsTableArray.array}" var="tab" cellSeparator="false " styleClass="tbl">
+                                        <p:column headerText="College Name">
+                                            <h:outputText value="#{tab.college_name}"/>
+                                        </p:column>
+                                        <p:column headerText="Date Rregistered">
+                                            <h:outputText value="#{tab.date}"/>
+                                        </p:column>
+                                        <p:column headerText="University">
+                                            <h:outputText value="#{tab.university}"/>
+                                        </p:column>
+                                        <p:column headerText="Status">
+
+                                            <p:commandButton value="#{tab.status}" style="background: #669533;  color: #ffffff; text-shadow:none; font-size: 13px;"/>
+                                        </p:column>
+                                        <p:column headerText="City">
+
+                                            <h:outputText value="#{tab.city}"/>
+                                        </p:column>
+                                        <p:column headerText="Package">
+
+                                            <h:outputText value="#{tab.packages}"/>
+                                        </p:column>
+                                        <p:column headerText="Actions">
+
+                                            <!--<p:commandButton value="Approve" styleClass="label label-success" icon="ui-icon-check"/>-->
+                                            <p:commandButton style="background: #73a839;  color: #ffffff; text-shadow:none; font-size: 13px;" value="Approve" icon="ui-icon-check"/>
+                                            <p:commandButton style="background: #9e6ab8;  color: #ffffff; text-shadow:none; font-size: 13px;" value="Message" icon="ui-icon-comment"/>
+                                            <p:commandButton style="background: #D83137;  color: #ffffff; text-shadow:none; font-size: 13px;" value="Reject" icon="ui-icon-close"/>
+
+                                        </p:column>
+                                    </p:dataTable>
+
+                                    <!--COLLEGES TABLE STARTS-->
+                                    <!--                                    <div class="box-content" style="width:100%">
+                                                                            <table class="table table-striped table-bordered bootstrap-datatable datatable">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>College name</th>
+                                                                                        <th>Date registered</th>
+                                                                                        <th>University</th>
+                                                                                        <th>Status</th>
+                                                                                        <th>City</th>
+                                                                                        <th>Package</th>
+                                                                                        <th>Actions</th>
+                                                                                    </tr>
+                                                                                </thead>   
+                                                                                <tbody>
+                                                                                    PROTOTYPE TABLE ROW STARTS
+                                                                                    <tr>
+                                                                                        <td>Ramaiah college</td>
+                                                                                        <td class="center">01/01/2014</td>
+                                                                                        <td class="center">VTU</td>
+                                                                                        <td class="center">
+                                                                                            <span class="label label-success">Active</span>
+                                                                                        </td>
+                                                                                        <td class="center">Banglore</td>
+                                                                                        <td class="center">Free</td>
+                                                                                        <td class="center">
+                                                                                            <a class="btn btn-success" href="#">
+                                                                                                <i class="icon-zoom-in icon-white"></i>  
+                                                                                                Approve                                            
+                                                                                            </a>
+                                                                                            <a class="btn btn-info" href="#">
+                                                                                                <i class="icon-edit icon-white"></i>  
+                                                                                                Message                                            
+                                                                                            </a>
+                                                                                            <a class="btn btn-danger" href="#">
+                                                                                                <i class="icon-trash icon-white"></i> 
+                                                                                                Reject
+                                                                                            </a>
+                                    
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    PROTOTYPE TABLE ENDS
+                                                                                    <tr>
+                                                                                        <td>Brindavan college</td>
+                                                                                        <td class="center">01/12/2013</td>
+                                                                                        <td class="center">VTU</td>
+                                                                                        <td class="center">
+                                                                                            <span class="label label-success">Active</span>
+                                                                                        </td>
+                                                                                        <td class="center">Banglore</td>
+                                                                                        <td class="center">Gold</td>
+                                                                                        <td class="center">
+                                                                                            <a class="btn btn-success" href="#">
+                                                                                                <i class="icon-zoom-in icon-white"></i>  
+                                                                                                Approve                                            
+                                                                                            </a>
+                                                                                            <a class="btn btn-info" href="#">
+                                                                                                <i class="icon-edit icon-white"></i>  
+                                                                                                Message                                            
+                                                                                            </a>
+                                                                                            <a class="btn btn-danger" href="#">
+                                                                                                <i class="icon-trash icon-white"></i> 
+                                                                                                Reject
+                                                                                            </a>
+                                    
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>City college</td>
+                                                                                        <td class="center">01/011/2013</td>
+                                                                                        <td class="center">Banglore University</td>
+                                                                                        <td class="center">
+                                                                                            <span class="label label-warning">Idle</span>
+                                                                                        </td>
+                                                                                        <td class="center">Banglore</td>
+                                                                                        <td class="center">Free</td>
+                                                                                        <td class="center">
+                                                                                            <a class="btn btn-success" href="#">
+                                                                                                <i class="icon-zoom-in icon-white"></i>  
+                                                                                                Approve                                            
+                                                                                            </a>
+                                                                                            <a class="btn btn-info" href="#">
+                                                                                                <i class="icon-edit icon-white"></i>  
+                                                                                                Message                                            
+                                                                                            </a>
+                                                                                            <a class="btn btn-danger" href="#">
+                                                                                                <i class="icon-trash icon-white"></i> 
+                                                                                                Reject
+                                                                                            </a>
+                                    
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>Oakridge college</td>
+                                                                                        <td class="center">01/011/2013</td>
+                                                                                        <td class="center">Mysore</td>
+                                                                                        <td class="center">
+                                                                                            <span class="label label-important">In-Active</span>
+                                                                                        </td>
+                                                                                        <td class="center">Mysore</td>
+                                                                                        <td class="center">Free</td>
+                                                                                        <td class="center">
+                                                                                            <a class="btn btn-success" href="#">
+                                                                                                <i class="icon-zoom-in icon-white"></i>  
+                                                                                                Approve                                            
+                                                                                            </a>
+                                                                                            <a class="btn btn-info" href="#">
+                                                                                                <i class="icon-edit icon-white"></i>  
+                                                                                                Message                                            
+                                                                                            </a>
+                                                                                            <a class="btn btn-danger" href="#">
+                                                                                                <i class="icon-trash icon-white"></i> 
+                                                                                                Reject
+                                                                                            </a>
+                                    
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>Christ college</td>
+                                                                                        <td class="center">01/11/2013</td>
+                                                                                        <td class="center">Christ</td>
+                                                                                        <td class="center">
+                                                                                            <span class="label label-success">Active</span>
+                                                                                        </td>
+                                                                                        <td class="center">Banglore</td>
+                                                                                        <td class="center">Platinum</td>
+                                                                                        <td class="center">
+                                                                                            <a class="btn btn-success" href="#">
+                                                                                                <i class="icon-zoom-in icon-white"></i>  
+                                                                                                Approve                                            
+                                                                                            </a>
+                                                                                            <a class="btn btn-info" href="#">
+                                                                                                <i class="icon-edit icon-white"></i>  
+                                                                                                Message                                            
+                                                                                            </a>
+                                                                                            <a class="btn btn-danger" href="#">
+                                                                                                <i class="icon-trash icon-white"></i> 
+                                                                                                Reject
+                                                                                            </a>
+                                    
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>            
+                                                                        </div>-->
+                                    <!--COLLEGES TABLE ENDS-->
+                                </p:panel>  
+
+
+                                <p:panel id="dboard-latest-messages" header="Latest Messages" closable="true" toggleable="true"  >  
+
+                                    <!--                                    <p:tabView id="tabView">  
+                                    
+                                                                              
+                                                                            <p:tab id="tab2" title="Text Reviews">  
+                                                                                <h:panelGrid columns="2" cellpadding="10">  
+                                                                                    <p:graphicImage id="tab1Img" value="/images/godfather/godfather1.jpg" />  
+                                                                                    <h3><h:outputText id="tab1Text"  
+                                                                                                  value="The violence whenever anything stands against the good of the family." /></h3>
+                                                                                    <a href="#">
+                                                                                        <img class="dashboard-avatar" alt="Usman" src="http://www.gravatar.com/avatar/3232415a0380253cfffe19163d04acab.png?s=50"></img></a>
+                                                                                     <a href="#">Maalokam </a>
+                                                                                     <strong>Hyderabad</strong><br/>
+                                                                                    
+                                                                                    <a href="#">City College 
+                                                                                    </a>  MBA Finance<br/>
+                                                                                </h:panelGrid>  
+                                                                            </p:tab>
+                                                                            <p:tab id="tab1" title="Video Reviews">  
+                                                                                <h:panelGrid columns="2" cellpadding="10">  
+                                                                                    <p:graphicImage id="tab1Img" value="/images/godfather/godfather1.jpg" />  
+                                                                                    <h:outputText id="tab1Text"  
+                                                                                                  value="The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.  
+                                                                                                  His beloved son Michael has just come home from the war, but does not intend to become part of his father's business. T  
+                                                                                                  hrough Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, kind and benevolent to those who give respect,  
+                                                                                                  but given to ruthless violence whenever anything stands against the good of the family." />  
+                                                                                </h:panelGrid>  
+                                                                            </p:tab>
+                                                                            
+                                                                        </p:tabView>-->
+                                    <!--MESSAGES TABLE STARTS-->
+                                    <div class="box-content">
+                                        <table class="table table-striped table-bordered bootstrap-datatable datatable">
+                                            <thead>
+                                                <tr>
+                                                    <th>From</th>
+                                                    <th>Type</th>
+                                                    <th>Subject</th>
+                                                    <th>Description</th>
+                                                    <th>Date</th>
+                                                    <th>Time</th>
+                                                    <th>Flag</th>
+                                                </tr>
+                                            </thead>   
+                                            <tbody>
+                                                TABLE ROW STARTS
+                                                <tr>
+
+                                                    <td class="center">Sharan</td>
+                                                    <td class="center">feedback</td>
+                                                    <td class="center">Good site</td>
+                                                    <td class="center">Its a good site</td>
+                                                    <td class="center">01/011/2013</td>
+                                                    <td class="center">5.30pm</td>
+                                                    <td class="center"><span class="label label-success">Read</span> </td>
+                                                </tr>
+                                                PROTOTYPE TABLE ENDS
+                                                <tr>
+
+                                                    <td class="center">Karan</td>
+                                                    <td class="center">feedback</td>
+                                                    <td class="center">improve colleges</td>
+                                                    <td class="center">Its a good site</td>
+                                                    <td class="center">01/011/2013</td>
+                                                    <td class="center">5.30pm</td>
+                                                    <td class="center"><span class="label label-success">Read</span> </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td class="center">Swaran</td>
+                                                    <td class="center">enquiry</td>
+                                                    <td class="center">Good site</td>
+                                                    <td class="center">Its a good site</td>
+                                                    <td class="center">01/011/2013</td>
+                                                    <td class="center">5.30pm</td>
+                                                    <td class="center"><span class="label label-warning">unread</span> </td>
+                                                </tr>
+                                                <tr>
+
+                                                    <td class="center">Charan</td>
+                                                    <td class="center">Request</td>
+                                                    <td class="center">Need MBA</td>
+                                                    <td class="center">can i do MBA in VTU</td>
+                                                    <td class="center">01/011/2013</td>
+                                                    <td class="center">6.30pm</td>
+                                                    <td class="center"><span class="label label-warning">Unread</span> </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>            
+                                    </div>
+                                    <!--MESSAGES TABLE ENDS-->
+                                </p:panel>  
+
+                                <p:panel id="dboard-latest-reviews" header="Latest Reviews" closable="true" toggleable="true"  >  
+
+                                    <div class="box-content">
+                                        <ul class="nav nav-tabs" id="myTab">
+                                            <li class="active"><a href="#info">Text</a></li>
+                                            <li><a href="#custom">Video</a></li>
+                                            <li><a href="#messages">Message</a></li>
+                                        </ul>
+
+                                        <div id="myTabContent" class="tab-content">
+                                            <div class="tab-pane active" id="info">
+                                                <center> <h3>Moharto helped me  to get seat</h3> </center>
+
+
+                                                <div class="box-content">
+                                                    <ul class="dashboard-list">
+                                                        <li>
+                                                            <a href="#">
+                                                                <img class="dashboard-avatar" alt="Usman" src="http://www.gravatar.com/avatar/3232415a0380253cfffe19163d04acab.png?s=50"></img></a>
+                                                            <a href="#">Maalokam </a>
+                                                            <strong>Hyderabad</strong><br/>
+
+                                                            <a href="#">City College 
+                                                            </a>  MBA Finance<br/>
+
+                                                        </li>
+                                                    </ul>
+
+
+
+                                                    <p>I have successfully completed my MBA marketing education course in 2011 and got placed in a very good Reputed company. It was good with the college hostel facilities and campus."</p>
+                                                    <center> <a class="btn btn-success" href="#">
+                                                            <i class="icon-zoom-in icon-white" ></i>  
+                                                            Add to Testimonial                                            
+                                                        </a> </center>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane" id="custom">
+                                                <h3>Custom <small>small text</small></h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Donec consectetur, velit a pharetra ultricies, diam lorem lacinia risus, ac commodo orci erat eu massa. Sed sit amet nulla ipsum. Donec felis mauris, vulputate sed tempor at, aliquam a ligula. Pellentesque non pulvinar nisi.</p>
+                                            </div>
+                                            <div class="tab-pane" id="messages">
+                                                <h3>Messages <small>small text</small></h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Donec consectetur, velit a pharetra ultricies, diam lorem lacinia risus, ac commodo orci erat eu massa. Sed sit amet nulla ipsum. Donec felis mauris, vulputate sed tempor at, aliquam a ligula. Pellentesque non pulvinar nisi.</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </p:panel>  
+
+                                <p:panel id="dboard-college-renuals" header="Upcoming Renewals" closable="true" toggleable="true"  >  
+                                    <h:outputText value="Renewals Content" />  
+                                </p:panel>  
+
+                                <p:panel id="dboard-latst-admissions" header="Latest Admissions" closable="true" toggleable="true"  >  
+                                    <h:outputText value="Admissions Content" />  
+                                </p:panel>  
+
+                                <p:panel id="dboard-latest-ads" header="Latest Ads" closable="true" toggleable="true"  >  
+                                    <h:outputText value="Latest Messages" />  
+                                </p:panel>  
+
+                                <p:panel id="dboard-ads-renuals" header="Expiring Ads" closable="true" toggleable="true"  >  
+                                    <h:outputText value="Reviews Content"  />  
+                                </p:panel>  
+
+                                <p:panel id="dboard-latest-tx" header="Latest Transactions" closable="true" toggleable="true"  >  
+                                    <h:outputText value="Renewals Content" />  
+                                </p:panel>  
+
+                                <p:panel id="dboard-mis" header="MIS" closable="true" toggleable="true"  >  
+                                    <h:outputText value="Admissions Content" />  
+                                </p:panel>
+
+                            </p:dashboard>  
+
+
+                        </h:form>  
+                        <!--DASHBOARD BLOCK ENDS-->
+
+                    </h:form> 
+                </p:layoutUnit>  
+                <!--MAIN CONTENT BLOCK ENDS-->
+
+                <!--FOOTER BLOCK STARTS-->
+                <p:layoutUnit position="south" size="40" style=" border:none;  border-top: 1px solid #aaa; border-radius: 4px;" resizable="false" closable="true" collapsible="false">  
+                    <!--<h:outputText value="South unit content." />-->  
+                    <footer>
+                        <p class="pull-left">© <a href="http://www.moharto.com/" target="_blank">Moharto</a> 2014</p>
+                        <p class="pull-right"> Powered by: <a href="http://www.mangium.com/">Mangium</a></p>
+                    </footer>
+                </p:layoutUnit> 
+                <!--FOOTER BLOCK ENDS-->
+
+            </p:layout>
+
+            <noscript>
+                <div class="alert alert-block span10">
+                    <h4 class="alert-heading">Warning!</h4>
+                    <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
                 </div>
-            </div>
-        </div>
-        <!-- topbar ends -->
-        
-        <div class="container-fluid">
-            <div class="row-fluid">
+            </noscript>
 
-                    <!--LEFT SIDE MENUBAR STARTS-->
-                <!-- left menu starts -->
-                <div class="span2 main-menu-span">
-                    <div class="well nav-collapse sidebar-nav">
-                        <ul class="nav nav-tabs nav-stacked main-menu">
-                            <li class="nav-header hidden-tablet">Main</li>
-                            <li><a class="ajax-link" href="index.html"><i class="icon-home"></i><span class="hidden-tablet"> Dashboard</span></a></li>
-
-                            <li><a class="ajax-link" href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> Data Center</span></a>
-                                <ul>
-                                    <li><a href='#'><span class="hidden-tablet" >Geography</span></a>
-                                        <ul>
-                                            <li><a href="countries-list.html"><span  class="hidden-tablet" >Country </span></a></li>
-                                            <li><a href="state.html"><span class="hidden-tablet" >State </span></a></li>
-                                            <li><a href="zone.html"><span class="hidden-tablet">Zone </span></a></li>
-                                            <li><a href="cities.html"><span class="hidden-tablet" >City </span></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-
-                                <ul>
-                                    <li><a class="ajax-link" href='#'><span>Colleges and Courses</span></a>
-
-                                        <ul>
-                                            <li><a href="universities.html"><span class="hidden-tablet">University </span></a></li>
-                                            <li><a href="#"><span class="hidden-tablet">College</span></a></li>
-                                            <li><a href="#"><span class="hidden-tablet"> Course Level</span></a></li>
-                                            <li><a href="#"><span class="hidden-tablet">  Course</span></a></li>
-                                            <li><a href="#"><span class="hidden-tablet"> Curriculum</span></a></li>
-                                        </ul>
-                                    </li>
-                                </ul> 
-
-                                <ul>
-                                    <li><a href='#'><span>Packages</span></a>
-
-                                        <ul>
-                                            <li><a href="#"><span class="hidden-tablet">  View List </span></a></li>
-                                            <li><a href="#"><span class="hidden-tablet">Add/Update</span></a></li>
-
-                                        </ul>
-                                    </li>
-                                </ul> 
-
-                                <ul>
-                                    <li><a href='#'><span class="hidden-tablet">Enrollment Charge</span></a>
-
-                                        <ul>
-                                            <li><a href="#" class="hidden-tablet"><span>  View List </span></a></li>
-                                            <li><a href="#"><span class="hidden-tablet">Add new</span></a></li>
-
-                                        </ul>
-                                    </li>
-                                </ul> 
-
-                                <ul>
-                                    <li><a href='#'><span>Ads</span></a>
-                                        <ul>
-                                            <li><a href="#"><span class="hidden-tablet">List </span></a></li>
-                                            <li><a href="#"><span class="hidden-tablet">Add</span></a></li>
-
-                                        </ul>
-                                    </li>
-                                </ul> 
-
-                            </li>
-
-
-
-
-                            <li><a class="ajax-link" href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Bussiness </span></a>
-
-                            </li>
-                            <li><a class="ajax-link" href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Sales </span></a></li>
-                            <li><a class="ajax-link" href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Messages</span></a></li>
-                            <li><a class="ajax-link" href="gallery.html"><i class="icon-picture"></i><span class="hidden-tablet"> Support</span></a></li>
-                            <li class="nav-header hidden-tablet">Sample Section</li>
-                            <li><a class="ajax-link" href="table.html"><i class="icon-align-justify"></i><span class="hidden-tablet"> Tables</span></a></li>
-                            <li><a class="ajax-link" href="calendar.html"><i class="icon-calendar"></i><span class="hidden-tablet"> Calendar</span></a></li>
-                            <li><a class="ajax-link" href="grid.html"><i class="icon-th"></i><span class="hidden-tablet"> Grid</span></a></li>
-                            <li><a class="ajax-link" href="file-manager.html"><i class="icon-folder-open"></i><span class="hidden-tablet"> File Manager</span></a></li>
-                            <li><a href="tour.html"><i class="icon-globe"></i><span class="hidden-tablet"> Tour</span></a></li>
-                            <li><a class="ajax-link" href="icon.html"><i class="icon-star"></i><span class="hidden-tablet"> Icons</span></a></li>
-                            <li><a href="error.html"><i class="icon-ban-circle"></i><span class="hidden-tablet"> Error Page</span></a></li>
-                            <li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
-                        </ul>
-                        <!--<label id="for-is-ajax" class="hidden-tablet" for="is-ajax"><input id="is-ajax" type="checkbox"> Ajax on menu</label>-->
-                    </div><!--/.well -->
-                    <!--LEFT SIDE MENUBAR ENDS-->
-                    
-                </div><!--/span-->
-                <!-- left menu ends -->
-
-                <noscript>
-                    <div class="alert alert-block span10">
-                        <h4 class="alert-heading">Warning!</h4>
-                        <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-                    </div>
-                </noscript>
-
-                <div id="content" class="span10">
-                    <!-- content starts -->
-
-
-                    <div>
-                        <ul class="breadcrumb">
-                            <li>
-                                <a href="#">Home</a> <span class="divider">/</span>
-                            </li>
-                            <li>
-                                <a href="#">Forms</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="row-fluid sortable">
-                        <div class="box span12">
-                            <div class="box-header well" >
-                                <h2><i class="icon-edit"></i> Form Elements</h2>
-                                <div class="box-icon">
-                                    <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
-                                    <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-                                    <a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-                                </div>
-                            </div>
-                            <div class="box-content">
-                                <form class="form-horizontal">
-                                    <fieldset>
-                                        <legend>Datepicker, Autocomplete, WYSIWYG</legend>
-                                        <div class="control-group">
-                                            <label class="control-label" for="typeahead">Auto complete </label>
-                                            <div class="controls">
-                                                <!--<input type="text" class="span6 typeahead" id="typeahead"  data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'>-->
-                                                <p class="help-block">Start typing to activate auto complete!</p>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="date01">Date input</label>
-                                            <div class="controls">
-                                                <!--<input type="text" class="input-xlarge datepicker" id="date01" value="02/16/12">-->
-                                            </div>
-                                        </div>
-
-                                        <div class="control-group">
-                                            <label class="control-label" for="fileInput">File input</label>
-                                            <div class="controls">
-                                                <!--<input class="input-file uniform_on" id="fileInput" type="file">-->
-                                            </div>
-                                        </div>          
-                                        <div class="control-group">
-                                            <label class="control-label" for="textarea2">Textarea WYSIWYG</label>
-                                            <div class="controls">
-                                                <textarea class="cleditor" id="textarea2" rows="3"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-actions">
-                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                            <button type="reset" class="btn">Cancel</button>
-                                        </div>
-                                    </fieldset>
-                                </form>   
-
-                            </div>
-                        </div><!--/span-->
-
-                    </div><!--/row-->
-
-
-                    <div class="row-fluid sortable">
-                        <div class="box span12">
-                            <div class="box-header well" >
-                                <h2><i class="icon-edit"></i> Form Elements</h2>
-                                <div class="box-icon">
-                                    <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
-                                    <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-                                    <a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-                                </div>
-                            </div>
-                            <div class="box-content">
-                                <form class="form-horizontal">
-                                    <fieldset>
-                                        <div class="control-group">
-                                            <label class="control-label" for="focusedInput">Focused input</label>
-                                            <div class="controls">
-                                                <!--<input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…">-->
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label">Uneditable input</label>
-                                            <div class="controls">
-                                                <span class="input-xlarge uneditable-input">Some value here</span>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="disabledInput">Disabled input</label>
-                                            <div class="controls">
-                                                <!--<input class="input-xlarge disabled" id="disabledInput" type="text" placeholder="Disabled input here…" disabled="">-->
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="optionsCheckbox2">Disabled checkbox</label>
-                                            <div class="controls">
-                                                <label class="checkbox">
-                                                    <!--<input type="checkbox" id="optionsCheckbox2" value="option1" disabled="">-->
-                                                    This is a disabled checkbox
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="control-group warning">
-                                            <label class="control-label" for="inputWarning">Input with warning</label>
-                                            <div class="controls">
-                                                <!--<input type="text" id="inputWarning">-->
-                                                <span class="help-inline">Something may have gone wrong</span>
-                                            </div>
-                                        </div>
-                                        <div class="control-group error">
-                                            <label class="control-label" for="inputError">Input with error</label>
-                                            <div class="controls">
-                                                <!--<input type="text" id="inputError">-->
-                                                <span class="help-inline">Please correct the error</span>
-                                            </div>
-                                        </div>
-                                        <div class="control-group success">
-                                            <label class="control-label" for="inputSuccess">Input with success</label>
-                                            <div class="controls">
-                                                <!--<input type="text" id="inputSuccess">-->
-                                                <span class="help-inline">Woohoo!</span>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="selectError3">Plain Select</label>
-                                            <div class="controls">
-                                                <select id="selectError3">
-                                                    <option>Option 1</option>
-                                                    <option>Option 2</option>
-                                                    <option>Option 3</option>
-                                                    <option>Option 4</option>
-                                                    <option>Option 5</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="selectError">Modern Select</label>
-                                            <div class="controls">
-                                                <select id="selectError" data-rel="chosen">
-                                                    <option>Option 1</option>
-                                                    <option>Option 2</option>
-                                                    <option>Option 3</option>
-                                                    <option>Option 4</option>
-                                                    <option>Option 5</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="selectError1">Multiple Select / Tags</label>
-                                            <div class="controls">
-                                                <select id="selectError1">
-                                                    <option>Option 1</option>
-                                                    <option>Option 2</option>
-                                                    <option>Option 3</option>
-                                                    <option>Option 4</option>
-                                                    <option>Option 5</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="selectError2">Group Select</label>
-                                            <div class="controls">
-                                                <select data-placeholder="Your Favorite Football Team" id="selectError2" data-rel="chosen">
-                                                    <option value=""></option>
-                                                    <optgroup label="NFC EAST">
-                                                        <option>Dallas Cowboys</option>
-                                                        <option>New York Giants</option>
-                                                        <option>Philadelphia Eagles</option>
-                                                        <option>Washington Redskins</option>
-                                                    </optgroup>
-                                                    <optgroup label="NFC NORTH">
-                                                        <option>Chicago Bears</option>
-                                                        <option>Detroit Lions</option>
-                                                        <option>Green Bay Packers</option>
-                                                        <option>Minnesota Vikings</option>
-                                                    </optgroup>
-                                                    <optgroup label="NFC SOUTH">
-                                                        <option>Atlanta Falcons</option>
-                                                        <option>Carolina Panthers</option>
-                                                        <option>New Orleans Saints</option>
-                                                        <option>Tampa Bay Buccaneers</option>
-                                                    </optgroup>
-                                                    <optgroup label="NFC WEST">
-                                                        <option>Arizona Cardinals</option>
-                                                        <option>St. Louis Rams</option>
-                                                        <option>San Francisco 49ers</option>
-                                                        <option>Seattle Seahawks</option>
-                                                    </optgroup>
-                                                    <optgroup label="AFC EAST">
-                                                        <option>Buffalo Bills</option>
-                                                        <option>Miami Dolphins</option>
-                                                        <option>New England Patriots</option>
-                                                        <option>New York Jets</option>
-                                                    </optgroup>
-                                                    <optgroup label="AFC NORTH">
-                                                        <option>Baltimore Ravens</option>
-                                                        <option>Cincinnati Bengals</option>
-                                                        <option>Cleveland Browns</option>
-                                                        <option>Pittsburgh Steelers</option>
-                                                    </optgroup>
-                                                    <optgroup label="AFC SOUTH">
-                                                        <option>Houston Texans</option>
-                                                        <option>Indianapolis Colts</option>
-                                                        <option>Jacksonville Jaguars</option>
-                                                        <option>Tennessee Titans</option>
-                                                    </optgroup>
-                                                    <optgroup label="AFC WEST">
-                                                        <option>Denver Broncos</option>
-                                                        <option>Kansas City Chiefs</option>
-                                                        <option>Oakland Raiders</option>
-                                                        <option>San Diego Chargers</option>
-                                                    </optgroup>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-actions">
-                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                            <button class="btn">Cancel</button>
-                                        </div>
-                                    </fieldset>
-                                </form>
-
-                            </div>
-                        </div><!--/span-->
-
-                    </div><!--/row-->
-
-                    <div class="row-fluid sortable">
-                        <div class="box span12">
-                            <div class="box-header well" >
-                                <h2><i class="icon-edit"></i> Form Elements</h2>
-                                <div class="box-icon">
-                                    <a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
-                                    <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
-                                    <a href="#" class="btn btn-close btn-round"><i class="icon-remove"></i></a>
-                                </div>
-                            </div>
-                            <div class="box-content">
-                                <form class="form-horizontal">
-                                    <fieldset>
-                                        <div class="control-group">
-                                            <label class="control-label" for="prependedInput">Prepended text</label>
-                                            <div class="controls">
-                                                <div class="input-prepend">
-                                                    <span class="add-on">@</span>
-                                                    <!--<input id="prependedInput" size="16" type="text">-->
-                                                </div>
-                                                <p class="help-block">Here's some help text</p>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="appendedInput">Appended text</label>
-                                            <div class="controls">
-                                                <div class="input-append">
-                                                    <!--<input id="appendedInput" size="16" type="text">-->
-                                                    <span class="add-on">.00</span>
-                                                </div>
-                                                <span class="help-inline">Here's more help text</span>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="appendedPrependedInput">Append and prepend</label>
-                                            <div class="controls">
-                                                <div class="input-prepend input-append">
-                                                    <span class="add-on">$</span>
-                                                    <!--<input id="appendedPrependedInput" size="16" type="text">-->
-                                                    <span class="add-on">.00</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="appendedInputButton">Append with button</label>
-                                            <div class="controls">
-                                                <div class="input-append">
-                                                    <!--<input id="appendedInputButton" size="16" type="text">-->
-                                                    <button class="btn" type="button">Go!</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label" for="appendedInputButtons">Two-button append</label>
-                                            <div class="controls">
-                                                <div class="input-append">
-                                                    <!--<input id="appendedInputButtons" size="16" type="text">-->
-                                                    <button class="btn" type="button">Search</button><button class="btn" type="button">Options</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label">Checkboxes</label>
-                                            <div class="controls">
-                                                <label class="checkbox inline">
-                                                    <!--<input type="checkbox" id="inlineCheckbox1" value="option1"> Option 1-->
-                                                </label>
-                                                <label class="checkbox inline">
-                                                    <!--<input type="checkbox" id="inlineCheckbox2" value="option2"> Option 2-->
-                                                </label>
-                                                <label class="checkbox inline">
-                                                    <!--<input type="checkbox" id="inlineCheckbox3" value="option3"> Option 3-->
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label">File Upload</label>
-                                            <div class="controls">
-                                                <!--<input type="file">-->
-                                            </div>
-                                        </div>
-                                        <div class="control-group">
-                                            <label class="control-label">Radio buttons</label>
-                                            <div class="controls">
-                                                <label class="radio">
-                                                    <!--<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">-->
-                                                    Option one is this and that—be sure to include why it's great
-                                                </label>
-                                                <div style="clear:both"></div>
-                                                <label class="radio">
-                                                    <!--<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">-->
-                                                    Option two can be something else and selecting it will deselect option one
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="form-actions">
-                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                            <button class="btn">Cancel</button>
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div>
-                        </div><!--/span-->
-
-                    </div><!--/row-->
-
-                    <!-- content ends -->
-                </div><!--/#content.span10-->
-            </div><!--/fluid-row-->
-
-            <hr>
-
-                <div class="modal hide fade" id="myModal">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">×</button>
-                        <h3>Settings</h3>
-                    </div>
-                    <div class="modal-body">
-                        <p>Here settings can be configured...</p>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#" class="btn" data-dismiss="modal">Close</a>
-                        <a href="#" class="btn btn-primary">Save changes</a>
-                    </div>
-                </div>
-            </hr>
-
-            <footer>
-                <p class="pull-left">&copy; <a href="http://www.moharto.com/" target="_blank">Moharto</a> 2014</p>
-                <p class="pull-right">Powered by: <a href="http://www.mangium.com/">Mangium</a></p>
-            </footer>
-
-        </div><!--/.fluid-container-->
-
-        <!-- external javascript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-
-        <!-- jQuery -->
-        <script src="js/jquery-1.7.2.min.js"></script>
-        <!-- jQuery UI -->
-        <script src="js/jquery-ui-1.8.21.custom.min.js"></script>
-        <!-- transition / effect library -->
-        <script src="js/bootstrap-transition.js"></script>
-        <!-- alert enhancer library -->
-        <script src="js/bootstrap-alert.js"></script>
-        <!-- modal / dialog library -->
-        <script src="js/bootstrap-modal.js"></script>
-        <!-- custom dropdown library -->
-        <script src="js/bootstrap-dropdown.js"></script>
-        <!-- scrolspy library -->
-        <script src="js/bootstrap-scrollspy.js"></script>
-        <!-- library for creating tabs -->
-        <script src="js/bootstrap-tab.js"></script>
-        <!-- library for advanced tooltip -->
-        <script src="js/bootstrap-tooltip.js"></script>
-        <!-- popover effect library -->
-        <script src="js/bootstrap-popover.js"></script>
-        <!-- button enhancer library -->
-        <script src="js/bootstrap-button.js"></script>
-        <!-- accordion library (optional, not used in demo) -->
-        <script src="js/bootstrap-collapse.js"></script>
-        <!-- carousel slideshow library (optional, not used in demo) -->
-        <script src="js/bootstrap-carousel.js"></script>
-        <!-- autocomplete library -->
-        <script src="js/bootstrap-typeahead.js"></script>
-        <!-- tour library -->
-        <script src="js/bootstrap-tour.js"></script>
-        <!-- library for cookie management -->
-        <script src="js/jquery.cookie.js"></script>
-        <!-- calander plugin -->
-        <script src='js/fullcalendar.min.js'></script>
-        <!-- data table plugin -->
-        <script src='js/jquery.dataTables.min.js'></script>
-
-        <!-- chart libraries start -->
-        <script src="js/excanvas.js"></script>
-        <script src="js/jquery.flot.min.js"></script>
-        <script src="js/jquery.flot.pie.min.js"></script>
-        <script src="js/jquery.flot.stack.js"></script>
-        <script src="js/jquery.flot.resize.min.js"></script>
-        <!-- chart libraries end -->
-
-        <!-- select or dropdown enhancer -->
-        <script src="js/jquery.chosen.min.js"></script>
-        <!-- checkbox, radio, and file input styler -->
-        <script src="js/jquery.uniform.min.js"></script>
-        <!-- plugin for gallery image view -->
-        <script src="js/jquery.colorbox.min.js"></script>
-        <!-- rich text editor library -->
-        <script src="js/jquery.cleditor.min.js"></script>
-        <!-- notification plugin -->
-        <script src="js/jquery.noty.js"></script>
-        <!-- file manager library -->
-        <script src="js/jquery.elfinder.min.js"></script>
-        <!-- star rating plugin -->
-        <script src="js/jquery.raty.min.js"></script>
-        <!-- for iOS style toggle switch -->
-        <script src="js/jquery.iphone.toggle.js"></script>
-        <!-- autogrowing textarea plugin -->
-        <script src="js/jquery.autogrow-textarea.js"></script>
-        <!-- multiple file upload plugin -->
-        <script src="js/jquery.uploadify-3.1.min.js"></script>
-        <!-- history.js for cross-browser state change on ajax -->
-        <script src="js/jquery.history.js"></script>
-        <!-- application script for Charisma demo -->
-        <script src="js/charisma.js"></script>
-
-
+        </h:form>
     </h:body>
 </html>
