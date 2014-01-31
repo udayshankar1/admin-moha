@@ -3,11 +3,18 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      >
+          
+      xmlns:p="http://primefaces.org/ui">
     <body>
 	    <ui:composition>
  
-		<h1>This is default footer</h1>
+                <p:layoutUnit position="south" size="40" style=" border:none;  border-top: 1px solid #aaa; border-radius: 4px;" resizable="false" closable="true" collapsible="false">  
+                    <!--<h:outputText value="South unit content." />-->  
+                    <footer>
+                        <p class="pull-left">© <a href="http://www.moharto.com/" target="_blank">Moharto</a> 2014</p>
+                        <p class="pull-right"> Powered by: <a href="http://www.mangium.com/">Mangium</a></p>
+                    </footer>
+                </p:layoutUnit>
  
 	    </ui:composition>
     </body>

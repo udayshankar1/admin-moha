@@ -5,50 +5,62 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       >
- 
-    <h:head>
-	<h:outputStylesheet name="common-style.css" library="css" />
-        
-    </h:head>
+    
+        <!--PAGE HEAD TEMPLATE-->
+        <h:head>
+            
+            <!--PAGE TITLE TEMPLATE-->
+                <ui:insert name="template-header" >
+                    <!--META INFORMATION-->
+                    <meta charset="utf-8"/>
+                    <title>Moharto for online admission -to  study MBA BTech BE in top colleges in india</title>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                    <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"/>
+                    <meta name="author" content="Moharto"/>
+
+                    <!--EXTRANAL STYLING LIBRARIES-->
+                    <h:outputStylesheet id="bs-css" library="css" name="bootstrap-cerulean.css"/>
+                    <h:outputStylesheet library="css" name="bootstrap-responsive.css"/>
+                    <h:outputStylesheet library="css" name="charisma-app.css"/>
+                    <h:outputStylesheet library="css" name="opa-icons.css"/>
+                </ui:insert>
+        </h:head>
  
     <h:body>
         <!--HEADER TEMPLATE-->
-        <ui:insert name="header" >
-            <ui:include src="/template/common/commonHeader.xhtml" />
-        </ui:insert>
+                <ui:insert name="template-header" >
+                    <ui:include src="/templates/commonHeader.xhtml" />
+                </ui:insert>
         
         <!--MENUBAR TEMPLATE-->
             
-                <ui:insert name="header" >
-                    <ui:include src="/template/common/commonHeader.xhtml" />
+                <ui:insert name="template-menubar" >
+                    <ui:include src="/templates/commonMenubar.xhtml" />
                 </ui:insert>
             
         <!--BREAD CRUMB TEMPLATE-->
             
-                <ui:insert name="content" >
-                    <ui:include src="/template/common/commonContent.xhtml" />
+                <ui:insert name="template-breadcrumb" >
+                    <ui:include src="/templates/commonBreadcrumb.xhtml" />
                 </ui:insert>
             
         <!--LEFT MENU TEMPLATE-->
             
-                <ui:insert name="footer" >
-                    <ui:include src="/template/common/commonFooter.xhtml" />
+                <ui:insert name="template-leftmenu" >
+                    <ui:include src="/templates/commonLeftmenu.xhtml" />
                 </ui:insert>
         
         <!--BODY TEMPLATE-->
             
-                <ui:insert name="footer" >
-                    <ui:include src="/template/common/commonFooter.xhtml" />
+                <ui:insert name="template-content">
+                    <!--HERE DYNAMICALLY CONTENT WILL BE REPLACED. WHEN WE DEFINE CONTENT INSIDE (UI:DEFINE NAME="template-content")-->
+                    
                 </ui:insert>
         
         <!--FOOTER TEMPLATE-->
             
-                <ui:insert name="footer" >
-                    <ui:include src="/template/common/commonFooter.xhtml" />
+                <ui:insert name="template-footer" >
+                    <ui:include src="/templates/commonFooter.xhtml" />
                 </ui:insert>
-            
-
-        
- 
     </h:body>
 </html>

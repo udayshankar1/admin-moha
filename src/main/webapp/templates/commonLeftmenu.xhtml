@@ -4,11 +4,51 @@
 <html xmlns="http://www.w3.org/1999/xhtml"   
       xmlns:ui="http://java.sun.com/jsf/facelets"
           
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:body>
 	    <ui:composition>
  
-		<h1>This is default header</h1>
+		<!--LEFT SIDE MENU BAR BLOCK STARTS--> 
+<!--                <p:layoutUnit position="west" header="Menu" style="border: none; width: 100%;" resizable="false" closable="true" collapsible="true">  -->
+        <h:form id="form-template-leftmenu-menu">
+                    <p:panelMenu style=" border:none; " > 
+                        <p:submenu  label="Admin Dashboard"> </p:submenu> 
+                        <p:submenu label="Data Center" >
+                            <p:submenu label="Geography">
+                                <p:menuitem value="Country" actionListener="#{buttonBean.save}" icon="ui-icon-disk"  url="#" />  
+                                <p:menuitem value="State" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Zone" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="City" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Colleges Courses">
+                                <p:menuitem value="University" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="College" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Course Level" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Course" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Curriculum" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Packages">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                            <p:submenu label="Subscription Charges">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Ads">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                        </p:submenu>
+                        <p:submenu label="Business"> </p:submenu>
+                        <p:submenu label="Sales"> </p:submenu>
+                        <p:submenu label="Messages"> </p:submenu>
+                        <p:submenu label="Support"> </p:submenu>
+                    </p:panelMenu> 
+        </h:form>
+                <!--</p:layoutUnit>-->  
+                <!--LEFT SIDE MENU BAR BLOCK ENDS-->
  
 	    </ui:composition>
     </h:body>
