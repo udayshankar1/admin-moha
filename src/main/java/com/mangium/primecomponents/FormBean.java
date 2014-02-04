@@ -6,8 +6,9 @@ package com.mangium.primecomponents;
  */
 import java.io.Serializable;  
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
-  
+
 public class FormBean implements Serializable {  
   
     private boolean value1;  

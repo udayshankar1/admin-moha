@@ -15,6 +15,7 @@
     </properties>
     
     <dependencies>
+        <!--HIBERNATE DEPENDENCIES-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -46,13 +47,19 @@
             <version>2.2.2</version>
             <type>jar</type>
         </dependency>
+        
+        
+        <!--PRIMEFACES DEPENDENCIES-->
         <dependency>
             <groupId>org.primefaces</groupId>
             <artifactId>primefaces</artifactId>
             <version>4.0</version>
         </dependency>
-        
-        <!--PRIMEFACES DEPENDENCIES-->
+        <dependency>
+            <groupId>org.primefaces</groupId>
+            <artifactId>primefaces</artifactId>
+            <version>4.0</version>
+        </dependency>
         <dependency>  
             <groupId>org.primefaces.themes</groupId>  
             <artifactId>all-themes</artifactId>  
@@ -162,6 +169,19 @@
             <version>3.2.3.RELEASE</version>
         </dependency>
         
+        
+        <!-- JSF DEPENDENCIES -->
+		<dependency>
+		  <groupId>com.sun.faces</groupId>
+		  <artifactId>jsf-api</artifactId>
+		  <version>2.2.1</version>
+		</dependency>
+		
+		<dependency>
+		  <groupId>com.sun.faces</groupId>
+		  <artifactId>jsf-impl</artifactId>
+		  <version>2.2.1</version>
+		</dependency>
         <dependency>
             <groupId>javax.servlet.jsp.jstl</groupId>
             <artifactId>javax.servlet.jsp.jstl-api</artifactId>
