@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="utf-8"/>
+        <title>Moharto for online admission -to  study MBA BTech BE in top colleges in india</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"/>
+        <meta name="author" content="Moharto"/>
+
+
+
+        <!--OVERRIDDEN STYLES STARTS-->
+        <style type="text/css">
+            .ui-dashboard-column{
+                float:none !important;
+            }
+            .ui-widget-header{
+                color: #0088cc!important;
+                text-shadow:none;
+
+            }
+            .ui-panelmenu .ui-panelmenu-header {
+                cursor: pointer;
+                position: relative;
+                margin: 0;
+                zoom: 1;
+                height: 35px;
+                font-size: 14px!important;
+            }
+            .ui-layout-north .ui-layout-unit-content {
+                overflow: visible !important;
+            }
+
+            .ui-layout-north {
+                z-index: 30 !important;
+                overflow: visible !important;
+            }
+            .tbl{
+                font-size: 13px!important;
+                width: 100%;
+            }
+            .tbl thead span{
+                color:#555555!important;
+                font-size: 14px!important;
+            }
+
+            .ui-widget-content {
+                color: #555555!important;
+                font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+                font-size: 13px;                
+            }
+            .ui-datatable thead th, .ui-datatable tfoot td {
+                text-align: left;
+            }
+        </style>
+        <!--OVERRIDDEN STYLES ENDS-->
+
+        <!--EXTRANAL STYLING LIBRARIES-->
+        <h:outputStylesheet id="bs-css" library="css" name="bootstrap-cerulean.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-responsive.css"/>
+        <h:outputStylesheet library="css" name="charisma-app.css"/>
+        <h:outputStylesheet library="css" name="opa-icons.css"/>
+
+    </h:head>
+
+    <h:body>
+        <h:form id="form-main-page" >
+            <p:layout fullPage="true" >  
+                <p:layoutUnit position="north"  style="border: none;"    resizable="false" closable="false" collapsible="false">  
+                    <!-- topbar starts -->
+                    <div class="navbar" style="margin-bottom: 0%;">
+                        <div class="navbar-inner">
+                            <div class="container-fluid">
+                                <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </a>
+
+                                <a class="brand" href="index.html"  > <img alt="Moharto Logo" src="img/moharto-logo-buttion.png" /><span style="font-family: serif;">oharto</span></a>
+                                <!-- user dropdown starts -->
+                                <p:selectOneMenu value="user-dropdown" styleClass="btn-group pull-right" >  
+                                    <f:selectItem itemLabel="Administrator" itemValue="" />  
+                                    <f:selectItem itemLabel="Settings"  itemValue="" />  
+                                    <f:selectItem itemLabel="Logout"  itemValue="" />  
+                                </p:selectOneMenu>
+                                <!-- user dropdown ends -->
+
+                                <div class="top-nav nav-collapse">
+                                    <ul class="nav">
+                                        <!--<li><a href="http://www.moharto.com">Visit moharto site</a></li>-->
+                                        <li>
+                                            <form class="navbar-search pull-left">
+                                                <!--<input placeholder="Search" class="search-query span2" name="query" type="text"/>-->
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--/.nav-collapse -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- topbar ends -->
+
+                    <!--MAIN HORIZONTAL MENU BAR STARTS--> 
+
+                    <p:growl id="messages"/>
+                    <p:menubar autoDisplay="false" style=" border: none">  
+                        <p:submenu label="Dashboard" icon="ui-icon-document"  >
+                        </p:submenu>
+                        <p:submenu label="Datacenter" icon="ui-icon-document">
+                            <p:submenu label="Geography" icon="ui-icon-contact">  
+                                <p:menuitem value="Country" url="#"/>  
+                                <p:menuitem value="State" url="#" />
+                                <p:menuitem value="Zone" url="#" />  
+                                <p:menuitem value="City" url="#" />  
+                            </p:submenu>
+                            <p:submenu label="Colleges" icon="ui-icon-contact">  
+                                <p:menuitem value="University" url="#"/>  
+                                <p:menuitem value="College" url="#" />
+                                <p:menuitem value="Course Level" url="#" />  
+                                <p:menuitem value="Course" url="#" />  
+                            </p:submenu>
+                            <p:submenu label="Packages" icon="ui-icon-contact">  
+                                <p:menuitem value="Packages List" url="#"/>
+                                <p:menuitem value="Add Packages" url="#"/>
+                            </p:submenu>
+                            <p:submenu label="Ads" icon="ui-icon-contact">  
+                                <p:menuitem value="Ads List" url="#"/>
+                                <p:menuitem value="Add Ad" url="#"/>
+                            </p:submenu>
+                        </p:submenu>  
+                        <p:submenu label="Bussiness" icon="ui-icon-pencil">  
+                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />  
+                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />  
+                        </p:submenu>  
+
+                        <p:submenu label="Sales" icon="ui-icon-help">  
+                            <p:menuitem value="Contents" url="#" />  
+                            <p:submenu label="Search" icon="ui-icon-search">  
+                                <p:submenu label="Text">  
+                                    <p:menuitem value="Workspace" url="#" />  
+                                </p:submenu>  
+                                <p:menuitem value="File" url="#" />  
+                            </p:submenu>  
+                        </p:submenu>  
+
+                        <p:submenu label="Messages" icon="ui-icon-gear">  
+                            <p:submenu label="Ajax" icon="ui-icon-refresh">  
+                                <p:menuitem value="Save" actionListener="#{menuBean.save}" icon="ui-icon-disk" update="messages"/>  
+                                <p:menuitem value="Update" actionListener="#{menuBean.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>  
+                            </p:submenu>  
+                            <p:submenu label="Non-Ajax" icon="ui-icon-newwin">  
+                                <p:menuitem value="Delete" actionListener="#{menuBean.delete}" icon="ui-icon-close" update="messages" ajax="false"/>  
+                            </p:submenu>  
+                        </p:submenu>  
+                    </p:menubar>
+                    <!--MAIN HORIZONTAL MENU BAR ENDS-->
+
+                    <!--BREAD CRUMB STARTS-->
+                    <p:breadCrumb>  
+                        <p:menuitem value="Dashboard" url="#" />  
+                        <p:menuitem value="Dashboard" url="#" />  
+                    </p:breadCrumb>
+                    <!--BREAD CRUMB ENDS-->
+                </p:layoutUnit>  
+
+                <!--LEFT SIDE MENU BAR BLOCK STARTS--> 
+                <p:layoutUnit position="west" header="Menu" style="border: none; width: 100%;" resizable="false" closable="true" collapsible="true">  
+
+                    <p:panelMenu style=" border:none; " > 
+                        <p:submenu  label="Admin Dashboard"> </p:submenu> 
+                        <p:submenu label="Data Center" >
+                            <p:submenu label="Geography">
+                                <p:menuitem value="Country" actionListener="#{buttonBean.save}" icon="ui-icon-disk"  url="#" />  
+                                <p:menuitem value="State" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Zone" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="City" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Colleges Courses">
+                                <p:menuitem value="University" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="College" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Course Level" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Course" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                                <p:menuitem value="Curriculum" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Packages">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                            <p:submenu label="Subscription Charges">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu> 
+                            <p:submenu label="Ads">
+                                <p:menuitem value="List" actionListener="#{buttonBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Add" actionListener="#{buttonBean.update}"  icon="ui-icon-arrowrefresh-1-w" />
+                            </p:submenu>
+                        </p:submenu>
+                        <p:submenu label="Business"> </p:submenu>
+                        <p:submenu label="Sales"> </p:submenu>
+                        <p:submenu label="Messages"> </p:submenu>
+                        <p:submenu label="Support"> </p:submenu>
+                    </p:panelMenu> 
+                </p:layoutUnit>  
+                <!--LEFT SIDE MENU BAR BLOCK ENDS-->        
+
+                <!--MAIN CONTENT BLOCK STARTS--> 
+                <p:layoutUnit position="center" style="border: none" resizable="false" collapsible="false" >  
+
+
+                    <!--MAIN CONTENT BLOCK STARTS-->
+
+
+                    <h:form id="form-countries-list">
+                        <p:growl id="messages" showDetail="true"/>
+                        <center>
+                            <h:panelGrid columns="2">
+                                <p:outputLabel value="Enter Zone Name:"/>
+                                <p:inputText placeholder="Enter Zone name"/>
+                                <p:outputLabel value="Select Country:"/>
+                                <p:selectOneMenu value="#{collegeProfileBean.countries}"  style="  width: 157px;">
+                                    <f:selectItem itemLabel="Select Country" itemValue="" />  
+                                    <f:selectItem itemLabel="India" itemValue="India"/>
+                                    <f:selectItem itemLabel="Nepal" itemValue="Nepal"/>
+                                    <f:selectItem itemLabel="China" itemValue="China"/>
+                                    <f:selectItem itemLabel="Bhutan" itemValue="Bhutan" />
+                                </p:selectOneMenu> 
+                                <p:outputLabel value="Select State:"/>
+                                <p:selectOneMenu value="#" style="  width: 157px;" >
+                                    <f:selectItem itemLabel="Select State" itemValue=""/>
+                                    <f:selectItem itemLabel="Karnataka" itemValue="Karnataka"/>
+                                    <f:selectItem itemLabel="Maharashtra" itemValue="Maharashtra"/>
+                                    <f:selectItem itemLabel="Chennai" itemValue="Chennai"/>
+                                    <f:selectItem itemLabel="Andhra pradhesh" itemValue="Andhra pradhesh"/>
+                                </p:selectOneMenu>
+                            </h:panelGrid>
+
+
+                            <p:pickList id="pickList" value="#{pickListBean.cities}" var="city"   
+                                        itemLabel="#{city}" itemValue="#{city}"  /> 
+
+                            <p:commandButton value="Save"/>
+                            <p:commandButton value="Clear"/>
+                            <p:commandButton value="Close"/> </center>
+                    </h:form> 
+                </p:layoutUnit>  
+                <!--MAIN CONTENT BLOCK ENDS-->
+
+                <!--FOOTER BLOCK STARTS-->
+                <p:layoutUnit position="south" size="40" style=" border:none;  border-top: 1px solid #aaa; border-radius: 4px;" resizable="false" closable="true" collapsible="false">  
+                    <!--<h:outputText value="South unit content." />-->  
+                    <footer>
+                        <p class="pull-left">© <a href="http://www.moharto.com/" target="_blank">Moharto</a> 2014</p>
+                        <p class="pull-right"> Powered by: <a href="http://www.mangium.com/">Mangium</a></p>
+                    </footer>
+                </p:layoutUnit> 
+                <!--FOOTER BLOCK ENDS-->
+            </p:layout>
+        </h:form>
+    </h:body>
+</html>

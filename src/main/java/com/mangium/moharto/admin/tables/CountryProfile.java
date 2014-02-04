@@ -11,9 +11,11 @@ public class CountryProfile {
     private String Alias;
     private String Status;
     private String Actions;
+    private String citiesCount;
+    private String zoneName;
+    private String zoneCities;
     
-    
-
+  
     public String getSI() {
         return SI;
     }
@@ -71,6 +73,32 @@ public class CountryProfile {
 
     public void setCountry_status(boolean country_status) {
         this.country_status = country_status;
+    }
+
+    public String getCitiesCount() {
+        return citiesCount;
+    }
+
+    public void setCitiesCount(String citiesCount) {
+        this.citiesCount = citiesCount;
+    }
+
+    public String getZoneName() {
+        return zoneName;
+    }
+
+    public void setZoneName(String zoneName) {
+        this.zoneName = zoneName;
+    }
+
+   
+
+    public String getZoneCities() {
+        return zoneCities;
+    }
+
+    public void setZoneCities(String zoneCities) {
+        this.zoneCities = zoneCities;
     }
      
 }

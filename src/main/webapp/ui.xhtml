@@ -301,7 +301,7 @@
                                             </td>
                                         </tr>
 
-                                         <!-- POPUP Dialog-->
+                                        <!-- POPUP Dialog-->
                                         <tr>
                                             <td><h3>POP-UP Dialog(Datatable)</h3></td>
                                             <td>
@@ -342,6 +342,23 @@
                                             </td>
                                         </tr>
                                         
+<!--                                         <tr>
+                                            <td><h3>Dialog</h3></td>
+                                            <td>
+                                                <h:form id="formGrowl">  
+                                                    <p:growl id="growl" showDetail="true" sticky="true" />  
+                                                    <p:panel header="Growl">  
+                                                        <h:panelGrid columns="2">  
+                                                            <h:outputText value="Your Name: *" />   
+                                                            <p:inputText value="#{growlBean.text}" required="true" label="Name"/>  
+                                                        </h:panelGrid>  
+                                                        <p:commandButton value="Save" actionListener="#{growlBean.save}" update="growl"/>  
+                                                    </p:panel>  
+
+                                                </h:form>
+                                            </td>
+                                        </tr>-->
+
                                         <!--Tooltip-->
                                         <tr>
                                             <td><h3>Tooltip</h3></td>
@@ -368,7 +385,22 @@
                                             </td>
                                         </tr>
 
-                                       
+                                        <tr>
+                                            <td><h3>Dialog</h3></td>
+                                            <td>
+                                                <h:form id="formGrowl">  
+                                                    <p:growl id="growl" showDetail="true" sticky="true" />  
+                                                    <p:panel header="Growl">  
+                                                        <h:panelGrid columns="2">  
+                                                            <h:outputText value="Your Name: *" />   
+                                                            <p:inputText value="#{growlBean.text}" required="true" label="Name"/>  
+                                                        </h:panelGrid>  
+                                                        <p:commandButton value="Save" actionListener="#{growlBean.save}" update="growl"/>  
+                                                    </p:panel>  
+
+                                                </h:form>
+                                            </td>
+                                        </tr>
                                     </table>
                                 </div>	
                                 <!--UI Table Ends HERE-->

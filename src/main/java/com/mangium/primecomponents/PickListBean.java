@@ -26,7 +26,7 @@ import org.primefaces.model.DualListModel;
 public class PickListBean {
 //    private DualListModel<Player> players;  
       
-    private DualListModel<String> cities;  
+    private DualListModel<String> cities; 
   
     public PickListBean() {  
         //Players  
@@ -48,12 +48,12 @@ public class PickListBean {
           
     
         
-        citiesSource.add("MBA(Finance)");  
-        citiesSource.add("MBA(HR)");  
-        citiesSource.add("MBA(Marketing)");  
-        citiesSource.add("B.Tech(CSE)");  
-        citiesSource.add("B.Tech(ECE)");  
-             citiesSource.add("B.Tech(EEE)");  
+        citiesSource.add("Mysore");  
+        citiesSource.add("Shimoga");  
+        citiesSource.add("Davanagere");  
+        citiesSource.add("Chitradurga");  
+        citiesSource.add("Haveri");  
+             citiesSource.add("Chickmaglur");  
           
         cities = new DualListModel<String>(citiesSource, citiesTarget);  
     }  
