@@ -23,9 +23,21 @@ public class CountriesManagedBean implements Serializable{
     /**
      * Create a object for IcountriesBo call bussiness methodes with that object
      */
+    
     ICountriesBo countries;
-// call bussinees methodes, do database related operations here
-    public CountriesManagedBean() {
+//getters and setters for bo obj
+    public ICountriesBo getCountries() {
+        return countries;
+    }
+
+    public void setCountries(ICountriesBo countries) {
+        this.countries = countries;
     }
     
+
+// get all list of countries from database
+     
+
+// call bussinees methodes, do database related operations here
+
 }

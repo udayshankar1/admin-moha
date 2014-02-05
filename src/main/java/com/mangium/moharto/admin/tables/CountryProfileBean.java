@@ -4,6 +4,7 @@ package com.mangium.moharto.admin.tables;
  *
  * @author uday
  */
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.application.FacesMessage;
@@ -15,7 +16,7 @@ import org.primefaces.event.FileUploadEvent;
 
 @javax.faces.bean.ManagedBean
 @RequestScoped
-public class CountryProfileBean {
+public class CountryProfileBean implements Serializable{
 
     private List<CountryProfile> colleges;
 

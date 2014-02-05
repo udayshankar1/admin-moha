@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package com.mangium.moharto.admin;
+package com.mangium.moharto.admin.datacenter;
 
 import javax.faces.application.FacesMessage;  
 import javax.faces.context.FacesContext;  
