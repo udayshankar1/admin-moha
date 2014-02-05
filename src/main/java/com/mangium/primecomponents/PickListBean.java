@@ -55,7 +55,8 @@ public class PickListBean {
         citiesSource.add("Haveri");  
              citiesSource.add("Chickmaglur");  
           
-        cities = new DualListModel<String>(citiesSource, citiesTarget);  
+
+             cities = new DualListModel<>(citiesSource, citiesTarget);  
     }  
       
 //    public DualListModel<Player> getPlayers() {  
@@ -83,7 +84,7 @@ public class PickListBean {
         msg.setSummary("Items Transferred");  
         msg.setDetail(builder.toString());  
           
-        FacesContext.getCurrentInstance().addMessage(null, msg);  
+        FacesContext.getCurrentInstance().addMessage("component selected", msg);  
     }  
     
 }

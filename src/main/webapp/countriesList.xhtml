@@ -38,14 +38,14 @@
                 z-index: 30 !important;
                 overflow: visible !important;
             }
-            .tbl{
-                font-size: 13px!important;
-                width: 100%;
-            }
-            .tbl thead span{
-                color:#555555!important;
-                font-size: 14px!important;
-            }
+            /*            .tbl{
+                            font-size: 13px!important;
+                            width: 100%;
+                        }
+                        .tbl thead span{
+                            color:#555555!important;
+                            font-size: 14px!important;
+                        }*/
 
             .ui-widget-content {
                 color: #555555!important;
@@ -57,7 +57,7 @@
             }
         </style>
         <!--OVERRIDDEN STYLES ENDS-->
-        
+
         <!--EXTRANAL STYLING LIBRARIES-->
         <h:outputStylesheet id="bs-css" library="css" name="bootstrap-cerulean.css"/>
         <h:outputStylesheet library="css" name="bootstrap-responsive.css"/>
@@ -213,145 +213,147 @@
 
 
                     <!--MAIN CONTENT BLOCK STARTS-->
-                    
-                    
-                    <h:form id="form-countries-list">
-                        <p:growl id="messages" showDetail="true"/>
-                        
-                        <!--COUNTRIES LIST TABLE COLUMNS STARTS-->
-                        <p:dataTable id="table-countries-list" var="collegerow" value="#{countryProfileBean.mediummessagemodel}"   widgetVar="messagesTable" 
-                                     emptyMessage="Unable to fetch data from database"  scrollRows="1"  
-                                     scrollable="true" liveScroll="true" scrollHeight="150"    selection="#{countryProfileBean.selectedcollege}" editable="true"     rows="10"  draggableColumns="true" editMode="cell" >  
 
-                            <p:ajax event="rowEdit" listener="#{countryProfileBean.onEdit}" update=":form-main-page:form-countries-list:messages"/>
-                            <p:ajax event="rowEditCancel" listener="#{countryProfileBean.onCancel}" update=":form-main-page:form-countries-list:messages"/>
-                            
-                            
+
+                    <h:form id="form-countries-list">
+
+                        <p:growl id="messages" showDetail="true"/>
+
+                        <p:panel header="List of Countries">  
+                            <!--<h:outputText value="List of Countries"  />-->
+                            <p:commandButton id="btn-list" value="List" />
+                            <p:commandButton id="btn-add" value="Add" onclick="PF('dailog-add-country').show();" type="button" />
+                            <p:commandButton id="btn-activelist" value="Active list"/>
+                            <p:commandButton id="btn-inactivelist" value="Inactive List"/>
+                            <p:commandButton id="btn-import" value="Import"/><br/>
                             <f:facet name="header" class="header" >  
 
-                                <p:commandButton id="btn-list" value="List"/>
-                                <p:commandButton id="btn-add" value="Add" onclick="PF('dailog-add-country').show();" type="button" />
-                                <p:commandButton id="btn-activelist" value="Active list"/>
-                                <p:commandButton id="btn-inactivelist" value="Inactive List"/>
-                                <p:commandButton id="btn-import" value="Import"/><br/>
-                                <h:outputText value="List of Countries"  />
+                                <h:outputText value="List of Countries"  /> 
+
+
                             </f:facet>
 
-                            //check box column
-                            <p:column selectionMode="multiple" style="width:3%;" />  
-                            
-                            <p:column headerText="SNo."  >  
-                                <p:cellEditor>
-                                    <f:facet name="output">  
-                                        <h:outputText value="#{collegerow.SI}" />  
-                                    </f:facet>  
-                                    <f:facet name="input">
-                                        <p:inputText value="#{collegerow.SI}" />  
-                                    </f:facet>
-                                </p:cellEditor>
-                            </p:column> 
 
-                            <p:column headerText="Name"  >  
-                                <p:cellEditor>
-                                    <f:facet name="output">  
-                                        <h:outputText value="#{collegerow.name}" />  
-                                    </f:facet>  
-                                    <f:facet name="input">
-                                        <p:inputText value="#{collegerow.name}" />  
-                                    </f:facet>
-                                </p:cellEditor>
-                            </p:column>  
+                            <!--COUNTRIES LIST TABLE COLUMNS STARTS-->
+                            <p:dataTable id="table-countries-list" var="collegerow" value="#{countryProfileBean.mediummessagemodel}"   widgetVar="messagesTable" 
+                                         emptyMessage="Unable to fetch data from database"  scrollRows="1"  
+                                         scrollable="true" liveScroll="true" scrollHeight="150"    selection="#{countryProfileBean.selectedcollege}" editable="true"     rows="10"  draggableColumns="true" editMode="cell" >  
 
-                            <p:column headerText="Acronomy">  
-                                <p:cellEditor>
-                                    <f:facet name="output">  
-                                        <h:outputText value="#{collegerow.acronomy}" />  
-                                    </f:facet>  
-                                    <f:facet name="input">  
-                                        <p:inputText value="#{collegerow.acronomy}"  />  
-                                    </f:facet>  
-                                </p:cellEditor>
-                            </p:column>  
-
-                            <p:column headerText="Alias">  
-                                <a onclick="PF('dailog-add-country').show();"> 
-                                    <!--<span class="label label-success">#{collegerow.alias}</span>-->
-                                    <p:selectBooleanButton value="#{formBean.value1}"  onLabel="Yes" offLabel="No" label="Status" onIcon="ui-icon-check" offIcon="ui-icon-close">
-                                        <!--<p:ajax update="msg" listener="#{formBean.addMessage}"/>-->
-                                    </p:selectBooleanButton>
-                                </a>
-
-                            </p:column>  
-
-                            <p:column headerText="Status">  
-                                <a> <span class="label label-success">#{collegerow.country_status}</span></a>
-                            </p:column>  
-
-                            <p:column headerText="Actions">  
-
-                                <a> <span class="label label-info">View</span></a>
-                                <a onclick="PF('dailog-add-country').show();"> <span class="label label-success">Update</span></a>
-                                <a> <span class="label label-inverse">Archive</span></a>
-                                <a> <span class="label label-important">Delete</span></a>
-                            </p:column>
+                                <p:ajax event="rowEdit" listener="#{countryProfileBean.onEdit}" update=":form-main-page:form-countries-list:messages"/>
+                                <p:ajax event="rowEditCancel" listener="#{countryProfileBean.onCancel}" update=":form-main-page:form-countries-list:messages"/>
 
 
-                        </p:dataTable>
-                        <!--COUNTRIES LIST TABLE COLUMNS ENDS-->
-                        
-                        
-
-                        <!--POP-UP daiolge for adding countries START-->                      
-                        <p:dialog id="dialog-country-add" header="Add Country" widgetVar="dailog-add-country" showEffect="clip" hideEffect="clip">  
-                            <!--Dailog main div-->
-                            <h:form id="form-countries-add" >
-                                <p:growl id="msg" />
-                            <br/>
-                            <center>
-                                <p:panelGrid columns="2" style="border: none;">
-                                    <p:outputLabel value="Country Name"/>
-                                    <p:inputText placeholder="INDIA"/>
-                                    <p:outputLabel value="Acronym"/>
-                                    <p:inputText placeholder="IND"/>
-
-                                    <p:outputLabel value="Status"/>
-                                    <p:selectBooleanButton value="#{formBean.value1}"  onLabel="Active" offLabel="Inactive" label="Status" onIcon="ui-icon-check" offIcon="ui-icon-close">
-                                    <p:ajax update="msg" listener="#{formBean.addMessage}"/>
-                                    </p:selectBooleanButton>
-                                </p:panelGrid>
-                                <br/>
 
 
-                               <!--ALIAS NAMES TABLE BLOCK STARTS-->
-                                <p:dataTable var="collegerow1" editable="true" rows="5" editMode="cell" selection="#{countryProfileBean.colleges}" value="#{countryProfileBean.mediummessagemodel}" >
-                                    <p:column headerText="Aliases">
-                                        <p:cellEditor>
-                                            <f:facet name="output">  
-                                                <h:outputText value="#{collegerow1.alias}" />  
-                                            </f:facet>  
-                                            <f:facet name="input">
-                                                <p:inputText value="#{collegerow1.alias}" />  
-                                            </f:facet>
-                                        </p:cellEditor>
-                                    </p:column>
-                                </p:dataTable>
-                                <br/>
-                                <!--ALIAS NAMES TABLE BLOCK ENDS-->
-                                
-                                
-                                <p:commandButton value="Save"/>
-                                <p:commandButton value="Clear"/>
-                                <p:commandButton value="Close"/>
-                                
-                            </center>
+                                //check box column
+                                <p:column selectionMode="multiple" style="width:3%;" />  
 
-                            </h:form>
+                                <p:column headerText="SNo."  >  
+                                    <p:cellEditor>
+                                        <f:facet name="output">  
+                                            <h:outputText value="#{collegerow.SI}" />  
+                                        </f:facet>  
+                                        <f:facet name="input">
+                                            <p:inputText value="#{collegerow.SI}" />  
+                                        </f:facet>
+                                    </p:cellEditor>
+                                </p:column> 
 
-                        </p:dialog>
+                                <p:column headerText="Name"  >  
+                                    <p:cellEditor>
+                                        <f:facet name="output">  
+                                            <h:outputText value="#{collegerow.name}" />  
+                                        </f:facet>  
+                                        <f:facet name="input">
+                                            <p:inputText value="#{collegerow.name}" />  
+                                        </f:facet>
+                                    </p:cellEditor>
+                                </p:column>  
+
+                                <p:column headerText="Acronomy">  
+                                    <p:cellEditor>
+                                        <f:facet name="output" >  
+                                            <h:outputText value="#{collegerow.acronomy}" />  
+                                        </f:facet>  
+                                        <f:facet name="input">  
+                                            <p:inputText value="#{collegerow.acronomy}"  />  
+                                        </f:facet>  
+                                    </p:cellEditor>
+                                </p:column>  
+
+                                <p:column headerText="Alias">  
+                                    <a onclick="PF('dailog-add-country').show();"> 
+                                        <!--<span class="label label-success">#{collegerow.alias}</span>-->
+                                        <p:selectBooleanButton value="#{formBean.value1}"  onLabel="Yes" offLabel="No" label="Status" onIcon="ui-icon-check" offIcon="ui-icon-close">
+                                            <!--<p:ajax update="msg" listener="#{formBean.addMessage}"/>-->
+                                        </p:selectBooleanButton>
+                                    </a>
+
+                                </p:column>  
+
+                                <p:column headerText="Status">  
+                                    <a>                                                
+                                        <p:selectBooleanButton value="#{formBean.value1}"   offLabel="INACTIVE" onLabel="ACTIVE"  label="Status" onIcon="ui-icon-check" offIcon="ui-icon-close">
+                                            <!--<p:ajax update="msg" listener="#{formBean.addMessage}"/>-->
+                                        </p:selectBooleanButton>
+                                    </a>
+                                </p:column>  
+
+                                <p:column headerText="Actions">  
+
+                                    <a> <span class="label label-info">View</span></a>
+                                    <a onclick="PF('dailog-add-country').show();"> <span class="label label-success">Update</span></a>
+                                    <a> <span class="label label-inverse">Archive</span></a>
+                                    <a> <span class="label label-important">Delete</span></a>
+                                </p:column>
+                            </p:dataTable>
+                            <!--COUNTRIES LIST TABLE COLUMNS ENDS-->
+
+                            <!--POP-UP daiolge for adding countries START-->                      
+                            <p:dialog id="dialog-country-add" header="Add Country" widgetVar="dailog-add-country" showEffect="clip" hideEffect="clip">  
+                                <!--Dailog main div-->
+                                <h:form id="form-countries-add" >
+                                    <p:growl id="msg" />
+                                    <br/>
+                                    <center>
+                                        <p:panelGrid columns="2" style="border: none;">
+                                            <p:outputLabel value="Country Name"/>
+                                            <p:inputText placeholder="INDIA"/>
+                                            <p:outputLabel value="Acronym"/>
+                                            <p:inputText placeholder="IND"/>
+
+                                            <p:outputLabel value="Status"/>
+                                            <p:selectBooleanButton value="#{formBean.value1}"  onLabel="Active" offLabel="Inactive" label="Status" onIcon="ui-icon-check" offIcon="ui-icon-close">
+                                                <p:ajax update="msg" listener="#{formBean.addMessage}"/>
+                                            </p:selectBooleanButton>
+                                        </p:panelGrid>
+                                        <br/>
+
+                                        <!--ALIAS NAMES TABLE BLOCK STARTS-->
+                                        <p:dataTable var="collegerow1" editable="true" rows="5" editMode="cell" selection="#{countryProfileBean.colleges}" value="#{countryProfileBean.mediummessagemodel}" >
+                                            <p:column headerText="Aliases">
+                                                <p:cellEditor>
+                                                    <f:facet name="output">  
+                                                        <h:outputText value="#{collegerow1.alias}" />  
+                                                    </f:facet>  
+                                                    <f:facet name="input">
+                                                        <p:inputText value="#{collegerow1.alias}" />  
+                                                    </f:facet>
+                                                </p:cellEditor>
+                                            </p:column>
+                                        </p:dataTable>
+                                        <br/>
+                                        <!--ALIAS NAMES TABLE BLOCK ENDS-->                               
+
+                                        <p:commandButton value="Save"/>
+                                        <p:commandButton value="Clear"/>
+                                        <p:commandButton value="Close"/>                                
+                                    </center>
+                                </h:form>
+                            </p:dialog></p:panel>
                         <!--dailog main div ends-->
-                            
-                        <!--POP-UP dailogue for adding countries END-->
 
+                        <!--POP-UP dailogue for adding countries END-->
 
                     </h:form> 
                 </p:layoutUnit>  

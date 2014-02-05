@@ -38,14 +38,14 @@
                 z-index: 30 !important;
                 overflow: visible !important;
             }
-            .tbl{
-                font-size: 13px!important;
-                width: 100%;
-            }
-            .tbl thead span{
-                color:#555555!important;
-                font-size: 14px!important;
-            }
+            /*            .tbl{
+                            font-size: 13px!important;
+                            width: 100%;
+                        }
+                        .tbl thead span{
+                            color:#555555!important;
+                            font-size: 14px!important;
+                        }*/
 
             .ui-widget-content {
                 color: #555555!important;
@@ -216,37 +216,43 @@
 
 
                     <h:form id="form-countries-list">
-                        <p:growl id="messages" showDetail="true"/>
-                        <center>
-                            <h:panelGrid columns="2">
-                                <p:outputLabel value="Enter Zone Name:"/>
-                                <p:inputText placeholder="Enter Zone name"/>
-                                <p:outputLabel value="Select Country:"/>
-                                <p:selectOneMenu value="#{collegeProfileBean.countries}"  style="  width: 157px;">
+
+                        <center>   <h:panelGrid columns="2">
+                                <p:outputLabel value="Course Level"/>
+                                <p:selectOneMenu value="#{collegeProfileBean.countries}" >
                                     <f:selectItem itemLabel="Select Country" itemValue="" />  
-                                    <f:selectItem itemLabel="India" itemValue="India"/>
-                                    <f:selectItem itemLabel="Nepal" itemValue="Nepal"/>
-                                    <f:selectItem itemLabel="China" itemValue="China"/>
-                                    <f:selectItem itemLabel="Bhutan" itemValue="Bhutan" />
-                                </p:selectOneMenu> 
-                                <p:outputLabel value="Select State:"/>
-                                <p:selectOneMenu value="#" style="  width: 157px;" >
-                                    <f:selectItem itemLabel="Select State" itemValue=""/>
-                                    <f:selectItem itemLabel="Karnataka" itemValue="Karnataka"/>
-                                    <f:selectItem itemLabel="Maharashtra" itemValue="Maharashtra"/>
-                                    <f:selectItem itemLabel="Chennai" itemValue="Chennai"/>
-                                    <f:selectItem itemLabel="Andhra pradhesh" itemValue="Andhra pradhesh"/>
-                                </p:selectOneMenu>
-                            </h:panelGrid>
+                                    <f:selectItem itemLabel="India" itemValue="After 12th"/>
+                                    <f:selectItem itemLabel="Nepal" itemValue="After UG"/>
+                                    <f:selectItem itemLabel="China" itemValue="After PG"/>                                   
+                                </p:selectOneMenu></h:panelGrid> <br/>
 
+                        <p:pickList id="pojoPickList" value="#{pickListBean.cities}" var="city"  
+                                    itemValue="#{city}" itemLabel="#{city}" effect="bounce" 
+                                    showSourceControls="true" showTargetControls="true" showCheckbox="true"  
+                                    showSourceFilter="true" showTargetFilter="true" filterMatchMode="contains" >  
 
-                            <p:pickList id="pickList" value="#{pickListBean.cities}" var="city"   
-                                        itemLabel="#{city}" itemValue="#{city}"  /> 
+                            <f:facet name="sourceCaption">Courses List</f:facet>  
+                            <f:facet name="targetCaption">Selected List</f:facet>  
+                            
+                            <!--<p:ajax event="transfer" listener="#{pickListBean.onTransfer}" update="msg" />-->  
+<!--                            <p:column style="width:25%">  
+                                <p:graphicImage value="/images/barca/#{player.photo}" width="30" height="40" />  
+                            </p:column>  -->
+                            <p:column style="width:75%;">  
+                                #{pickListBean.cities}  
+                            </p:column>  
+                        </p:pickList> 
+                        <!--ALIAS NAMES TABLE BLOCK ENDS-->                               
 
-                            <p:commandButton value="Update"/>
-                            <p:commandButton value="Clear"/>
-                            <p:commandButton value="Close"/> </center>
-                    </h:form> 
+                       <p:commandButton value="Save"/>
+                        <p:commandButton value="Clear"/>
+                        <p:commandButton value="Close"/>                                
+                        </center>
+                    </h:form>
+                
+                    <!--dailog main div ends-->
+
+                    <!--POP-UP dailogue for adding countries END-->                  
                 </p:layoutUnit>  
                 <!--MAIN CONTENT BLOCK ENDS-->
 
