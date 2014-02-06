@@ -46,5 +46,7 @@ private String country_status;//use booleany type instead of String
         this.country_status = country_status;
     }
 
+    
+
 
 }

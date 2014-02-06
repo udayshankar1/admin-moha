@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="utf-8"/>
+        <title>Moharto for online admission -to  study MBA BTech BE in top colleges in india</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"/>
+        <meta name="author" content="Moharto"/>
+
+
+
+        
+
+    </h:head>
+
+    <h:body>
+        <h:form id="form-main-page" >
+            <p:layout fullPage="true" >  
+                     
+
+                <!--MAIN CONTENT BLOCK STARTS--> 
+                <p:layoutUnit position="center" style="border: none" resizable="false" collapsible="false" >  
+
+                    
+
+                    <!--MAIN CONTENT BLOCK STARTS-->
+
+
+                    <h:form id="form-countries-list">
+
+                       
+
+                        <p:panel header="List of Countries">  
+                            
+
+
+                            <!--COUNTRIES LIST TABLE COLUMNS STARTS-->
+                            <p:dataTable id="table-countries-list" var="collegerow" value="#{countriesManagedBean.countries}"   
+                                         emptyMessage="Unable to fetch data from database" >  
+                                <p:column headerText="SNo."  >  
+
+                                    <h:outputText value="#{collegerow.country_id}" />  
+
+                                </p:column> 
+                            </p:dataTable>
+                            <!--COUNTRIES LIST TABLE COLUMNS ENDS-->
+                        </p:panel>
+                    </h:form> 
+                </p:layoutUnit>  
+                <!--MAIN CONTENT BLOCK ENDS-->
+
+                <!--FOOTER BLOCK STARTS-->
+                
+                <!--FOOTER BLOCK ENDS-->
+            </p:layout>
+        </h:form>
+    </h:body>
+</html>

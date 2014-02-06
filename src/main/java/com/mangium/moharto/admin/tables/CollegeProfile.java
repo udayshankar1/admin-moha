@@ -5,7 +5,7 @@ package com.mangium.moharto.admin.tables;
  * @author uday
  */
 public class CollegeProfile {
-    private  String course;
+    private  String course;//row index
     private String specialization;
     private String  seats;
     private String lastdate;

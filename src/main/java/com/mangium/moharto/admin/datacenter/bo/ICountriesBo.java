@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.mangium.moharto.admin.datacenter.bo;
 
 import com.mangium.moharto.admin.datacenter.model.Countries;
@@ -23,6 +17,6 @@ public interface ICountriesBo {
 
     void updateCountries(Countries countries);
 
-    List<Countries> findAllCountries();
+    List<Countries> findAllCountries(); 
     
 }
