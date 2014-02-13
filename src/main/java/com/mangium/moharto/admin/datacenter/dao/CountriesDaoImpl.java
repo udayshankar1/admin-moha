@@ -9,11 +9,13 @@ package com.mangium.moharto.admin.datacenter.dao;
 import com.mangium.moharto.admin.datacenter.model.Countries;
 import java.util.List;
 
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+
 /**
  *
  * @author uday
  */
-public class CountriesDaoImpl implements ICountriesDao{
+public class CountriesDaoImpl extends HibernateDaoSupport implements ICountriesDao{
 
     @Override
     public void addCountries(Countries countries) {
@@ -32,7 +34,8 @@ public class CountriesDaoImpl implements ICountriesDao{
 
     @Override
     public List<Countries> findAllCountries() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getHibernateTemplate().find("from Countries");
     }
     
 }

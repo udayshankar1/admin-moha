@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <ui:insert name="template-header" >
+        <meta charset="utf-8"/>
+        <title>Moharto for online admission -to  study MBA BTech BE in top colleges in india</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="Moharto for online admission -to  study MBA BTECH BE in top colleges in india"/>
+        <meta name="author" content="Moharto"/>
+
+        <h:outputStylesheet id="bs-css" library="css" name="bootstrap-cerulean.css"/>
+        <h:outputStylesheet library="css" name="bootstrap-responsive.css"/>
+        <h:outputStylesheet library="css" name="charisma-app.css"/>
+        <h:outputStylesheet library="css" name="opa-icons.css"/>
+
+    <!--OVERRIDDEN STYLES STARTS-->
+        <style type="text/css">
+            .ui-dashboard-column{
+                float:none !important;
+            }
+            .ui-widget-header{
+                color: #0088cc!important;
+                text-shadow:none;
+
+            }
+            .ui-panelmenu .ui-panelmenu-header {
+                cursor: pointer;
+                position: relative;
+                margin: 0;
+                zoom: 1;
+                height: 35px;
+                font-size: 14px!important;
+            }
+            .ui-layout-north .ui-layout-unit-content {
+                overflow: visible !important;
+            }
+
+            .ui-layout-north {
+                z-index: 30 !important;
+                overflow: visible !important;
+            }
+            .tbl{
+                font-size: 13px!important;
+                width: 100%;
+            }
+            .tbl thead span{
+                color:#555555!important;
+                font-size: 13px!important;
+                font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+            }
+            .ui-widget-content {
+                color: #555555!important;
+                font-family: "Ubuntu", Helvetica, Arial, sans-serif;
+                font-size: 13px;                
+            }
+            .ui-datatable thead th, .ui-datatable tfoot td {
+                text-align: left;
+            }
+        </style>
+        <!--OVERRIDDEN STYLES ENDS-->
+
+        </ui:insert>
+
+    </h:head>
+
+    <h:body>
+
+        <p:layout fullPage="true"  stateful="true" >  
+                
+                
+                <!--HEADER BLOCK STARTS-->
+                <p:layoutUnit position="north"  style="border: none;"    resizable="false" closable="false" collapsible="false">  
+                    <ui:insert name="template-header" >
+                    <ui:include src="/templates/commonHeader.xhtml" />
+                    </ui:insert>
+                    
+                    <!--MENUBAR TEMPLATE-->
+                            <ui:insert name="template-menubar" >
+                    <ui:include src="/templates/commonMenubar.xhtml" />
+                </ui:insert>
+            
+                </p:layoutUnit>  
+                <!--HEADER BLOCK ENDS-->
+                
+                <!--LEFT SIDE MENU BAR BLOCK STARTS--> 
+                <p:layoutUnit position="west" header="Menu" style="border: none; width: 100%;" resizable="false" closable="true" collapsible="true">  
+
+                    <!--LEFT MENU TEMPLATE-->
+            
+                <ui:insert name="template-leftmenu" >
+                    <ui:include src="/templates/commonLeftmenu.xhtml" />
+                </ui:insert>
+
+                </p:layoutUnit>  
+                <!--LEFT SIDE MENU BAR BLOCK ENDS-->
+
+                <!--    <p:layoutUnit position="east" size="200" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">  
+                        <h:outputText value="Right unit content." />  
+                    </p:layoutUnit>  -->
+
+
+                <!--MAIN CONTENT BLOCK STARTS--> 
+                <p:layoutUnit position="center" style="border: none; width: 100%;" resizable="false" collapsible="false" >  
+
+                    <!--BREAD CRUMB TEMPLATE-->
+            
+<!--                <ui:insert name="template-breadcrumb" >
+                    <ui:include src="/templates/commonBreadcrumb.xhtml" />
+                </ui:insert>-->
+                    
+                    <!--BODY TEMPLATE-->
+            
+                <ui:insert name="template-content">
+                    <!--HERE DYNAMICALLY CONTENT WILL BE REPLACED. WHEN WE DEFINE CONTENT INSIDE (UI:DEFINE NAME="template-content")-->
+                    
+                </ui:insert>
+                </p:layoutUnit>  
+                <!--MAIN CONTENT BLOCK ENDS-->
+
+                <!--FOOTER BLOCK STARTS-->
+                <p:layoutUnit position="south" size="10"   style=" border:none; width: 100%;" resizable="false" closable="true" collapsible="false">  
+                    <!--FOOTER TEMPLATE-->
+            
+                <ui:insert name="template-footer" >
+                    <ui:include src="/templates/commonFooter.xhtml" />
+                </ui:insert>
+                </p:layoutUnit> 
+                <!--FOOTER BLOCK ENDS-->
+
+            </p:layout>
+      
+    </h:body>
+</html>

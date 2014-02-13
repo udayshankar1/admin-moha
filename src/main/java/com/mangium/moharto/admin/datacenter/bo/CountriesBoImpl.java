@@ -6,6 +6,7 @@
 
 package com.mangium.moharto.admin.datacenter.bo;
 
+import com.mangium.moharto.admin.datacenter.dao.ICountriesDao;
 import com.mangium.moharto.admin.datacenter.model.Countries;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,9 @@ import java.util.List;
  * @author uday
  */
 public class CountriesBoImpl implements ICountriesBo {
+    
+//    create ICountriesDao boject and use this obj to do data base related operations
+    ICountriesDao countriesdao;
 
     @Override
     public void addCountries(Countries countries) {
@@ -35,26 +39,29 @@ public class CountriesBoImpl implements ICountriesBo {
     public List<Countries> findAllCountries() {
         //static code starts
         System.out.println("# find all countries methode called #");
-         List<Countries> countries;
-         
+          List<Countries> countries;
+//         
          countries = new ArrayList<>();
          System.out.println("countries obj"+countries);
         Countries c1 = new Countries();
         c1.setCountry_id(10);
-        c1.setCountry_name("india");
-        c1.setCountry_acronym("IND");
-        c1.setCountry_status("true");
+//        c1.setCountry_name("india");
+//        c1.setCountry_acronym("IND");
+//        c1.setCountry_status(1);//1-active 0-inactive
+//        c1.setCountry_deleletion_flag(0);//1-deleted 0-not deleted
         System.out.println("after setting values c1="+c1);
         countries.add(c1);
         System.out.println("countries obj"+countries);
+        return countries;
 //        static code ends
         
 //        dynamic data loading starts
         
 //        use dao obj to call actual functions
-        
+//        return countriesdao.findAllCountries();
 //        dynamic data loading ends
-        return countries;
+        
+        
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

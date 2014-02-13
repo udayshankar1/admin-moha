@@ -8,9 +8,17 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     
     
-        <ui:composition template="/templates/commonTemplate.xhtml">
+        <ui:composition template="/templates/commonTemplate-1.xhtml">
             <ui:define name="template-content" >
-                <h:outputText value="sample1" ></h:outputText>
+                
+                <!--BREAD CRUMB STARTS-->
+                    <p:breadCrumb>  
+                        <p:menuitem value="Dashboard" url="/faces/index.xhtml" />  
+                        <p:menuitem value="Dashboard" url="#" />  
+
+                    </p:breadCrumb>
+                    <!--BREAD CRUMB ENDS-->
+                
                 <!--MAIN CONTENT BLOCK STARTS-->
                     
                     
@@ -22,8 +30,8 @@
                                      emptyMessage="Unable to fetch data from database"  scrollRows="1"  
                                      scrollable="true" liveScroll="true" scrollHeight="150"    selection="#{countryProfileBean.selectedcollege}" editable="true"     rows="10"  draggableColumns="true" editMode="cell" >  
 
-                            <p:ajax event="rowEdit" listener="#{countryProfileBean.onEdit}" update=":form-main-page:form-countries-list:messages"/>
-                            <p:ajax event="rowEditCancel" listener="#{countryProfileBean.onCancel}" update=":form-main-page:form-countries-list:messages"/>
+                            <p:ajax event="rowEdit" listener="#{countryProfileBean.onEdit}" update=":form-countries-list:messages"/>
+                            <p:ajax event="rowEditCancel" listener="#{countryProfileBean.onCancel}" update=":form-countries-list:messages"/>
                             
                             
                             <f:facet name="header" class="header" >  
@@ -36,7 +44,7 @@
                                 <h:outputText value="List of Countries"  />
                             </f:facet>
 
-                            //check box column
+                            
                             <p:column selectionMode="multiple" style="width:3%;" />  
                             
                             <p:column headerText="SNo."  >  
@@ -155,8 +163,5 @@
                     </h:form> 
             </ui:define>
         </ui:composition>
-        
-    
-    
     
 </html>

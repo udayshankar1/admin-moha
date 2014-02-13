@@ -10,7 +10,8 @@ public class Countries {
 private int country_id;
 private String country_name;
 private String country_acronym;
-private String country_status;//use booleany type instead of String 
+private int country_status;//use booleany type instead of String 
+private int country_deleletion_flag;
 
 //getters and setters
 
@@ -38,15 +39,21 @@ private String country_status;//use booleany type instead of String
         this.country_acronym = country_acronym;
     }
 
-    public String getCountry_status() {
+    public int getCountry_status() {
         return country_status;
     }
 
-    public void setCountry_status(String country_status) {
+    public void setCountry_status(int country_status) {
         this.country_status = country_status;
     }
 
+    public int getCountry_deleletion_flag() {
+        return country_deleletion_flag;
+    }
+
+    public void setCountry_deleletion_flag(int country_deleletion_flag) {
+        this.country_deleletion_flag = country_deleletion_flag;
+    }
+
     
-
-
 }

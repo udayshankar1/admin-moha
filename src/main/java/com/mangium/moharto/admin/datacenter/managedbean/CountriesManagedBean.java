@@ -22,15 +22,7 @@ import javax.faces.bean.RequestScoped;
 public class CountriesManagedBean implements Serializable{
 
         
-//    private int country_id;
-//
-//    public int getCountry_id() {
-//        return country_id;
-//    }
-//
-//    public void setCountry_id(int country_id) {
-//        this.country_id = country_id;
-//    }
+
     
     
     /**
@@ -40,8 +32,10 @@ public class CountriesManagedBean implements Serializable{
     private ICountriesBo countries;
 //getters and setters for bo object
     
+//    this methode will be called by data table first
      public List<Countries> getCountries() {
          System.out.println("in getCountries methode");
+//         here we are calling bo methode with bo object
         return countries.findAllCountries();
     }
 

@@ -9,6 +9,8 @@
          class="com.mangium.moharto.admin.datacenter.bo.CountriesBoImpl" >
    		<property name="customerDao" ref="customerDao" />
    	</bean>
+        
+        
  
    	<bean id="customerDao" 
          class="com.mangium.moharto.admin.datacenter.dao.CountriesDaoImpl" >

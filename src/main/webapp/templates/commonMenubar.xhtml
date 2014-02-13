@@ -9,64 +9,68 @@
     <h:body>
 	    <ui:composition>
  
-		<h1>This is default header</h1>
                 <!--MAIN HORIZONTAL MENU BAR STARTS--> 
                 <h:form id="form-template-header-menubar-vertical">
-                    
-                    <p:growl id="messages"/>
+
+                    <p:growl id="messages" />
                     <p:menubar autoDisplay="false" style=" border: none">  
-                        <p:submenu label="Dashboard" icon="ui-icon-document"  >
+                        <p:submenu label="Dashboard" icon="ui-icon-document"   >
+                        <p:menuitem value="Dashboard" url="/faces/index.xhtml"/>
                         </p:submenu>
                         <p:submenu label="Datacenter" icon="ui-icon-document">
                             <p:submenu label="Geography" icon="ui-icon-contact">  
-                                <p:menuitem value="Country" url="#"/>  
-                                <p:menuitem value="State" url="#" />
-                                <p:menuitem value="Zone" url="#" />  
-                                <p:menuitem value="City" url="#" />  
+                                <p:menuitem value="Country" url="/faces/countriesList.xhtml"/>  
+                                <p:menuitem value="State" url="/faces/states-list.xhtml" />
+                                <p:menuitem value="Zone" url="/faces/zones-list.xhtml" />  
+                                <p:menuitem value="City" url="/faces/index.xhtml" />  
                             </p:submenu>
                             <p:submenu label="Colleges" icon="ui-icon-contact">  
-                                <p:menuitem value="University" url="#"/>  
-                                <p:menuitem value="College" url="#" />
-                                <p:menuitem value="Course Level" url="#" />  
-                                <p:menuitem value="Course" url="#" />  
+                                <p:menuitem value="University" url="/faces/index.xhtml"/>  
+                                <p:menuitem value="College" url="/faces/index.xhtml" />
+                                <p:menuitem value="Course Level" url="/faces/index.xhtml" />  
+                                <p:menuitem value="Course" url="/faces/cities-list.xhtml" />  
                             </p:submenu>
                             <p:submenu label="Packages" icon="ui-icon-contact">  
-                                <p:menuitem value="Packages List" url="#"/>
-                                <p:menuitem value="Add Packages" url="#"/>
+                                <p:menuitem value="Packages List" url="/faces/index.xhtml"/>
+                                <p:menuitem value="Add Packages" url="/faces/index.xhtml"/>
                             </p:submenu>
                             <p:submenu label="Ads" icon="ui-icon-contact">  
-                                <p:menuitem value="Ads List" url="#"/>
-                                <p:menuitem value="Add Ad" url="#"/>
+                                <p:menuitem value="Ads List" url="/faces/index.xhtml"/>
+                                <p:menuitem value="Add Ad" url="/faces/index.xhtml"/>
                             </p:submenu>
                         </p:submenu>  
+
                         <p:submenu label="Bussiness" icon="ui-icon-pencil">  
-                            <p:menuitem value="Undo" url="#" icon="ui-icon-arrowreturnthick-1-w" />  
-                            <p:menuitem value="Redo" url="#" icon="ui-icon-arrowreturnthick-1-e" />  
+                            <p:menuitem value="Undo" url="/faces/index.xhtml" icon="ui-icon-arrowreturnthick-1-w" />  
+                            <p:menuitem value="Redo" url="/faces/index.xhtml" icon="ui-icon-arrowreturnthick-1-e" />  
                         </p:submenu>  
 
                         <p:submenu label="Sales" icon="ui-icon-help">  
-                            <p:menuitem value="Contents" url="#" />  
+                            <p:menuitem value="Contents" url="/faces/index.xhtml" />  
                             <p:submenu label="Search" icon="ui-icon-search">  
                                 <p:submenu label="Text">  
-                                    <p:menuitem value="Workspace" url="#" />  
+                                    <p:menuitem value="Workspace" url="/faces/index.xhtml" />  
                                 </p:submenu>  
-                                <p:menuitem value="File" url="#" />  
+                                <p:menuitem value="File" url="/faces/index.xhtml" />  
                             </p:submenu>  
                         </p:submenu>  
 
                         <p:submenu label="Messages" icon="ui-icon-gear">  
                             <p:submenu label="Ajax" icon="ui-icon-refresh">  
-                                <p:menuitem value="Save" actionListener="#{menuBean.save}" icon="ui-icon-disk" update="messages"/>  
-                                <p:menuitem value="Update" actionListener="#{menuBean.update}" icon="ui-icon-arrowrefresh-1-w" update="messages"/>  
+                                <p:menuitem value="Save" actionListener="#{menuBean.save}" icon="ui-icon-disk" />  
+                                <p:menuitem value="Update" actionListener="#{menuBean.update}" icon="ui-icon-arrowrefresh-1-w" />  
                             </p:submenu>  
                             <p:submenu label="Non-Ajax" icon="ui-icon-newwin">  
-                                <p:menuitem value="Delete" actionListener="#{menuBean.delete}" icon="ui-icon-close" update="messages" ajax="false"/>  
+                                <p:menuitem value="Delete" actionListener="#{menuBean.delete}" icon="ui-icon-close"  ajax="false"/>  
                             </p:submenu>  
                         </p:submenu>  
+
+
+
+
                     </p:menubar>
-                    
-                    </h:form>
-                    <!--MAIN HORIZONTAL MENU BAR ENDS-->
+                </h:form>
+                    <!--MAIN VERTICAL MENU BAR ENDS-->
  
 	    </ui:composition>
     </h:body>
